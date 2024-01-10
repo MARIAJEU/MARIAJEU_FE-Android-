@@ -1,11 +1,10 @@
 package com.example.mariajeu
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mariajeu.databinding.ActivityKakaosignupBinding
 import com.example.mariajeu.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
@@ -14,9 +13,10 @@ import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
 
-class LoginActivity : AppCompatActivity(){
+class KakaoSignUpActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -28,13 +28,20 @@ class LoginActivity : AppCompatActivity(){
         /** KakoSDK init */
         KakaoSdk.init(this, this.getString(R.string.kakao_app_key))
 
-        binding.loginSignInTv.setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
-        }
-
+        /** Click_listener */
         binding.loginKakaoLoginBtn.setOnClickListener {
             kakaoLogin() //로그인
         }
+//        binding.btnStartKakaoLogout.setOnClickListener {
+//            kakaoLogout() //로그아웃
+//        }
+//        binding.btnStartKakaoUnlink.setOnClickListener {
+//            kakaoUnlink() //연결해제
+//        }
+        // start화면 보여주기
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.main_frm, StartFragment())
+//            .commit()
     }
 
     private fun kakaoLogin() {
@@ -79,9 +86,40 @@ class LoginActivity : AppCompatActivity(){
         }
     }
 
+//    private fun kakaoLogout(){
+//        // 로그아웃
+//        UserApiClient.instance.logout { error ->
+//            if (error != null) {
+//                TextMsg(this, "로그아웃 실패. SDK에서 토큰 삭제됨: ${error}")
+//            }
+//            else {
+//                TextMsg(this, "로그아웃 성공. SDK에서 토큰 삭제됨")
+//                setLogin(false)
+//            }
+//        }
+//    }
+//
+//    private fun kakaoUnlink(){
+//        // 연결 끊기
+//        UserApiClient.instance.unlink { error ->
+//            if (error != null) {
+//                TextMsg(this, "연결 끊기 실패: ${error}")
+//            }
+//            else {
+//                TextMsg(this, "연결 끊기 성공. SDK에서 토큰 삭제 됨")
+//                setLogin(false)
+//            }
+//        }
+//    }
+//
+//    private fun TextMsg(act: Activity, msg : String){
+//        binding.tvHashKey.text = msg
+//    }
+
     private fun setLogin(bool: Boolean){
         binding.loginKakaoLoginBtn.visibility = if(bool) View.GONE else View.VISIBLE
 //        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
 //        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE
     }
+
 }

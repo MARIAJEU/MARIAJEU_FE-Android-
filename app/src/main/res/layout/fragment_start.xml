@@ -81,7 +81,7 @@
             android:layout_marginTop="168.47dp"
             android:text="레시피, 와인 종류, 특성을 입력하세요.."
             android:gravity="top"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/white" />
 
         <ImageView
             android:id="@+id/start_search_iv"
@@ -116,7 +116,7 @@
             app:layout_constraintBottom_toBottomOf="@id/start_white_v"
             android:text="WHITE"
             android:textSize="11sp"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:elevation="10dp"
             />
 
@@ -143,7 +143,7 @@
             app:layout_constraintBottom_toBottomOf="@id/start_red_v"
             android:text="RED"
             android:textSize="11sp"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:elevation="10dp"
             />
 
@@ -169,7 +169,7 @@
             app:layout_constraintBottom_toBottomOf="@id/start_sparkling_v"
             android:text="SPARKLING"
             android:textSize="11sp"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:elevation="10dp"
             />
 
@@ -414,7 +414,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="400dp"
-            android:background="#D9D9D9"
+            android:background="@color/light_gray"
             app:layout_constraintEnd_toStartOf="@id/start_menu2_v" />
 
         <TextView
@@ -434,7 +434,7 @@
             android:layout_height="148.33dp"
             app:layout_constraintStart_toEndOf="@id/start_menu1_v"
             app:layout_constraintTop_toTopOf="@id/start_menu1_v"
-            android:background="#D9D9D9"
+            android:background="@color/light_gray"
             app:layout_constraintEnd_toEndOf="parent" />
 
 
@@ -454,7 +454,7 @@
             android:layout_width="156dp"
             android:layout_height="148.33dp"
             android:layout_marginTop="48dp"
-            android:background="#D9D9D9"
+            android:background="@color/light_gray"
             app:layout_constraintStart_toStartOf="@id/start_menu1_v"
             app:layout_constraintTop_toBottomOf="@id/start_menu1_v" />
 
@@ -477,7 +477,7 @@
             app:layout_constraintStart_toStartOf="@id/start_menu2_v"
             app:layout_constraintTop_toBottomOf="@id/start_menu2_v"
             android:layout_marginTop="50dp"
-            android:background="#D9D9D9"
+            android:background="@color/light_gray"
             />
         <TextView
             android:id="@+id/start_menu4_tv"

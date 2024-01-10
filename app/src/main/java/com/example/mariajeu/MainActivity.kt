@@ -1,10 +1,19 @@
 package com.example.mariajeu
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.util.Log
+import android.view.View
+import com.example.mariajeu.databinding.ActivityLoginBinding
 import com.example.mariajeu.databinding.ActivityMainBinding
+import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.common.KakaoSdk
+import com.kakao.sdk.common.model.ClientError
+import com.kakao.sdk.common.model.ClientErrorCause
+import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.user.UserApiClient
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,17 +26,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // start화면 보여주기
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.main_frm, StartFragment())
-//            .commit()
-
-
-
         initBottomNavigation()
 
     }
-
 
     private fun initBottomNavigation(){
 
