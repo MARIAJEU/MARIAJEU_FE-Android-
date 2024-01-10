@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="menu1_margin_top_white">400dp</dimen>
+    <dimen name="menu1_margin_top_red">453dp</dimen>
+    <dimen name="menu1_margin_top_sparkling">400dp</dimen>
+</resources>

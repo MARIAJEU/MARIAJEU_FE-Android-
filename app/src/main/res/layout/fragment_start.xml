@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/start_constraintlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/start_logo_iv"
+            android:src="@drawable/ic_start_logo"
+            android:layout_width="34.75dp"
+            android:layout_height="45.5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20.68dp"
+            android:layout_marginTop="17dp"
+            />
+
+        <TextView
+            android:id="@+id/start_login_tv"
+            android:layout_width="36dp"
+            android:layout_height="14dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="20dp"
+            android:text="LOGIN"
+            android:textSize="11dp"
+            />
+
+        <TextView
+            android:id="@+id/start_english_logo_tv"
+            android:layout_width="118dp"
+            android:layout_height="39dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="93dp"
+            android:text="영문로고"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:id="@+id/start_simple_service_tv"
+            android:layout_width="122dp"
+            android:layout_height="17dp"
+            app:layout_constraintTop_toBottomOf="@id/start_english_logo_tv"
+            app:layout_constraintStart_toStartOf="@id/start_english_logo_tv"
+            android:text="'간단한 서비스 설명'"
+            android:textSize="14dp"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/start_search_v"
+            android:layout_width="328dp"
+            android:layout_height="32.16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="160dp"
+            android:background="@drawable/rectangle_3" />
+
+        <TextView
+            android:id="@+id/start_search_tv"
+            android:layout_width="181dp"
+            android:layout_height="14dp"
+            app:layout_constraintStart_toStartOf="@id/start_search_v"
+            android:textSize="11sp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="168.47dp"
+            android:text="레시피, 와인 종류, 특성을 입력하세요.."
+            android:gravity="top"
+            android:textColor="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/start_search_iv"
+            android:src="@drawable/ic_start_find"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            app:layout_constraintEnd_toEndOf="@id/start_search_v"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintTop_toTopOf="@id/start_search_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_search_v"
+            />
+
+        <View
+            android:id="@+id/start_white_v"
+            android:layout_width="95.97dp"
+            android:layout_height="31.44dp"
+            android:layout_marginTop="204dp"
+            android:background="@drawable/rectangle_2"
+            android:elevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/start_white_tv"
+            android:layout_width="37dp"
+            android:layout_height="14dp"
+            app:layout_constraintStart_toStartOf="@id/start_white_v"
+            app:layout_constraintEnd_toEndOf="@id/start_white_v"
+            app:layout_constraintTop_toTopOf="@id/start_white_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_white_v"
+            android:text="WHITE"
+            android:textSize="11sp"
+            android:textColor="#FFFFFF"
+            android:elevation="10dp"
+            />
+
+
+        <View
+            android:id="@+id/start_red_v"
+            android:layout_width="95.97dp"
+            android:layout_height="31.44dp"
+            app:layout_constraintEnd_toStartOf="@id/start_white_v"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="205.52dp"
+            android:layout_marginEnd="16.55dp"
+            android:background="@drawable/rectangle_2"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/start_red_tv"
+            android:layout_width="23dp"
+            android:layout_height="14dp"
+            app:layout_constraintStart_toStartOf="@id/start_red_v"
+            app:layout_constraintEnd_toEndOf="@id/start_red_v"
+            app:layout_constraintTop_toTopOf="@id/start_red_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_red_v"
+            android:text="RED"
+            android:textSize="11sp"
+            android:textColor="#FFFFFF"
+            android:elevation="10dp"
+            />
+
+        <View
+            android:id="@+id/start_sparkling_v"
+            android:layout_width="95.97dp"
+            android:layout_height="31.44dp"
+            app:layout_constraintStart_toEndOf="@id/start_white_v"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="205.52dp"
+            android:layout_marginStart="16.55dp"
+            android:background="@drawable/rectangle_2"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/start_sparkling_tv"
+            android:layout_width="64dp"
+            android:layout_height="14dp"
+            app:layout_constraintStart_toStartOf="@id/start_sparkling_v"
+            app:layout_constraintEnd_toEndOf="@id/start_sparkling_v"
+            app:layout_constraintTop_toTopOf="@id/start_sparkling_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_sparkling_v"
+            android:text="SPARKLING"
+            android:textSize="11sp"
+            android:textColor="#FFFFFF"
+            android:elevation="10dp"
+            />
+
+        <View
+            android:id="@+id/start_rectangle_1_v"
+            android:layout_width="321dp"
+            android:layout_height="156.36dp"
+            android:layout_marginTop="212dp"
+            android:background="@drawable/rectangle_1"
+            android:elevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"/>
+
+        <View
+            android:id="@+id/start_rectangle_16_v"
+            android:layout_width="321dp"
+            android:layout_height="205dp"
+            android:layout_marginTop="212dp"
+            android:background="@drawable/rectangle_16"
+            android:clickable="false"
+            android:elevation="0dp"
+            android:focusable="false"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+        <TextView
+            android:id="@+id/start_choice_01_tv"
+            android:layout_width="35dp"
+            android:layout_height="12dp"
+            app:layout_constraintStart_toStartOf="@id/start_rectangle_1_v"
+            app:layout_constraintTop_toBottomOf="@id/start_red_v"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="20dp"
+            android:text="BOLD"
+            android:textSize="10dp"
+            android:gravity="top"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+        <View
+            android:id="@+id/start_choice_01_v"
+            android:layout_width="281.49dp"
+            android:layout_height="8.27dp"
+            android:layout_alignParentLeft="true"
+            app:layout_constraintStart_toStartOf="@id/start_choice_01_tv"
+            app:layout_constraintTop_toBottomOf="@id/start_choice_01_tv"
+            android:layout_marginTop="3.2dp"
+            android:background="@drawable/rectangle_8"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            />
+        <ImageView
+            android:id="@+id/start_choice_01_iv"
+            android:layout_width="14.89dp"
+            android:layout_height="14.89dp"
+            android:src="@drawable/ic_ellipse_32"
+            app:layout_constraintStart_toStartOf="@id/start_choice_01_v"
+            app:layout_constraintEnd_toEndOf="@id/start_choice_01_v"
+            app:layout_constraintTop_toTopOf="@id/start_choice_01_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_choice_01_v"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/start_choice_02_tv"
+            android:layout_width="40dp"
+            android:layout_height="12dp"
+            app:layout_constraintStart_toStartOf="@id/start_rectangle_1_v"
+            app:layout_constraintTop_toBottomOf="@id/start_choice_01_v"
+            android:layout_marginTop="22.03dp"
+            android:layout_marginStart="20dp"
+            android:text="ACIDIC"
+            android:textSize="10dp"
+            android:gravity="top"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+        <View
+            android:id="@+id/start_choice_02_v"
+            android:layout_width="281.49dp"
+            android:layout_height="8.27dp"
+            android:layout_alignParentLeft="true"
+            app:layout_constraintStart_toStartOf="@id/start_choice_02_tv"
+            app:layout_constraintTop_toBottomOf="@id/start_choice_02_tv"
+            android:layout_marginTop="3.2dp"
+            android:background="@drawable/rectangle_8"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            />
+        <ImageView
+            android:id="@+id/start_choice_02_iv"
+            android:layout_width="14.89dp"
+            android:layout_height="14.89dp"
+            android:src="@drawable/ic_ellipse_32"
+            app:layout_constraintStart_toStartOf="@id/start_choice_02_v"
+            app:layout_constraintEnd_toEndOf="@id/start_choice_02_v"
+            app:layout_constraintTop_toTopOf="@id/start_choice_02_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_choice_02_v"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/start_choice_03_tv"
+            android:layout_width="35dp"
+            android:layout_height="12dp"
+            app:layout_constraintStart_toStartOf="@id/start_rectangle_1_v"
+            app:layout_constraintTop_toBottomOf="@id/start_choice_02_v"
+            android:layout_marginTop="22.03dp"
+            android:layout_marginStart="20dp"
+            android:text="FIZZY"
+            android:textSize="10dp"
+            android:gravity="top"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+        <View
+            android:id="@+id/start_choice_03_v"
+            android:layout_width="281.49dp"
+            android:layout_height="8.27dp"
+            android:layout_alignParentLeft="true"
+            app:layout_constraintStart_toStartOf="@id/start_choice_03_tv"
+            app:layout_constraintTop_toBottomOf="@id/start_choice_03_tv"
+            android:layout_marginTop="3.2dp"
+            android:background="@drawable/rectangle_8"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            />
+        <ImageView
+            android:id="@+id/start_choice_03_iv"
+            android:layout_width="14.89dp"
+            android:layout_height="14.89dp"
+            android:src="@drawable/ic_ellipse_32"
+            app:layout_constraintStart_toStartOf="@id/start_choice_03_v"
+            app:layout_constraintEnd_toEndOf="@id/start_choice_03_v"
+            app:layout_constraintTop_toTopOf="@id/start_choice_03_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_choice_03_v"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+        <TextView
+            android:id="@+id/start_choice_04_tv"
+            android:layout_width="35dp"
+            android:layout_height="12dp"
+            app:layout_constraintStart_toStartOf="@id/start_rectangle_1_v"
+            app:layout_constraintTop_toBottomOf="@id/start_choice_03_v"
+            android:layout_marginTop="22.03dp"
+            android:layout_marginStart="20dp"
+            android:text="ACIDIC"
+            android:textSize="10dp"
+            android:gravity="top"
+            android:visibility="invisible"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+        <View
+            android:id="@+id/start_choice_04_v"
+            android:layout_width="281.49dp"
+            android:layout_height="8.27dp"
+            android:layout_alignParentLeft="true"
+            app:layout_constraintStart_toStartOf="@id/start_choice_04_tv"
+            app:layout_constraintTop_toBottomOf="@id/start_choice_04_tv"
+            android:layout_marginTop="3.2dp"
+            android:background="@drawable/rectangle_8"
+            android:gravity="top"
+            android:visibility="invisible"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            />
+        <ImageView
+            android:id="@+id/start_choice_04_iv"
+            android:layout_width="14.89dp"
+            android:layout_height="14.89dp"
+            android:src="@drawable/ic_ellipse_32"
+            app:layout_constraintStart_toStartOf="@id/start_choice_04_v"
+            app:layout_constraintEnd_toEndOf="@id/start_choice_04_v"
+            app:layout_constraintTop_toTopOf="@id/start_choice_04_v"
+            app:layout_constraintBottom_toBottomOf="@id/start_choice_04_v"
+            android:gravity="top"
+            android:visibility="invisible"
+            android:translationZ="10dp"
+            android:elevation="10dp"
+            />
+
+        <View
+            android:id="@+id/start_mouseon_ex_v"
+            android:layout_width="304dp"
+            android:layout_height="54dp"
+            android:background="@drawable/rectangle_37"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/start_rectangle_1_v"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="@id/start_rectangle_1_v"
+            app:layout_constraintTop_toTopOf="@id/start_choice_01_v"
+            android:clickable="false"
+            android:focusable="false"
+            android:translationZ="20dp"
+            android:elevation="20dp"/>
+
+        <TextView
+            android:id="@+id/start_mouseon_ex_tv"
+            android:layout_width="252dp"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|top"
+            android:text="default"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/start_mouseon_ex_v"
+            app:layout_constraintEnd_toEndOf="@id/start_mouseon_ex_v"
+            app:layout_constraintStart_toStartOf="@id/start_mouseon_ex_v"
+            app:layout_constraintTop_toTopOf="@id/start_mouseon_ex_v"
+            app:layout_constraintVertical_bias="0.333"
+            android:clickable="false"
+            android:focusable="false"
+            android:translationZ="20dp"
+            android:elevation="20dp" />
+
+
+
+
+        <View
+            android:id="@+id/start_menu1_v"
+            android:layout_width="156dp"
+            android:layout_height="148.33dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="400dp"
+            android:background="#D9D9D9"
+            app:layout_constraintEnd_toStartOf="@id/start_menu2_v" />
+
+        <TextView
+            android:id="@+id/start_menu1_tv"
+            android:layout_width="69dp"
+            android:layout_height="14dp"
+            app:layout_constraintStart_toStartOf="@id/start_menu1_v"
+            app:layout_constraintTop_toBottomOf="@id/start_menu1_v"
+            android:layout_marginTop="10.5dp"
+            android:text="연어스테이크"
+            android:textSize="11.9dp"
+            android:gravity="top" />
+
+        <View
+            android:id="@+id/start_menu2_v"
+            android:layout_width="156dp"
+            android:layout_height="148.33dp"
+            app:layout_constraintStart_toEndOf="@id/start_menu1_v"
+            app:layout_constraintTop_toTopOf="@id/start_menu1_v"
+            android:background="#D9D9D9"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/start_menu2_tv"
+            android:layout_width="69dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="4dp"
+            android:gravity="top"
+            android:text="감바스"
+            android:textSize="11.9dp"
+            app:layout_constraintStart_toStartOf="@id/start_menu2_v"
+            app:layout_constraintTop_toBottomOf="@id/start_menu2_v" />
+
+        <View
+            android:id="@+id/start_menu3_v"
+            android:layout_width="156dp"
+            android:layout_height="148.33dp"
+            android:layout_marginTop="48dp"
+            android:background="#D9D9D9"
+            app:layout_constraintStart_toStartOf="@id/start_menu1_v"
+            app:layout_constraintTop_toBottomOf="@id/start_menu1_v" />
+
+        <TextView
+            android:id="@+id/start_menu3_tv"
+            android:layout_width="69dp"
+            android:layout_height="14dp"
+            app:layout_constraintStart_toStartOf="@id/start_menu3_v"
+            app:layout_constraintTop_toBottomOf="@id/start_menu3_v"
+            android:layout_marginTop="10.5dp"
+            android:text="menu3"
+            android:textSize="11.9dp"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/start_menu4_v"
+            android:layout_width="156dp"
+            android:layout_height="148.33dp"
+            app:layout_constraintStart_toStartOf="@id/start_menu2_v"
+            app:layout_constraintTop_toBottomOf="@id/start_menu2_v"
+            android:layout_marginTop="50dp"
+            android:background="#D9D9D9"
+            />
+        <TextView
+            android:id="@+id/start_menu4_tv"
+            android:layout_width="69dp"
+            android:layout_height="14dp"
+            app:layout_constraintStart_toStartOf="@id/start_menu4_v"
+            app:layout_constraintTop_toBottomOf="@id/start_menu4_v"
+            android:layout_marginTop="10.5dp"
+            android:text="menu4"
+            android:textSize="11.9dp"
+            android:gravity="top"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

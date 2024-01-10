@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/login_english_logo_tv"
+        android:layout_width="118dp"
+        android:layout_height="39dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="158dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="133dp"
+        android:text="영문로고"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/login_simple_service_tv"
+        android:layout_width="122dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="172dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/login_english_logo_tv"
+        android:text="'간단한 서비스 설명'"
+        android:textSize="14dp"
+        android:gravity="top"
+        />
+
+    <View
+        android:id="@+id/login_rectangle_1"
+        android:layout_width="388dp"
+        android:layout_height="189dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="215dp"
+        android:background="@drawable/login_rectangle1"
+        />
+
+    <ImageView
+        android:id="@+id/login_background_logo_iv"
+        android:src="@drawable/ic_login_logo"
+        android:layout_width="355.98dp"
+        android:layout_height="468.4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="322dp"
+        />
+
+    <EditText
+        android:id="@+id/login_id_et"
+        android:layout_width="358dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/login_rectangle5"
+        android:hint="사용자의 ID를 입력해주세요."
+        android:inputType="text"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/login_rectangle_1"
+        app:layout_constraintTop_toTopOf="@id/login_rectangle_1" />
+
+    <EditText
+        android:id="@+id/login_password_et"
+        android:layout_width="358dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/login_rectangle5"
+        android:hint="사용자의 ID를 입력해주세요."
+        android:inputType="text"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/login_rectangle_1"
+        app:layout_constraintTop_toBottomOf="@id/login_id_et" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_login_btn"
+        android:layout_width="171.87dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_rectangle_7"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/login_rectangle_1"
+        app:layout_constraintTop_toBottomOf="@id/login_password_et"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_kakao_login_btn"
+        android:layout_width="171.87dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_rectangle_7"
+        android:text="카카오톡 간편 로그인"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/login_login_btn"
+        app:layout_constraintTop_toBottomOf="@id/login_password_et"
+        />
+
+
+    <TextView
+        android:id="@+id/login_find_id_tv"
+        android:layout_width="38dp"
+        android:layout_height="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="63dp"
+        app:layout_constraintTop_toBottomOf="@id/login_rectangle_1"
+        android:layout_marginTop="17dp"
+        android:text="ID 찾기"
+        android:textSize="12sp"
+        />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="4dp"
+        android:background="#3D1959"
+        app:layout_constraintStart_toEndOf="@id/login_find_id_tv"
+        app:layout_constraintTop_toTopOf="@id/login_find_id_tv" />
+
+    <TextView
+        android:id="@+id/login_find_password_tv"
+        android:layout_width="70dp"
+        android:layout_height="15dp"
+        app:layout_constraintStart_toEndOf="@id/login_find_id_tv"
+        android:layout_marginStart="63dp"
+        app:layout_constraintTop_toBottomOf="@id/login_rectangle_1"
+        android:layout_marginTop="17dp"
+        android:text="비밀번호 찾기"
+        android:textSize="12sp"
+        />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="4dp"
+        android:background="#3D1959"
+        app:layout_constraintStart_toEndOf="@id/login_find_password_tv"
+        app:layout_constraintTop_toTopOf="@id/login_find_password_tv" />
+    <TextView
+        android:id="@+id/login_sign_in_tv"
+        android:layout_width="48dp"
+        android:layout_height="15dp"
+        app:layout_constraintStart_toEndOf="@id/login_find_password_tv"
+        android:layout_marginStart="63dp"
+        app:layout_constraintTop_toBottomOf="@id/login_rectangle_1"
+        android:layout_marginTop="17dp"
+        android:text="회원가입"
+        android:textSize="12sp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

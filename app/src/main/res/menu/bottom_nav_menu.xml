@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_home"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="피드"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_bottom_search"
+        app:showAsAction="always"
+        android:title="검색" />
+    <item
+        android:id="@+id/likeFragment"
+        android:icon="@drawable/ic_bottom_like"
+        app:showAsAction="always"
+        android:title="찜" />
+    <item
+        android:id="@+id/mypageFragment"
+        android:icon="@drawable/ic_bottom_mypage"
+        app:showAsAction="always"
+        android:title="My" />
+</menu>
