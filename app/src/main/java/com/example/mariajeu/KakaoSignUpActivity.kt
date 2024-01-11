@@ -1,8 +1,10 @@
 package com.example.mariajeu
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mariajeu.databinding.ActivityKakaosignupBinding
 import com.example.mariajeu.databinding.ActivityLoginBinding
@@ -116,10 +118,11 @@ class KakaoSignUpActivity : AppCompatActivity() {
 //        binding.tvHashKey.text = msg
 //    }
 
-    private fun setLogin(bool: Boolean){
-        binding.loginKakaoLoginBtn.visibility = if(bool) View.GONE else View.VISIBLE
+    private fun setLogin(bool: Boolean) : Boolean{
+        startActivity(Intent(this, StartFragment::class.java))
 //        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
 //        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE
+        return true
     }
 
 }

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">MARIAJEU</string>
-    <string name="kakao_app_key">{700c1077d57196cc26390d25f4662d35}</string>
-    <string name="kakao_app_key2">kakao{700c1077d57196cc26390d25f4662d35}</string>
+    <string name="kakao_app_key">700c1077d57196cc26390d25f4662d35</string>
+    <string name="kakao_app_key2">kakao700c1077d57196cc26390d25f4662d35</string>
 </resources>

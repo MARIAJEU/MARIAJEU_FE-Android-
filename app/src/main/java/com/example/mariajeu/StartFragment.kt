@@ -1,6 +1,8 @@
 package com.example.mariajeu
 
+import android.app.Activity
 import android.content.Intent
+import android.content.Intent.getIntent
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +12,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.view.MotionEvent
+import android.view.View.GONE
 import android.view.View.OnHoverListener
+import android.view.View.VISIBLE
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.example.mariajeu.databinding.FragmentStartBinding
@@ -31,6 +36,35 @@ class StartFragment : Fragment() {
         return binding.root
     }
 
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        val startIntent : Intent = Intent()
+//        val isLogin = startIntent.getStringExtra("success")
+//
+//        if (isLogin != null) {
+//            val btnLogin = binding.startLoginTv
+//            val btnLogout = binding.startLogoutTv
+//
+//            btnLogin.visibility = GONE
+//            btnLogout.visibility = VISIBLE
+//        }
+//
+//    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) { // activity A 호출 -> B 호출 -> A 호출 (결과값 반환) 시에 사용하는 함수
+        super.onActivityResult(requestCode, resultCode, data)
+
+        Log.d("값 전달받기 성공", "성공")
+
+        val btnLogin = binding.startLoginTv
+        val btnLogout = binding.startLogoutTv
+
+        // 로그인 성공 시, 로그인 -> 로그아웃 버튼으로 전환됨
+        btnLogin.visibility = GONE
+        btnLogout.visibility = VISIBLE
+
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -38,7 +72,8 @@ class StartFragment : Fragment() {
         startLoginTextView.setOnClickListener {
             // 클릭 이벤트 발생 시 LoginActivity 로 전환
             val intent = Intent(activity, LoginActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("로그인으로", "toLogin")
+            startActivityForResult(intent, 1)
         }
 
         binding.startWhiteV.setOnClickListener { handleViewClick(binding.startWhiteV, binding.startWhiteTv) }

@@ -1,10 +1,12 @@
 package com.example.mariajeu
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mariajeu.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.model.OAuthToken
@@ -21,6 +23,8 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val toLogin = intent.getStringExtra("로그인으로")
 
         val keyHash = Utility.getKeyHash(this)
         Log.e("Key", "keyHash: ${keyHash}")
@@ -80,7 +84,12 @@ class LoginActivity : AppCompatActivity(){
     }
 
     private fun setLogin(bool: Boolean){
-        binding.loginKakaoLoginBtn.visibility = if(bool) View.GONE else View.VISIBLE
+        val loginItent = Intent(this, StartFragment::class.java)
+        loginItent.putExtra("로그인 성공", "success")
+        Log.d("tag", "로그인 성공함")
+        setResult(RESULT_OK, loginItent)
+//        startActivity(loginItent)
+        finish() // 이전 액티비티로 돌아가기
 //        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
 //        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE
     }
