@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.util.Log
 import android.view.View
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.mariajeu.databinding.ActivityLoginBinding
 import com.example.mariajeu.databinding.ActivityMainBinding
 import com.kakao.sdk.auth.model.OAuthToken
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        installSplashScreen()
         setContentView(binding.root)
 
         initBottomNavigation()

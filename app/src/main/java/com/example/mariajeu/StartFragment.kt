@@ -60,6 +60,7 @@ class StartFragment : Fragment() {
         val btnLogout = binding.startLogoutTv
 
         // 로그인 성공 시, 로그인 -> 로그아웃 버튼으로 전환됨
+        // ** 현재는 카카오톡 로그인 시에만 적용됨 ** //
         btnLogin.visibility = GONE
         btnLogout.visibility = VISIBLE
 
