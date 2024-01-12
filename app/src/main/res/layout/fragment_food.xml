@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/food_background_iv"
+            android:layout_width="360.81dp"
+            android:layout_height="223.2dp"
+            android:src="@drawable/ic_food_menu1_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_logo_tv"
+            android:layout_width="33dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="22.66dp"
+            android:layout_marginTop="13.01dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="LOGO"
+            android:textSize="11.75sp"
+            android:textColor="@color/white"
+            android:gravity="top"
+            />
+
+        <ImageView
+            android:id="@+id/food_menu1_alarm_iv"
+            android:layout_width="23dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_food_alarm"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_logo_tv"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_logo_tv"
+            android:layout_marginStart="198.59dp"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_user_tv"
+            android:layout_width="31dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="299.56dp"
+            android:layout_marginTop="13.01dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="USER"
+            android:textSize="11.75sp"
+            android:textColor="@color/white"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_title_extra_tv"
+            android:layout_width="147dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="94.82dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="73.43dp"
+            android:text="RED WINE과 잘 어울리는"
+            android:textColor="@color/white"
+            android:textSize="13.425dp"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_title_korean_tv"
+            android:layout_width="158dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="93.98dp"
+            android:layout_marginTop="92.73dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="연어 스테이크"
+            android:textColor="@color/white"
+            android:textSize="26.851dp"
+            android:gravity="top"
+            />
+        <TextView
+            android:id="@+id/food_menu1_title_english_tv"
+            android:layout_width="105dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="116.63dp"
+            android:layout_marginTop="127.13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="SALMON STEAK"
+            android:textColor="@color/white"
+            android:textSize="13.425dp"
+            android:gravity="top"
+            />
+
+
+        <TextView
+            android:id="@+id/food_menu1_section2_salmon_tv"
+            android:layout_width="78dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="22.66dp"
+            android:layout_marginTop="221.95dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="연어스테이크"
+            android:textSize="13.425dp"
+            android:gravity="top"
+            />
+
+        <ImageView
+            android:id="@+id/food_menu1_section2_ellipse1_iv"
+            android:layout_width="3.36dp"
+            android:layout_height="3.36dp"
+            android:layout_marginLeft="114.12dp"
+            android:layout_marginTop="227.82dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#000000"/>
+        <TextView
+            android:id="@+id/food_menu1_section2_red_wine_tv"
+            android:layout_width="49dp"
+            android:layout_height="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="122.51dp"
+            android:layout_marginTop="223.62dp"
+            android:text="RED WINE"
+            android:textSize="10.069dp"
+            android:textColor="#8B1A10"
+            android:gravity="top"
+            />
+        <ImageView
+            android:id="@+id/food_menu1_section2_ellipse2_iv"
+            android:layout_width="3.36dp"
+            android:layout_height="3.36dp"
+            android:layout_marginStart="187.96dp"
+            android:layout_marginTop="227.82dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#000000"/>
+        <ImageView
+            android:id="@+id/food_menu1_section2_heart_iv"
+            android:layout_width="20.14dp"
+            android:layout_height="20.14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="196.35dp"
+            android:layout_marginTop="219.43dp"
+            android:src="@drawable/ic_food_heart"
+            />
+        <TextView
+            android:id="@+id/some_id"
+            android:layout_width="17dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="221.52dp"
+            android:layout_marginTop="223.62dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="128"
+            android:textSize="10.069dp"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section2_character_wine_tv"
+            android:layout_width="142dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="22.66dp"
+            android:layout_marginTop="258.87dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="CHARACTER OF WINE"
+            android:textSize="13.425dp"
+            android:gravity="top"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section2_c1_left_tv"
+            android:layout_width="30dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="22.66dp"
+            android:layout_marginTop="282.36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="LIGHT"
+            android:textSize="10.069dp"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/food_menu1_section2_c1_rectangle_v"
+            android:layout_width="201.38dp"
+            android:layout_height="6.71dp"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section2_c1_left_tv"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="284.88dp"
+            android:layout_marginStart="27dp"
+            android:background="@drawable/rectangle_8"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section2_c2_left_tv"
+            android:layout_width="30dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="22.66dp"
+            android:layout_marginTop="304.18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="SMOOTH"
+            android:textSize="10.069dp"
+            android:gravity="top"
+            />
+
+
+        <TextView
+            android:id="@+id/food_menu1_section2_c3_left_tv"
+            android:layout_width="30dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="22.66dp"
+            android:layout_marginTop="325.99dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="DRY"
+            android:textSize="10.069dp"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section2_c4_left_tv"
+            android:layout_width="30dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="22.66dp"
+            android:layout_marginTop="347.81dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="SOFT"
+            android:textSize="10.069dp"
+            android:gravity="top"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
