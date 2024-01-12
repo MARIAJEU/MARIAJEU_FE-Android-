@@ -1,5 +1,6 @@
 package com.example.mariajeu
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,5 +13,10 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val intentSignUp = Intent(this, Login2Activity::class.java)
+        binding.btnNext.setOnClickListener {
+            startActivity(intentSignUp)
+        }
     }
 }

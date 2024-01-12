@@ -5,24 +5,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/title"
-        android:src="@drawable/ic_signup"
-        android:layout_width="233.93dp"
-        android:layout_height="81.88dp"
+    <!-- 제목 -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/tv_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="56dp">
-    </ImageView>
+        android:layout_marginTop="56dp"
+        android:text="MARIAJEU"
+        android:textStyle="bold"
+        android:textSize="45sp"
+        android:textColor="@color/white"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_signup"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="106dp"
+        android:text="SIGN UP"
+        android:textSize="30sp"
+        android:textColor="@color/white">
+    </TextView>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/title"-->
+<!--        android:src="@drawable/ic_signup"-->
+<!--        android:layout_width="233.93dp"-->
+<!--        android:layout_height="81.88dp"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginTop="56dp">-->
+<!--    </ImageView>-->
 
     <ScrollView
-        android:layout_width="325.84dp"
-        android:layout_height="718.51dp"
+        android:layout_width="360dp"
+        android:layout_height="600dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title">
+        app:layout_constraintTop_toBottomOf="@+id/tv_signup">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,40 +71,222 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="20dp">
+
+                    <!-- 동의 부분 -->
+
                     <Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
-                        android:background="@drawable/btn_check_on">
+                        android:background="@drawable/btn_check_off">
                     </Button>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="전체 동의하기"
+                        android:textSize="11sp"
+                        android:textColor="@color/white">
+                    </TextView>
 
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="20dp">
+
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_check_off">
+                    </Button>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/iv_allow_all">
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/iv_yakgwan">
                     </ImageView>
 
                 </LinearLayout>
+
+                <!-- user 정보 입력 부분 -->
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="70dp"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/iv_yakgwan">
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/iv_yakgwan_box">
                 </ImageView>
 
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_2"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="165dp"
+                    android:layout_marginLeft="50dp"
+                    android:hint="ID (4~12자리)"
+                    android:textColorHint="@color/purple"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/ic_signup_id">
+                </EditText>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_3"
+                    android:layout_marginTop="200dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="195dp"
+                    android:layout_marginLeft="50dp"
+                    android:hint="비밀번호 (8~16자리 / 영문, 숫자, 특수문자 조합)"
+                    android:textColorHint="@color/purple"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/ic_signup_pw">
+                </EditText>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_3"
+                    android:layout_marginTop="230dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="225dp"
+                    android:layout_marginLeft="50dp"
+                    android:hint="비밀번호를 다시 입력해주세요"
+                    android:textColorHint="@color/purple"
+                    android:textColor="@color/black"
+                    android:textSize="12sp">
+                </EditText>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_incorrect_pw"
+                    android:text="* 일치하지 않습니다"
+                    android:textColor="#8F1952"
+                    android:layout_marginTop="235dp"
+                    android:layout_marginLeft="250dp"
+                    android:textSize="8sp"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_4"
+                    android:layout_marginTop="260dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="255dp"
+                    android:layout_marginLeft="50dp"
+                    android:hint="계정 분실 시 확인용 이메일"
+                    android:textColorHint="@color/purple"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/ic_signup_email">
+                </EditText>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_2"
+                    android:layout_marginTop="330dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="335dp"
+                    android:layout_marginLeft="50dp"
+                    android:hint="이름"
+                    android:textColorHint="@color/purple"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/ic_signup_id">
+                </EditText>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_3"
+                    android:layout_marginTop="360dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="365dp"
+                    android:layout_marginLeft="50dp"
+                    android:hint="휴대전화번호"
+                    android:textColorHint="@color/purple"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/ic_signup_phone">
+                </EditText>
+
+                <Button
+                    android:layout_width="61.83dp"
+                    android:layout_height="20.05dp"
+                    android:id="@+id/btn_certification"
+                    android:background="@color/purple"
+                    android:text="인증요청"
+                    android:layout_marginTop="365dp"
+                    android:layout_marginLeft="260dp">
+                </Button>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_4"
+                    android:layout_marginTop="390dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <Button
+                    android:layout_width="289.07dp"
+                    android:layout_height="36.76dp"
+                    android:id="@+id/btn_next"
+                    android:text="다음"
+                    android:background="@color/white"
+                    android:textColor="@color/purple"
+                    android:layout_marginTop="630dp"
+                    android:layout_gravity="center_horizontal">
+                </Button>
 
             </FrameLayout>
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n"
-                android:textSize="50sp"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
