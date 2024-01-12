@@ -34,7 +34,6 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT " />
                 <category android:name="android.intent.category.BROWSABLE " />
-
                 <!-- Redirect URL: "kakao{NATIVE_APP_KEY}://oauth" -->
                 <!-- scheme-example: kakao{NATIVE_APP_KEY}" -->
                 <data
