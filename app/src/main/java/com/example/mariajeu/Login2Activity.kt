@@ -38,18 +38,10 @@ class Login2Activity : AppCompatActivity() {
 
         // 등록하기 버튼을 눌렀을 경우
         binding.ivRegister.setOnClickListener {
-            imageUpload(uri)
-
-            val bundle: Bundle = Bundle() // 데이터를 담을 객체 생성
-            bundle.putString("message", "test")
-            val startFragment: StartFragment = StartFragment() // fragment 선엉ㄴ
-            startFragment.arguments = bundle // fragment에 데이터 넘기기
-
-            val manager: FragmentManager = supportFragmentManager
-            val transaction: FragmentTransaction = manager.beginTransaction()
-
-            // fragment 화면 보여주기
-            transaction.replace(R.id.homeFragment, StartFragment()).commit()
+//            imageUpload(uri)
+            // Activity -> Fragment 전환??
+            val login2Intent = Intent(this, MainActivity::class.java)
+            startActivity(login2Intent)
 
         }
     }
@@ -57,7 +49,7 @@ class Login2Activity : AppCompatActivity() {
     private val registerForActivityResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             when (result.resultCode) {
-                AppCompatActivity.RESULT_OK -> {
+                RESULT_OK -> {
                     // 변수 uri에 전달 받은 이미지 uri를 넣어준다.
                     uri = result.data?.data!!
 
