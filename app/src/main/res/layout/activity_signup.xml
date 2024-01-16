@@ -157,8 +157,10 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_input_pwd"
                     android:layout_marginTop="195dp"
                     android:layout_marginLeft="50dp"
+                    android:inputType="textPassword"
                     android:hint="비밀번호 (8~16자리 / 영문, 숫자, 특수문자 조합)"
                     android:textColorHint="@color/purple"
                     android:textColor="@color/black"
@@ -177,6 +179,8 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_input_pwd_again"
+                    android:inputType="textPassword"
                     android:layout_marginTop="225dp"
                     android:layout_marginLeft="50dp"
                     android:hint="비밀번호를 다시 입력해주세요"
@@ -207,6 +211,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
                     android:layout_marginTop="255dp"
                     android:layout_marginLeft="50dp"
                     android:hint="계정 분실 시 확인용 이메일"
@@ -229,6 +234,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="335dp"
                     android:layout_marginLeft="50dp"
+                    android:inputType="textPersonName"
                     android:hint="이름"
                     android:textColorHint="@color/purple"
                     android:textColor="@color/black"

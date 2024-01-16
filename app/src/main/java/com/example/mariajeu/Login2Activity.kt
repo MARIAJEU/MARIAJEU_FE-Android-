@@ -8,9 +8,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.example.mariajeu.databinding.ActivityLogin2Binding
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -62,6 +59,8 @@ class Login2Activity : AppCompatActivity() {
             }
         }
 
+
+    // TODO 이미지 업로드가 안 되고 런타임에러 떠서 수정 필요 ** (서버 연동하면 어차피 다른 방식으로 할 거 같긴 함)
     private fun imageUpload(uri: Uri) {
         // storage 인스턴스 생성
         val storage = Firebase.storage
