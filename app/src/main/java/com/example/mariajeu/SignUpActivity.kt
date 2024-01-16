@@ -15,8 +15,13 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val intentSignUp = Intent(this, Login2Activity::class.java)
+
         binding.btnNext.setOnClickListener {
             startActivity(intentSignUp)
+        }
+        binding.btnCertification.setOnClickListener {
+            val helper = AppSignatureHelper(this)
+            val hash = helper.getAppSignatures()?.get(0)
         }
     }
 }
