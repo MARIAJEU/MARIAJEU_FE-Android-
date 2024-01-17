@@ -195,6 +195,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_input_id"
                     android:layout_marginTop="235dp"
                     android:layout_marginLeft="50dp"
                     android:hint="ID (4~12자리)"
@@ -253,7 +254,7 @@
                     android:id="@+id/tv_incorrect_pw"
                     android:text="* 일치하지 않습니다"
                     android:textColor="#8F1952"
-                    android:layout_marginTop="295dp"
+                    android:layout_marginTop="305dp"
                     android:layout_marginLeft="250dp"
                     android:textSize="8sp"
                     android:visibility="gone"/>
@@ -278,6 +279,18 @@
                     android:textSize="12sp"
                     android:drawableStart="@drawable/ic_signup_email">
                 </EditText>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_essential_info"
+                    android:text="*아이디: 필수 정보입니다."
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:layout_marginTop="365dp"
+                    android:layout_marginLeft="40dp"
+                    android:visibility="gone">
+                </TextView>
 
                 <ImageView
                     android:layout_width="289dp"
@@ -311,6 +324,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_input_phone"
                     android:inputType="phone"
                     android:layout_marginTop="395dp"
                     android:layout_marginLeft="50dp"
@@ -365,6 +379,18 @@
                     android:layout_marginTop="435dp"
                     android:layout_marginLeft="260dp">
                 </android.widget.Button>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_essential_info2"
+                    android:text="*휴대전화번호: 필수 정보입니다."
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:layout_marginTop="465dp"
+                    android:layout_marginLeft="40dp"
+                    android:visibility="gone">
+                </TextView>
 
                 <android.widget.Button
                     android:layout_width="289.07dp"

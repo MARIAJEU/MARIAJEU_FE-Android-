@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.example.mariajeu.databinding.ActivitySignupBinding
@@ -25,9 +26,17 @@ class SignUpActivity : AppCompatActivity() {
 
         // 다음 버튼 눌렀을 때 프로필 사진 화면으로 전환
         binding.btnNext.setOnClickListener {
-            Log.d("TEST이름TEST이름", binding.etName.text.toString())
-            intent.putExtra("이름", binding.etName.text.toString())
-            startActivity(intent)
+            if (binding.etInputId.text.toString().isEmpty()) {
+                binding.tvEssentialInfo.visibility = View.VISIBLE
+            }
+            else if (binding.etInputPhone.text.toString().isEmpty()) {
+                binding.tvEssentialInfo2.visibility = View.VISIBLE
+            }
+            else {
+                Log.d("TEST이름TEST이름", binding.etName.text.toString())
+                intent.putExtra("이름", binding.etName.text.toString())
+                startActivity(intent)
+            }
         }
 
         // TODO 본인인증 -> 안 됨...
