@@ -346,6 +346,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_certification_num"
                     android:inputType="phone"
                     android:layout_marginTop="425dp"
                     android:layout_marginLeft="50dp"
@@ -383,6 +384,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tv_check_certification"
+                    android:text="* 본인인증에 성공하였습니다"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="460dp"
+                    android:layout_marginLeft="250dp"
+                    android:textSize="8sp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/tv_essential_info2"
                     android:text="*휴대전화번호: 필수 정보입니다."
                     android:textColor="@color/white"
@@ -402,6 +414,49 @@
                     android:layout_marginTop="600dp"
                     android:layout_gravity="center_horizontal">
                 </android.widget.Button>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_2"
+                    android:layout_marginTop="480dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/signup_rectangle_4"
+                    android:layout_marginTop="510dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <android.widget.Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/btn_certification_off"
+                    android:layout_marginTop="485dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/btn_check_off"
+                    android:visibility="visible">
+                </android.widget.Button>
+                <android.widget.Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/btn_certification_on"
+                    android:layout_marginTop="485dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/btn_check_on"
+                    android:visibility="gone">
+                </android.widget.Button>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/iv_certification_all"
+                    android:layout_marginTop="490dp"
+                    android:layout_marginLeft="70dp">
+                </ImageView>
 
             </FrameLayout>
 

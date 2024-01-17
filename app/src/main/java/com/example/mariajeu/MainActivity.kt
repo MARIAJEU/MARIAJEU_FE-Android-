@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+    companion object {
+        const val PERMISSIONS_REQUEST_SEND_SMS = 2323
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

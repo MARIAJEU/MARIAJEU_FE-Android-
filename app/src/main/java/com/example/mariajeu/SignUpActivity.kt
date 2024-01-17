@@ -1,17 +1,27 @@
 package com.example.mariajeu
 
+import android.app.PendingIntent
+import android.Manifest
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
-import android.os.PersistableBundle
+import android.telephony.SmsManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.mariajeu.databinding.ActivitySignupBinding
-import com.google.firebase.ktx.Firebase
+import com.google.android.gms.common.GoogleApiAvailability
+import java.lang.Exception
+import kotlin.random.Random
+
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -23,9 +33,14 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val intent = Intent(this, Login2Activity::class.java)
+        // 랜덤으로 네 자리 수 만들기 (인증번호로 사용)
+        val random = Random(System.currentTimeMillis())
+        val randomNum = random.nextInt(1000, 10000)
 
         // 다음 버튼 눌렀을 때 프로필 사진 화면으로 전환
         binding.btnNext.setOnClickListener {
+            val gpsVersion = packageManager.getPackageInfo(GoogleApiAvailability.GOOGLE_PLAY_SERVICES_PACKAGE, 0).versionCode
+            Log.d("TEST버젼체크TEST버젼체크", gpsVersion.toString())
             if (binding.etInputId.text.toString().isEmpty()) {
                 binding.tvEssentialInfo.visibility = View.VISIBLE
             }
@@ -41,8 +56,16 @@ class SignUpActivity : AppCompatActivity() {
 
         // TODO 본인인증 -> 안 됨...
         binding.btnCertification.setOnClickListener {
-            val helper = AppSignatureHelper(this)
-            val hash = helper.getAppSignatures()?.get(0)
+            val phoneNumber = binding.etInputPhone.text.toString()
+            Log.d("TEST전번TEST전번", phoneNumber)
+
+            sendSmsMessage(this,  phoneNumber, randomNum.toString())
+        }
+
+        binding.btnConfirm.setOnClickListener {
+            if (randomNum.toString().equals(binding.etCertificationNum.text.toString())) {
+                binding.tvCheckCertification.visibility = View.VISIBLE
+            }
         }
 
         // 비밀번호 일치 여부 확인
@@ -77,6 +100,8 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
         })
+
+
 
         // 버튼 눌렀을 때 동의 -----------------------------------------------------------------------
 
@@ -122,7 +147,103 @@ class SignUpActivity : AppCompatActivity() {
             binding.btnPersoninfoOn.visibility = View.GONE
         }
 
+        binding.btnCertificationOff.setOnClickListener {
+            binding.btnCertificationOff.visibility = View.GONE
+            binding.btnCertificationOn.visibility = View.VISIBLE
+        }
+
+        binding.btnCertificationOn.setOnClickListener {
+            binding.btnCertificationOff.visibility = View.VISIBLE
+            binding.btnCertificationOn.visibility = View.GONE
+        }
+
         //-----------------------------------------------------------------------
 
+    }
+
+    fun sendSmsMessage(mContext: Context, phone: String, message: String) {
+        // 리턴 값 선언
+        var returnData = false
+        var m_log = ""
+        var errorFlag = false
+
+        try {
+            // 1. input 값 null 체크
+            if (phone.isEmpty()) {
+                m_log = "[ERROR] : Input Data Is Null"
+                errorFlag = true
+            }
+
+            // 2. permission 권한 부여 상태 확인
+            if (ContextCompat.checkSelfPermission(
+                    mContext!!,
+                    Manifest.permission.SEND_SMS
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
+            } else { //
+                m_log = "[ERROR] : [SEND_SMS] Permission Not Granted"
+                errorFlag = true
+            }
+
+//            // 3. 휴대폰에 유심 장착됐는지 확인
+//            if (C_StateCheck.getUsimMouting(mContext) === false) {
+//                m_log = "[ERROR] : [SEND_SMS] Device Usim Not Mounting"
+//                errorFlag = true
+//            }
+
+            // 4. SMS 문자 발송 수행
+            if (errorFlag == false) {
+                var sendIntent: PendingIntent? = null
+                var deliveredIntent: PendingIntent? =null
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    // 타겟 31 이상
+                    sendIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_SENT"), PendingIntent.FLAG_IMMUTABLE)
+                    deliveredIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_DELIVERED"), PendingIntent.FLAG_IMMUTABLE)
+                } else {
+                    // 타겟 31 미만
+                    sendIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_SENT"), 0)
+                    deliveredIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_DELIVERED"), 0)
+                }
+
+                val smsManager = SmsManager.getDefault()
+                smsManager.sendTextMessage(phone, null, message, sendIntent, deliveredIntent)
+                m_log = "[SUCESS] : SEND_SMS"
+                returnData = true
+            }
+        } catch (e: Exception) {
+            m_log = "[Exeption]: " + e.message.toString()
+            errorFlag = true
+        }
+
+        Log.d("TEST인증번호오오오", m_log)
+
+    }
+
+    class SmsSentReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            when (resultCode) {
+                RESULT_OK -> {
+                    // SMS 전송 성공 처리
+                    Log.d("SmsSentReceiver", "SMS 전송 성공")
+                }
+                SmsManager.RESULT_ERROR_GENERIC_FAILURE -> {
+                    // 일반적인 오류 처리
+                    Log.d("SmsSentReceiver", "일반 오류 발생")
+                }
+                SmsManager.RESULT_ERROR_NO_SERVICE -> {
+                    // 서비스 없음 오류 처리
+                    Log.d("SmsSentReceiver", "서비스 없음")
+                }
+                SmsManager.RESULT_ERROR_NULL_PDU -> {
+                    // PDU(null) 오류 처리
+                    Log.d("SmsSentReceiver", "PDU(null) 오류")
+                }
+                SmsManager.RESULT_ERROR_RADIO_OFF -> {
+                    // 무선(Radio) 꺼짐 오류 처리
+                    Log.d("SmsSentReceiver", "무선(Radio) 꺼짐")
+                }
+            }
+        }
     }
 }
