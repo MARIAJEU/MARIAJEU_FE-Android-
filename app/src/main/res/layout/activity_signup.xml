@@ -76,7 +76,7 @@
 
                     <!-- 동의 부분 -->
 
-                    <Button
+                    <android.widget.Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:id="@+id/btn_all_off"
@@ -84,8 +84,8 @@
                         android:layout_marginRight="5dp"
                         android:background="@drawable/btn_check_off"
                         android:visibility="visible">
-                    </Button>
-                    <Button
+                    </android.widget.Button>
+                    <android.widget.Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:id="@+id/btn_all_on"
@@ -93,10 +93,11 @@
                         android:layout_marginRight="5dp"
                         android:background="@drawable/btn_check_on"
                         android:visibility="gone">
-                    </Button>
+                    </android.widget.Button>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:text="전체 동의하기"
                         android:textSize="11sp"
                         android:textColor="@color/white">
@@ -106,13 +107,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="325dp"
+                    android:layout_height="718dp"
                     android:orientation="horizontal"
                     android:layout_marginTop="40dp"
                     android:layout_marginLeft="20dp">
 
-                    <Button
+                    <android.widget.Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:id="@+id/btn_yakgwan_off"
@@ -120,8 +121,8 @@
                         android:layout_marginRight="5dp"
                         android:background="@drawable/btn_check_off"
                         android:visibility="visible">
-                    </Button>
-                    <Button
+                    </android.widget.Button>
+                    <android.widget.Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:id="@+id/btn_yakgwan_on"
@@ -129,7 +130,7 @@
                         android:layout_marginRight="5dp"
                         android:background="@drawable/btn_check_on"
                         android:visibility="gone">
-                    </Button>
+                    </android.widget.Button>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -148,18 +149,53 @@
                     android:src="@drawable/iv_yakgwan_box">
                 </ImageView>
 
+                <android.widget.Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/btn_personinfo_off"
+                    android:layout_marginTop="135dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/btn_check_off"
+                    android:visibility="visible">
+                </android.widget.Button>
+                <android.widget.Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/btn_personinfo_on"
+                    android:layout_marginTop="135dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/btn_check_on"
+                    android:visibility="gone">
+                </android.widget.Button>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="140dp"
+                    android:layout_marginLeft="50dp"
+                    android:src="@drawable/iv_personalinfo">
+                </ImageView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/iv_personalinfo_box">
+                </ImageView>
+
                 <ImageView
                     android:layout_width="289dp"
                     android:layout_height="30dp"
                     app:srcCompat="@drawable/signup_rectangle_2"
-                    android:layout_marginTop="170dp"
+                    android:layout_marginTop="240dp"
                     android:layout_marginLeft="40dp">
                 </ImageView>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="165dp"
+                    android:layout_marginTop="235dp"
                     android:layout_marginLeft="50dp"
                     android:hint="ID (4~12자리)"
                     android:textColorHint="@color/purple"
@@ -172,7 +208,7 @@
                     android:layout_width="289dp"
                     android:layout_height="30dp"
                     app:srcCompat="@drawable/signup_rectangle_3"
-                    android:layout_marginTop="200dp"
+                    android:layout_marginTop="270dp"
                     android:layout_marginLeft="40dp">
                 </ImageView>
 
@@ -180,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/et_input_pwd"
-                    android:layout_marginTop="195dp"
+                    android:layout_marginTop="265dp"
                     android:layout_marginLeft="50dp"
                     android:inputType="textPassword"
                     android:hint="비밀번호 (8~16자리 / 영문, 숫자, 특수문자 조합)"
@@ -194,7 +230,7 @@
                     android:layout_width="289dp"
                     android:layout_height="30dp"
                     app:srcCompat="@drawable/signup_rectangle_3"
-                    android:layout_marginTop="230dp"
+                    android:layout_marginTop="300dp"
                     android:layout_marginLeft="40dp">
                 </ImageView>
 
@@ -203,7 +239,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/et_input_pwd_again"
                     android:inputType="textPassword"
-                    android:layout_marginTop="225dp"
+                    android:layout_marginTop="295dp"
                     android:layout_marginLeft="50dp"
                     android:hint="비밀번호를 다시 입력해주세요"
                     android:textColorHint="@color/purple"
@@ -217,7 +253,7 @@
                     android:id="@+id/tv_incorrect_pw"
                     android:text="* 일치하지 않습니다"
                     android:textColor="#8F1952"
-                    android:layout_marginTop="235dp"
+                    android:layout_marginTop="295dp"
                     android:layout_marginLeft="250dp"
                     android:textSize="8sp"
                     android:visibility="gone"/>
@@ -226,7 +262,7 @@
                     android:layout_width="289dp"
                     android:layout_height="30dp"
                     app:srcCompat="@drawable/signup_rectangle_4"
-                    android:layout_marginTop="260dp"
+                    android:layout_marginTop="330dp"
                     android:layout_marginLeft="40dp">
                 </ImageView>
 
@@ -234,7 +270,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:layout_marginTop="255dp"
+                    android:layout_marginTop="325dp"
                     android:layout_marginLeft="50dp"
                     android:hint="계정 분실 시 확인용 이메일"
                     android:textColorHint="@color/purple"
@@ -247,7 +283,7 @@
                     android:layout_width="289dp"
                     android:layout_height="30dp"
                     app:srcCompat="@drawable/signup_rectangle_2"
-                    android:layout_marginTop="330dp"
+                    android:layout_marginTop="380dp"
                     android:layout_marginLeft="40dp">
                 </ImageView>
 
@@ -255,7 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/et_name"
-                    android:layout_marginTop="335dp"
+                    android:layout_marginTop="375dp"
                     android:layout_marginLeft="50dp"
                     android:hint="이름"
                     android:textColorHint="@color/purple"
@@ -268,7 +304,7 @@
                     android:layout_width="289dp"
                     android:layout_height="30dp"
                     app:srcCompat="@drawable/signup_rectangle_3"
-                    android:layout_marginTop="360dp"
+                    android:layout_marginTop="400dp"
                     android:layout_marginLeft="40dp">
                 </ImageView>
 
@@ -276,7 +312,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
-                    android:layout_marginTop="365dp"
+                    android:layout_marginTop="395dp"
                     android:layout_marginLeft="50dp"
                     android:hint="휴대전화번호"
                     android:textColorHint="@color/purple"
@@ -285,34 +321,61 @@
                     android:drawableStart="@drawable/ic_signup_phone">
                 </EditText>
 
-                <Button
+                <ImageView
+                    android:layout_width="289dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/signup_rectangle_4"
+                    android:layout_marginTop="430dp"
+                    android:layout_marginLeft="40dp">
+                </ImageView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:layout_marginTop="425dp"
+                    android:layout_marginLeft="50dp"
+                    android:hint="인증번호 입력"
+                    android:textColorHint="@color/purple"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/btn_check_off">
+                </EditText>
+
+                <android.widget.Button
                     android:layout_width="61.83dp"
                     android:layout_height="20.05dp"
                     android:id="@+id/btn_certification"
                     android:background="@color/purple"
                     android:text="인증요청"
-                    android:layout_marginTop="365dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="405dp"
                     android:layout_marginLeft="260dp">
-                </Button>
+                </android.widget.Button>
 
-                <ImageView
-                    android:layout_width="289dp"
-                    android:layout_height="30dp"
-                    app:srcCompat="@drawable/signup_rectangle_4"
-                    android:layout_marginTop="390dp"
-                    android:layout_marginLeft="40dp">
-                </ImageView>
+                <android.widget.Button
+                    android:layout_width="61.83dp"
+                    android:layout_height="20.05dp"
+                    android:id="@+id/btn_confirm"
+                    android:background="@color/purple"
+                    android:text="확인"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="435dp"
+                    android:layout_marginLeft="260dp">
+                </android.widget.Button>
 
-                <Button
+                <android.widget.Button
                     android:layout_width="289.07dp"
                     android:layout_height="36.76dp"
                     android:id="@+id/btn_next"
                     android:text="다음"
                     android:background="@color/white"
                     android:textColor="@color/purple"
-                    android:layout_marginTop="480dp"
+                    android:layout_marginTop="600dp"
                     android:layout_gravity="center_horizontal">
-                </Button>
+                </android.widget.Button>
 
             </FrameLayout>
 

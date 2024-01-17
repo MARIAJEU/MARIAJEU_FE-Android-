@@ -39,16 +39,18 @@ class Login2Activity : AppCompatActivity() {
 //            imageUpload(uri)
             // Activity -> Fragment 전환??
             val login2Intent = Intent(this, MainActivity::class.java)
+            login2Intent.putExtra("로그아웃으로", "logout")
             startActivity(login2Intent)
 
         }
 
-        // 체크 버튼 눌렀을 때 -> 이름으로
+        // 체크 버튼 눌렀을 때 -> 이름으로 닉네임이 설정됨
         binding.btnCheckName.setOnClickListener {
             val userName = intent.getStringExtra("이름")
             Log.d("TEST전달TEST전달", userName.toString())
             binding.etNickname.setText(userName.toString())
         }
+
     }
 
     private val registerForActivityResult =

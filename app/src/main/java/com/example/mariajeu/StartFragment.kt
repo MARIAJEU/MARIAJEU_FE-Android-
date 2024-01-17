@@ -36,20 +36,20 @@ class StartFragment : Fragment() {
         return binding.root
     }
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        val startIntent : Intent = Intent()
-//        val isLogin = startIntent.getStringExtra("success")
-//
-//        if (isLogin != null) {
-//            val btnLogin = binding.startLoginTv
-//            val btnLogout = binding.startLogoutTv
-//
-//            btnLogin.visibility = GONE
-//            btnLogout.visibility = VISIBLE
-//        }
-//
-//    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val startIntent : Intent = Intent()
+        val isLogin = startIntent.getStringExtra("success")
+
+        if (isLogin != null) {
+            val btnLogin = binding.startLoginTv
+            val btnLogout = binding.startLogoutTv
+
+            btnLogin.visibility = GONE
+            btnLogout.visibility = VISIBLE
+        }
+
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) { // activity A 호출 -> B 호출 -> A 호출 (결과값 반환) 시에 사용하는 함수
         super.onActivityResult(requestCode, resultCode, data)

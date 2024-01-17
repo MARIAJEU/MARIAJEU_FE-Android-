@@ -77,6 +77,9 @@ class SignUpActivity : AppCompatActivity() {
 
             binding.btnYakgwanOff.visibility = View.GONE
             binding.btnYakgwanOn.visibility = View.VISIBLE
+
+            binding.btnPersoninfoOff.visibility = View.GONE
+            binding.btnPersoninfoOn.visibility = View.VISIBLE
         }
 
         binding.btnAllOn.setOnClickListener {
@@ -85,6 +88,9 @@ class SignUpActivity : AppCompatActivity() {
 
             binding.btnYakgwanOff.visibility = View.VISIBLE
             binding.btnYakgwanOn.visibility = View.GONE
+
+            binding.btnPersoninfoOff.visibility = View.VISIBLE
+            binding.btnPersoninfoOn.visibility = View.GONE
         }
 
         binding.btnYakgwanOff.setOnClickListener {
@@ -95,6 +101,16 @@ class SignUpActivity : AppCompatActivity() {
         binding.btnYakgwanOn.setOnClickListener {
             binding.btnYakgwanOff.visibility = View.VISIBLE
             binding.btnYakgwanOn.visibility = View.GONE
+        }
+
+        binding.btnPersoninfoOff.setOnClickListener {
+            binding.btnPersoninfoOff.visibility = View.GONE
+            binding.btnPersoninfoOn.visibility = View.VISIBLE
+        }
+
+        binding.btnPersoninfoOn.setOnClickListener {
+            binding.btnPersoninfoOff.visibility = View.VISIBLE
+            binding.btnPersoninfoOn.visibility = View.GONE
         }
 
         //-----------------------------------------------------------------------
