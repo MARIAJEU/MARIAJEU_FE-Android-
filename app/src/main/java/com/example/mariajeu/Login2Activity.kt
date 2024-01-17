@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -40,6 +41,13 @@ class Login2Activity : AppCompatActivity() {
             val login2Intent = Intent(this, MainActivity::class.java)
             startActivity(login2Intent)
 
+        }
+
+        // 체크 버튼 눌렀을 때 -> 이름으로
+        binding.btnCheckName.setOnClickListener {
+            val userName = intent.getStringExtra("이름")
+            Log.d("TEST전달TEST전달", userName.toString())
+            binding.etNickname.setText(userName.toString())
         }
     }
 

@@ -65,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/iv_signup_background"
-                    android:background="@drawable/iv_signupbox">
+                    android:background="@color/light_purple">
                 </View>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -79,9 +79,20 @@
                     <Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
+                        android:id="@+id/btn_all_off"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
-                        android:background="@drawable/btn_check_off">
+                        android:background="@drawable/btn_check_off"
+                        android:visibility="visible">
+                    </Button>
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/btn_all_on"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_check_on"
+                        android:visibility="gone">
                     </Button>
                     <TextView
                         android:layout_width="wrap_content"
@@ -104,9 +115,20 @@
                     <Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
+                        android:id="@+id/btn_yakgwan_off"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
-                        android:background="@drawable/btn_check_off">
+                        android:background="@drawable/btn_check_off"
+                        android:visibility="visible">
+                    </Button>
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/btn_yakgwan_on"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_check_on"
+                        android:visibility="gone">
                     </Button>
                     <ImageView
                         android:layout_width="wrap_content"
@@ -232,9 +254,9 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_name"
                     android:layout_marginTop="335dp"
                     android:layout_marginLeft="50dp"
-                    android:inputType="textPersonName"
                     android:hint="이름"
                     android:textColorHint="@color/purple"
                     android:textColor="@color/black"
@@ -253,6 +275,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:layout_marginTop="365dp"
                     android:layout_marginLeft="50dp"
                     android:hint="휴대전화번호"
@@ -287,7 +310,7 @@
                     android:text="다음"
                     android:background="@color/white"
                     android:textColor="@color/purple"
-                    android:layout_marginTop="630dp"
+                    android:layout_marginTop="480dp"
                     android:layout_gravity="center_horizontal">
                 </Button>
 

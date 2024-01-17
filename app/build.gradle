@@ -65,6 +65,7 @@ dependencies {
     // 프사 업로드를 위한 firebase
     implementation platform('com.google.firebase:firebase-bom:31.2.2')
     implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
     //-----------------------------------------------------------------
     implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1' // 문자 인증 번호 전송을 위함
 
