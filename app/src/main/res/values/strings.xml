@@ -2,4 +2,8 @@
     <string name="app_name">MARIAJEU</string>
     <string name="kakao_app_key">700c1077d57196cc26390d25f4662d35</string>
     <string name="kakao_app_key2">kakao700c1077d57196cc26390d25f4662d35</string>
+    <string name="g_2_1_">[필수재료]\n 연어 400g\n 토마토 2개\n 아보카도 1개\n 소금 약간\n 후추 약간</string>
+    <string name="cooking_process">1. 생연어는 소금, 후추로 밑간하고 레몬을 올려 잠시 재운다.\n\n2. 예열된 팬에 올리브유를 살짝 두르고 껍질 쪽 먼저 익힌다.
+            \n\n3. 한쪽이 익으면 버터를 넣고 마늘, 아스파라거스를 넣어 뒷면도 익혀낸다.
+            \n\n4. 연어가 80%정도 익으면 소스 재료를 넣어 조려 완성한다.</string>
 </resources>
