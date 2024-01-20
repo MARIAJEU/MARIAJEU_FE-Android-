@@ -7,6 +7,7 @@ import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.fragment.app.FragmentManager
 import com.example.mariajeu.databinding.ActivityLoginBinding
 import com.example.mariajeu.databinding.ActivityMainBinding
 import com.kakao.sdk.auth.model.OAuthToken
@@ -72,4 +73,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
 }
+

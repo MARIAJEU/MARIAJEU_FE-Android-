@@ -273,11 +273,23 @@ class StartFragment : Fragment() {
         // 프래그먼트 전환을 위한 트랜잭션 시작
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
 
-        // 이전의 백스택을 모두 제거
-        requireActivity().supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        // 현재 보이는 프래그먼트를 숨김
+        val startFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.main_frm)
+        if (startFragment != null) {
+            transaction.hide(startFragment)
+        }
 
         // FoodFragment를 추가하거나 보여줌
-        transaction.replace(R.id.start_constraintlayout, foodFragment)
+        if (!foodFragment.isAdded) {
+            // FoodFragment가 아직 추가되지 않았으면 추가
+            transaction.add(R.id.main_frm, foodFragment)
+        }
+
+        // 숨겨진 상태인 경우 보이게 함
+        transaction.show(foodFragment)
+
+        // addToBackStack을 사용하여 백스택에 추가
+        transaction.addToBackStack(null)
 
         // 트랜잭션 커밋
         transaction.commit()
