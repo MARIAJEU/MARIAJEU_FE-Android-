@@ -32,6 +32,7 @@
                 android:text="매장이름"
                 android:textSize="11.61sp"
                 android:textStyle="bold"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="10dp"/>
 
             <TextView
@@ -39,12 +40,14 @@
                 android:layout_height="wrap_content"
                 android:text="매장 소개 쏼라쏼라.. 프리미엄 스테이크~~"
                 android:textSize="5.81sp"
+                android:layout_marginTop="3dp"
                 android:layout_marginLeft="10dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -55,26 +58,114 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_rating"
+                    android:id="@+id/tv_listview_rating"
                     android:text="4.5"
                     android:textSize="5.81sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_review"
+                    android:id="@+id/tv_listview_review"
                     android:text="(200)"
                     android:textSize="5.81sp"
                     android:layout_marginLeft="3dp"/>
-
-
             </LinearLayout>
 
-
-            <ImageView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/iv_my_location" />
+                android:orientation="horizontal"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/iv_my_location"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내 위치에서"
+                    android:textSize="5.81sp"
+                    android:layout_marginLeft="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="300m"
+                    android:textColor="#8B1A10"
+                    android:textSize="5.81sp"
+                    android:layout_marginLeft="2dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_listview_location"
+                android:text="위치는 강남"
+                android:textSize="5.81sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_listview_price"
+                android:text="가격은 5만원~"
+                android:textSize="5.81sp"
+                android:layout_marginLeft="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.widget.Button
+                    android:layout_width="30dp"
+                    android:layout_height="9dp"
+                    android:background="@drawable/ib_listview_reservation"
+                    android:text="오후 6:00"
+                    android:textSize="5.46sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <android.widget.Button
+                    android:layout_width="30dp"
+                    android:layout_height="9dp"
+                    android:background="@drawable/ib_listview_reservation"
+                    android:text="오후 6:30"
+                    android:textSize="5.46sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <android.widget.Button
+                    android:layout_width="30dp"
+                    android:layout_height="9dp"
+                    android:background="@drawable/ib_listview_reservation"
+                    android:text="오후 7:00"
+                    android:textSize="5.46sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <android.widget.Button
+                    android:layout_width="30dp"
+                    android:layout_height="9dp"
+                    android:background="@drawable/ib_listview_reservation"
+                    android:text="오후 7:30"
+                    android:textSize="5.46sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <android.widget.Button
+                    android:layout_width="30dp"
+                    android:layout_height="9dp"
+                    android:background="@drawable/ib_listview_reservation"
+                    android:text="오후 8:00"
+                    android:textSize="5.46sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
