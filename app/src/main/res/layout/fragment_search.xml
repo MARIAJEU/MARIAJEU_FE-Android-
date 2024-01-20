@@ -156,6 +156,38 @@
         app:layout_constraintTop_toBottomOf="@+id/ib_map"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_sort_filter"
+        android:src="@drawable/iv_sort"
+        app:layout_constraintLeft_toRightOf="@id/ib_filter_atmosphere"
+        app:layout_constraintTop_toBottomOf="@+id/ib_map"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_selected_filter"
+        app:layout_constraintTop_toBottomOf="@+id/ib_map"
+        app:layout_constraintLeft_toRightOf="@+id/iv_sort_filter"
+        android:text="추천순"
+        android:textSize="10sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="14dp"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_select_sort_way"
+        android:src="@drawable/ib_detail"
+        app:layout_constraintTop_toBottomOf="@+id/ib_map"
+        app:layout_constraintLeft_toLeftOf="@id/iv_sort_filter"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="75dp"
+        android:background="@color/transparent"/>
+
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"

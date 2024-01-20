@@ -753,7 +753,7 @@
             android:textSize="13.425dp"
             android:gravity="top"
             />
-        
+
         <ImageView
             android:id="@+id/food_menu1_section5_cooking_video_iv"
             android:layout_width="312.98dp"
