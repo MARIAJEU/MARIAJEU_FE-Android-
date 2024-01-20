@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/lv_item_img"
-            android:layout_width="100.36dp"
-            android:layout_height="95.38dp"
+            android:layout_width="120.36dp"
+            android:layout_height="135.38dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="@color/light_gray" />
@@ -26,33 +26,63 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="매장이름"
-                android:textSize="11.61sp"
-                android:textStyle="bold"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="10dp"/>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_listview_name"
+                    android:text="매장 이름"
+                    android:textColor="@color/black"
+                    android:textSize="20.61sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <android.widget.Button
+                    android:layout_width="80dp"
+                    android:layout_height="14dp"
+                    android:id="@+id/btn_listview_cork_charge"
+                    android:background="@drawable/ib_listview_corkcharge"
+                    android:text="콜키지 비용 무료"
+                    android:textColor="#B51D1D"
+                    android:textSize="10.6sp"
+                    android:layout_marginLeft="5dp"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ib_heart"
+                    android:background="@color/transparent"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginLeft="80dp"/>
+
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_listview_description"
                 android:text="매장 소개 쏼라쏼라.. 프리미엄 스테이크~~"
-                android:textSize="5.81sp"
-                android:layout_marginTop="3dp"
+                android:textSize="12.81sp"
+                android:layout_marginTop="1dp"
                 android:layout_marginLeft="10dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="1dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/iv_star"
+                    android:layout_marginTop="2dp"
                     android:layout_marginLeft="10dp" />
 
                 <TextView
@@ -60,14 +90,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_listview_rating"
                     android:text="4.5"
-                    android:textSize="5.81sp" />
+                    android:textSize="10.81sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_listview_review"
                     android:text="(200)"
-                    android:textSize="5.81sp"
+                    android:textSize="10.81sp"
                     android:layout_marginLeft="3dp"/>
             </LinearLayout>
 
@@ -75,27 +105,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="3dp">
+                android:layout_marginTop="1dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/iv_my_location"
+                    android:layout_marginTop="2dp"
                     android:layout_marginLeft="10dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="내 위치에서"
-                    android:textSize="5.81sp"
+                    android:textSize="10.81sp"
                     android:layout_marginLeft="3dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tv_listview_mylocation"
                     android:text="300m"
                     android:textColor="#8B1A10"
-                    android:textSize="5.81sp"
+                    android:textSize="10.81sp"
                     android:layout_marginLeft="2dp"/>
             </LinearLayout>
 
@@ -103,16 +135,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_listview_location"
-                android:text="위치는 강남"
-                android:textSize="5.81sp"
-                android:layout_marginTop="5dp"
+                android:text="위치는 아주대 인근"
+                android:textSize="10.81sp"
                 android:layout_marginLeft="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_listview_price"
                 android:text="가격은 5만원~"
-                android:textSize="5.81sp"
+                android:textSize="10.81sp"
                 android:layout_marginLeft="10dp"/>
 
             <LinearLayout
@@ -121,47 +152,47 @@
                 android:orientation="horizontal">
 
                 <android.widget.Button
-                    android:layout_width="30dp"
-                    android:layout_height="9dp"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 6:00"
-                    android:textSize="5.46sp"
+                    android:textSize="10.46sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"/>
 
                 <android.widget.Button
-                    android:layout_width="30dp"
-                    android:layout_height="9dp"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 6:30"
-                    android:textSize="5.46sp"
+                    android:textSize="10.46sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"/>
 
                 <android.widget.Button
-                    android:layout_width="30dp"
-                    android:layout_height="9dp"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 7:00"
-                    android:textSize="5.46sp"
+                    android:textSize="10.46sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"/>
 
                 <android.widget.Button
-                    android:layout_width="30dp"
-                    android:layout_height="9dp"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 7:30"
-                    android:textSize="5.46sp"
+                    android:textSize="10.46sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"/>
 
                 <android.widget.Button
-                    android:layout_width="30dp"
-                    android:layout_height="9dp"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 8:00"
-                    android:textSize="5.46sp"
+                    android:textSize="10.46sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"/>
 
