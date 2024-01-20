@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import androidx.fragment.app.Fragment
 import com.example.mariajeu.databinding.FragmentSearchBinding
 
@@ -26,21 +27,27 @@ class SearchFragment : Fragment() {
         var restaurantList = arrayListOf<Restaurant>() // 리스트뷰를 위해 생성
 
         /* 예시 데이터 */
-        restaurantList.add(Restaurant("식당1"))
-        restaurantList.add(Restaurant("식당2"))
-        restaurantList.add(Restaurant("식당3"))
-        restaurantList.add(Restaurant("식당4"))
-        restaurantList.add(Restaurant("식당5"))
-        restaurantList.add(Restaurant("식당6"))
-        restaurantList.add(Restaurant("식당7"))
-        restaurantList.add(Restaurant("식당8"))
-        restaurantList.add(Restaurant("식당9"))
-        restaurantList.add(Restaurant("식당10"))
+        restaurantList.add(Restaurant("마리아주"))
+        restaurantList.add(Restaurant("AOS"))
+        restaurantList.add(Restaurant("안드로이드 파이팅"))
+        restaurantList.add(Restaurant("인하대 맛집"))
+        restaurantList.add(Restaurant("아주대 맛집"))
+        restaurantList.add(Restaurant("인하대 와인"))
+        restaurantList.add(Restaurant("아주대 와인"))
+        restaurantList.add(Restaurant("미테펍"))
+        restaurantList.add(Restaurant("와인파인"))
+        restaurantList.add(Restaurant("옐로퍼플"))
         Log.d("TEST레스토랑TEST", "Size: ${restaurantList.size}")
 
         val adapter = RestaurantAdapter(requireContext(), restaurantList)
         binding.lvRestaurant.adapter = adapter
 
+        var cntRestaurant = adapter.count
+
+        binding.tvCntRestaurant.text = cntRestaurant.toString() + "개의 매장"
+
+
         return binding.root
     }
+
 }

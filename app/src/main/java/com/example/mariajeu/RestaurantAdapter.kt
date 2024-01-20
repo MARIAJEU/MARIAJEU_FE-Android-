@@ -12,19 +12,22 @@ import android.widget.TextView
 class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<Restaurant>): BaseAdapter() {
 
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
-    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View? {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.listview_list_item, null)
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+        var view = convertView
 
 //        // ArrayList<Restaurant>의 변수 restaurant의 이미지와 데이터를 ImageView와 TextView에 담음
 //        val restaurant = restaurantList[p0]
 //        val resourceId = context.resources.getIdentifier(restaurant.restaurantImg, "drawable", context.packageName)
 //        restaurantImg.setImageResource(resourceId)
 
-        var convertView = p1
-        if (convertView == null) {
-            convertView = LayoutInflater.from(p2?.context).inflate(R.layout.listview_list_item, p2, false)
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.listview_list_item, parent, false)
         }
-        val restaurantName = view.findViewById<TextView>(R.id.tv_listview_name)
+
+        val restaurant = restaurantList[position]
+        val restaurantName = view!!.findViewById<TextView>(R.id.tv_listview_name)
+        restaurantName.text = restaurant.restaurantName
+
 //        val restaurantImg = view.findViewById<ImageView>(R.id.lv_item_img)
 //        val corkCharge = view.findViewById<Button>(R.id.btn_listview_cork_charge)
 //        val restaurantDescription = view.findViewById<TextView>(R.id.tv_listview_description)
@@ -33,7 +36,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 //        val restaurantPrice = view.findViewById<TextView>(R.id.tv_listview_price)
 //        val restaurantLocation = view.findViewById<TextView>(R.id.tv_listview_location)
 
-        return convertView
+        return view
     }
     override fun getCount(): Int {
         return restaurantList.size
