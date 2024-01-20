@@ -20,6 +20,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.example.mariajeu.databinding.FragmentStartBinding
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.fragment.app.FragmentManager
 
 
 class StartFragment : Fragment() {
@@ -86,6 +87,17 @@ class StartFragment : Fragment() {
         binding.startChoice02V.setOnTouchListener(createChoiceTouchListener(binding.startChoice02Tv))
         binding.startChoice03V.setOnTouchListener(createChoiceTouchListener(binding.startChoice03Tv))
         binding.startChoice04V.setOnTouchListener(createChoiceTouchListener(binding.startChoice04Tv))
+
+
+        // start_menu1_v 클릭 시 FoodFragment로 전환
+        binding.startMenu1V.setOnClickListener {
+            navigateToFoodFragment()
+        }
+
+        // start_menu1_tv 클릭 시 FoodFragment로 전환
+        binding.startMenu1Tv.setOnClickListener {
+            navigateToFoodFragment()
+        }
     }
 
     private fun createChoiceTouchListener(choiceTextView: TextView): View.OnTouchListener {
@@ -255,4 +267,19 @@ class StartFragment : Fragment() {
         }
     }
 
+    private fun navigateToFoodFragment() {
+        val foodFragment = FoodFragment()
+
+        // 프래그먼트 전환을 위한 트랜잭션 시작
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+
+        // 이전의 백스택을 모두 제거
+        requireActivity().supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+        // FoodFragment를 추가하거나 보여줌
+        transaction.replace(R.id.start_constraintlayout, foodFragment)
+
+        // 트랜잭션 커밋
+        transaction.commit()
+    }
 }
