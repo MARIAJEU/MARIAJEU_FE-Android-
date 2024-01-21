@@ -7,16 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import com.example.mariajeu.databinding.ListviewListItemBinding
 
 class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
 
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+
 
         var view = convertView
 
@@ -69,22 +67,20 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         return view
     }
 
-    private fun showCustomDialog(restaurant: Restaurant) {
+    fun showCustomDialog(restaurant: Restaurant) : String {
 
         val customDialog = RestaurantTimeDialog(context, this)
+        Log.d("TEST 네임", restaurant.restaurantName)
 
-        val tvName = customDialog.findViewById<TextView>(R.id.tv_dialog_name)
-        val tvDate = customDialog.findViewById<TextView>(R.id.tv_dialog_date)
-        val tvTime = customDialog.findViewById<TextView>(R.id.tv_dialog_time)
-        val tvPersonnel = customDialog.findViewById<TextView>(R.id.tv_dialog_cnt_personnel)
-
-//        Log.d("TEST 네임", tvName.toString())
-
-//        tvName.text = restaurant.restaurantName
+        // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
+        RestaurantTimeDialog.rName.text = restaurant.restaurantName
 
         // TODO 날짜, 시간, 인원수 연동해서 tvDate.text = ... 작성
 
+
         customDialog.show()
+
+        return restaurant.restaurantName
     }
 
     override fun getCount(): Int {
@@ -108,6 +104,8 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         // 취소 버튼이 눌렸을 때의 동작 처리
         // 여기에서 필요한 로직을 추가하세요.
     }
+
+
 
 
 }
