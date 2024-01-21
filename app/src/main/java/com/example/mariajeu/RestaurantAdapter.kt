@@ -1,5 +1,6 @@
 package com.example.mariajeu
 
+import android.app.Dialog
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -47,29 +48,29 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         val restaurantTime5 = view.findViewById<Button>(R.id.listview_time5)
 
         restaurantTime1.setOnClickListener {
-            showCustomDialog(restaurant, 1)
+            showRestaurantDialog(restaurant, 1)
         }
 
         restaurantTime2.setOnClickListener {
-            showCustomDialog(restaurant, 2)
+            showRestaurantDialog(restaurant, 2)
         }
         restaurantTime3.setOnClickListener {
-            showCustomDialog(restaurant, 3)
+            showRestaurantDialog(restaurant, 3)
         }
         restaurantTime4.setOnClickListener {
-            showCustomDialog(restaurant, 4)
+            showRestaurantDialog(restaurant, 4)
         }
         restaurantTime5.setOnClickListener {
-            showCustomDialog(restaurant, 5)
+            showRestaurantDialog(restaurant, 5)
         }
 
 
         return view
     }
 
-    fun showCustomDialog(restaurant: Restaurant, idx: Int) : String {
+    private fun showRestaurantDialog(restaurant: Restaurant, idx: Int) {
 
-        val customDialog = RestaurantTimeDialog(context, this)
+        val restaurantTimeDialog = RestaurantTimeDialog(context, this)
         Log.d("TEST 네임", restaurant.restaurantName)
 
         // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
@@ -86,9 +87,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         // TODO 날짜, 시간, 인원수 연동해서 tvDate.text = ... 작성
 
 
-        customDialog.show()
-
-        return restaurant.restaurantName
+        restaurantTimeDialog.show()
     }
 
     override fun getCount(): Int {
@@ -105,12 +104,28 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 
     override fun onYesButtonClick(id: Int) {
         // 확인 버튼이 눌렸을 때의 동작 처리
-        // 여기에서 필요한 로직을 추가하세요.
+        showReservationDialog()
+
     }
 
     override fun onCancelButtonClick() {
         // 취소 버튼이 눌렸을 때의 동작 처리
         // 여기에서 필요한 로직을 추가하세요.
+    }
+
+    private fun showReservationDialog() {
+
+        // Dialog 객체 생성
+        val reservationDialog = ReservationDialog(context)
+
+        // 커스텀 다이얼로그의 XML 레이아웃을 인플레이트
+        val dialogReservation = LayoutInflater.from(context).inflate(R.layout.dialog_reservation, null)
+
+        // Dialog에 커스텀 레이아웃 설정
+        reservationDialog.setContentView(dialogReservation)
+
+        // Dialog를 화면에 표시
+        reservationDialog.show()
     }
 
 
