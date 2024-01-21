@@ -3,19 +3,16 @@ package com.example.mariajeu
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.PopupMenu
 import android.widget.PopupWindow
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.mariajeu.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
-    lateinit var binding: FragmentSearchBinding
+    private lateinit var binding: FragmentSearchBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,32 +25,35 @@ class SearchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentSearchBinding.inflate(inflater, container, false)
+        var restaurantList = arrayListOf<Restaurant>() // 리스트뷰를 위해 생성
+
+        fun setValues() {
+            /* 예시 데이터 */
+            restaurantList.add(Restaurant("마리아주"))
+            restaurantList.add(Restaurant("AOS"))
+            restaurantList.add(Restaurant("안드로이드 파이팅"))
+            restaurantList.add(Restaurant("인하대 맛집"))
+            restaurantList.add(Restaurant("아주대 맛집"))
+            restaurantList.add(Restaurant("인하대 와인"))
+            restaurantList.add(Restaurant("아주대 와인"))
+            restaurantList.add(Restaurant("미테펍"))
+            restaurantList.add(Restaurant("와인파인"))
+            restaurantList.add(Restaurant("옐로퍼플"))
+            Log.d("TEST레스토랑TEST", "Size: ${restaurantList.size}")
+
+            val adapter = RestaurantAdapter(requireContext(), restaurantList)
+            binding.lvRestaurant.adapter = adapter
+
+            var cntRestaurant = adapter.count
+
+            binding.tvCntRestaurant.text = cntRestaurant.toString() + "개의 매장"
+        }
 
         // ********************************* 리스트뷰 데이터 ********************************************* //
 
-        var restaurantList = arrayListOf<Restaurant>() // 리스트뷰를 위해 생성
-
-        /* 예시 데이터 */
-        restaurantList.add(Restaurant("마리아주"))
-        restaurantList.add(Restaurant("AOS"))
-        restaurantList.add(Restaurant("안드로이드 파이팅"))
-        restaurantList.add(Restaurant("인하대 맛집"))
-        restaurantList.add(Restaurant("아주대 맛집"))
-        restaurantList.add(Restaurant("인하대 와인"))
-        restaurantList.add(Restaurant("아주대 와인"))
-        restaurantList.add(Restaurant("미테펍"))
-        restaurantList.add(Restaurant("와인파인"))
-        restaurantList.add(Restaurant("옐로퍼플"))
-        Log.d("TEST레스토랑TEST", "Size: ${restaurantList.size}")
-
-        val adapter = RestaurantAdapter(requireContext(), restaurantList)
-        binding.lvRestaurant.adapter = adapter
-
-        var cntRestaurant = adapter.count
-
-        binding.tvCntRestaurant.text = cntRestaurant.toString() + "개의 매장"
-
+        setValues()
 
         // ****************************** 팝업 메뉴 ********************************************//
         // 팝업 메뉴를 표시할 버튼이나 뷰를 찾아옵니다.
@@ -83,45 +83,35 @@ class SearchFragment : Fragment() {
             }
         }
 
+        fun setMenuItemClickListener(textViewId: Int, imageButton: ImageButton, visibility: Int) {
+            popupMenuView.findViewById<TextView>(textViewId).setOnClickListener {
+                handleMenuItemClick(imageButton, visibility)
+                binding.tvSelectedFilter.text = popupMenuView.findViewById<TextView>(textViewId).text.toString()
+                popupWindow.dismiss()
+            }
+        }
+
         // 팝업 메뉴 아이템 클릭 리스너 설정
-        popupMenuView.findViewById<TextView>(R.id.menu_recommand).setOnClickListener {
-            handleMenuItemClick(btn1, View.VISIBLE)
-            binding.tvSelectedFilter.text = popupMenuView.findViewById<TextView>(R.id.menu_recommand).text.toString()
-            popupWindow.dismiss()
-        }
-
-        popupMenuView.findViewById<TextView>(R.id.menu_review).setOnClickListener {
-            handleMenuItemClick(btn2, View.VISIBLE)
-            binding.tvSelectedFilter.text = popupMenuView.findViewById<TextView>(R.id.menu_review).text.toString()
-            popupWindow.dismiss()
-        }
-
-        popupMenuView.findViewById<TextView>(R.id.menu_price_high).setOnClickListener {
-            handleMenuItemClick(btn3, View.VISIBLE)
-            binding.tvSelectedFilter.text = popupMenuView.findViewById<TextView>(R.id.menu_price_high).text.toString()
-            popupWindow.dismiss()
-        }
-
-        popupMenuView.findViewById<TextView>(R.id.menu_price_low).setOnClickListener {
-            handleMenuItemClick(btn4, View.VISIBLE)
-            binding.tvSelectedFilter.text = popupMenuView.findViewById<TextView>(R.id.menu_price_low).text.toString()
-            popupWindow.dismiss()
-        }
-
-        popupMenuView.findViewById<TextView>(R.id.menu_distance).setOnClickListener {
-            handleMenuItemClick(btn5, View.VISIBLE)
-            binding.tvSelectedFilter.text = popupMenuView.findViewById<TextView>(R.id.menu_distance).text.toString()
-            popupWindow.dismiss()
-        }
+        setMenuItemClickListener(R.id.menu_recommand, btn1, View.VISIBLE)
+        setMenuItemClickListener(R.id.menu_review, btn2, View.VISIBLE)
+        setMenuItemClickListener(R.id.menu_price_high, btn3, View.VISIBLE)
+        setMenuItemClickListener(R.id.menu_price_low, btn4, View.VISIBLE)
+        setMenuItemClickListener(R.id.menu_distance, btn5, View.VISIBLE)
 
         // 팝업 메뉴가 표시되도록 클릭 이벤트 리스너 설정
         popupBtn.setOnClickListener {
             popupWindow.showAsDropDown(popupBtn)
         }
 
+        // ************************** 다이얼로그 ********************************************//
+
+
 
         return binding.root
+
+
     }
+
 
 
 

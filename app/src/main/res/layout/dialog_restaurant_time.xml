@@ -1,179 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/ic_dialog_background"
-    android:gravity="center"
-    android:minWidth="300dp"
-    android:orientation="vertical"
-    android:padding="20dp">
 
-    <TextView
-        android:id="@+id/confirmTextView"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
-        android:minHeight="30dp"
-        android:textSize="16sp"
-        tools:text="매장 방문을 확정하시나요?"
-        android:textStyle="bold"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_centerInParent="true"
-        android:background="#20000000"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:text="당일취소 및 노쇼방지를 위하여 예약을 확정하실 때 레스토랑 및 다른 고객님께 피해가 되지 않도록 신중히 예약 부탁드립니다"
-        android:textSize="9sp"/>
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <View
-            android:layout_width="286.79dp"
-            android:layout_height="139.25dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_dialog_menu_background" />
+        android:background="@drawable/ic_dialog_background"
+        android:gravity="center"
+        android:minWidth="300dp"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="매장 이름"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="30dp"/>
-
-        <android.widget.Button
-            android:layout_width="40dp"
-            android:layout_height="8dp"
-            android:id="@+id/btn_dialog_cork_charge"
-            android:background="@drawable/ib_listview_corkcharge"
-            android:text="콜키지 비용 무료"
-            android:textColor="#B51D1D"
-            android:textSize="4.6sp"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="53dp"/>
-
-        <ImageButton
-            android:layout_width="49.73dp"
-            android:layout_height="49.73dp"
-            android:id="@+id/ib_btn_dialog_date"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center|left"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="50dp"
-            android:background="@drawable/ic_dialog_detail_background" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="일자"
-            android:textSize="10sp"
-            android:layout_gravity="center|left"
-            android:layout_marginTop="65dp"
-            android:layout_marginLeft="66dp"/>
-
-        <ImageButton
-            android:layout_width="49.73dp"
-            android:layout_height="49.73dp"
-            android:id="@+id/ib_btn_dialog_time"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/ic_dialog_detail_background" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="시간"
-            android:textSize="10sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="65dp" />
-
-        <ImageButton
-            android:layout_width="49.73dp"
-            android:layout_height="49.73dp"
-            android:id="@+id/ib_btn_dialog_cnt_personnel"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center|right"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="50dp"
-            android:background="@drawable/ic_dialog_detail_background" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="인원"
-            android:textSize="10sp"
-            android:layout_gravity="center|right"
-            android:layout_marginTop="65dp"
-            android:layout_marginRight="64dp"/>
-
-    </FrameLayout>
-
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+            android:id="@+id/confirmTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/noButton"
-                android:src="@drawable/ic_dialog_button_cancel_bacground"
-                android:layout_width="140dp"
-                android:layout_height="30dp"
-                android:background="@color/transparent"
-                android:paddingLeft="20dp" />
-
-            <ImageButton
-                android:id="@+id/yesButton"
-                android:src="@drawable/ic_dialog_confirm_background"
-                android:layout_width="140dp"
-                android:layout_height="30dp"
-                android:background="@color/transparent"
-                android:layout_marginLeft="15dp"
-                android:paddingRight="20dp"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="취소"
+            android:gravity="left"
+            android:minHeight="30dp"
+            android:textSize="20sp"
             android:textColor="@color/black"
-            android:textSize="9sp"
-            android:layout_marginLeft="73dp"
-            android:layout_marginTop="27dp"/>
+            android:layout_marginTop="10dp"
+            android:text="매장 방문을 확정하시나요?"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerInParent="true"
+            android:background="#20000000"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="확인"
-            android:textColor="@color/white"
-            android:textSize="9sp"
-            android:layout_marginLeft="208dp"
-            android:layout_marginTop="27dp"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="당일취소 및 노쇼방지를 위하여 예약을 확정하실 때 레스토랑 및 다른 고객님께 피해가 되지 않도록 신중히 예약 부탁드립니다"
+            android:textSize="12sp"/>
 
-    </FrameLayout>
 
-</LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="286.79dp"
+                android:layout_height="139.25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_dialog_menu_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_dialog_name"
+                android:text="매장 이름"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="30dp"/>
+
+            <android.widget.Button
+                android:layout_width="50dp"
+                android:layout_height="12dp"
+                android:id="@+id/btn_dialog_cork_charge"
+                android:background="@drawable/ib_listview_corkcharge"
+                android:text="콜키지 비용 무료"
+                android:textColor="#B51D1D"
+                android:textSize="7sp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="53dp"/>
+
+            <ImageView
+                android:layout_width="49.73dp"
+                android:layout_height="49.73dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center|left"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/ic_dialog_detail_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_dialog_date"
+                android:text="일자"
+                android:textSize="10sp"
+                android:layout_gravity="center|left"
+                android:layout_marginTop="65dp"
+                android:layout_marginLeft="66dp"/>
+
+            <ImageView
+                android:layout_width="49.73dp"
+                android:layout_height="49.73dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/ic_dialog_detail_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_dialog_time"
+                android:text="시간"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="65dp" />
+
+            <ImageView
+                android:layout_width="49.73dp"
+                android:layout_height="49.73dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center|right"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/ic_dialog_detail_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/tv_dialog_cnt_personnel"
+                android:text="인원"
+                android:textSize="10sp"
+                android:layout_gravity="center|right"
+                android:layout_marginTop="65dp"
+                android:layout_marginRight="64dp"/>
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/dialog_button_cancel"
+                    android:src="@drawable/ic_dialog_button_cancel_bacground"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:background="@color/transparent"
+                    android:paddingLeft="20dp" />
+
+                <ImageButton
+                    android:id="@+id/dialog_button_confirm"
+                    android:src="@drawable/ic_dialog_confirm_background"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:background="@color/transparent"
+                    android:layout_marginLeft="15dp"
+                    android:paddingRight="20dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="취소"
+                android:textColor="@color/black"
+                android:textSize="9sp"
+                android:layout_marginLeft="73dp"
+                android:layout_marginTop="27dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="확인"
+                android:textColor="@color/white"
+                android:textSize="9sp"
+                android:layout_marginLeft="208dp"
+                android:layout_marginTop="27dp"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

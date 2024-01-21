@@ -159,6 +159,7 @@
                 <android.widget.Button
                     android:layout_width="50dp"
                     android:layout_height="15dp"
+                    android:id="@+id/listview_time1"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 6:00"
                     android:textSize="10.46sp"
@@ -168,6 +169,7 @@
                 <android.widget.Button
                     android:layout_width="50dp"
                     android:layout_height="15dp"
+                    android:id="@+id/listview_time2"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 6:30"
                     android:textSize="10.46sp"
@@ -177,6 +179,7 @@
                 <android.widget.Button
                     android:layout_width="50dp"
                     android:layout_height="15dp"
+                    android:id="@+id/listview_time3"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 7:00"
                     android:textSize="10.46sp"
@@ -186,6 +189,7 @@
                 <android.widget.Button
                     android:layout_width="50dp"
                     android:layout_height="15dp"
+                    android:id="@+id/listview_time4"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 7:30"
                     android:textSize="10.46sp"
@@ -195,6 +199,7 @@
                 <android.widget.Button
                     android:layout_width="50dp"
                     android:layout_height="15dp"
+                    android:id="@+id/listview_time5"
                     android:background="@drawable/ib_listview_reservation"
                     android:text="오후 8:00"
                     android:textSize="10.46sp"
