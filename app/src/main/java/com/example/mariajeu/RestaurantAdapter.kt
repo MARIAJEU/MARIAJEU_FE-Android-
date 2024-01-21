@@ -47,33 +47,41 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         val restaurantTime5 = view.findViewById<Button>(R.id.listview_time5)
 
         restaurantTime1.setOnClickListener {
-            showCustomDialog(restaurant)
+            showCustomDialog(restaurant, 1)
         }
 
         restaurantTime2.setOnClickListener {
-            showCustomDialog(restaurant)
+            showCustomDialog(restaurant, 2)
         }
         restaurantTime3.setOnClickListener {
-            showCustomDialog(restaurant)
+            showCustomDialog(restaurant, 3)
         }
         restaurantTime4.setOnClickListener {
-            showCustomDialog(restaurant)
+            showCustomDialog(restaurant, 4)
         }
         restaurantTime5.setOnClickListener {
-            showCustomDialog(restaurant)
+            showCustomDialog(restaurant, 5)
         }
 
 
         return view
     }
 
-    fun showCustomDialog(restaurant: Restaurant) : String {
+    fun showCustomDialog(restaurant: Restaurant, idx: Int) : String {
 
         val customDialog = RestaurantTimeDialog(context, this)
         Log.d("TEST 네임", restaurant.restaurantName)
 
         // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
         RestaurantTimeDialog.rName.text = restaurant.restaurantName
+
+        when (idx) {
+            1 -> RestaurantTimeDialog.rTime.text = "오후 6:00"
+            2 -> RestaurantTimeDialog.rTime.text = "오후 6:30"
+            3 -> RestaurantTimeDialog.rTime.text = "오후 7:00"
+            4 -> RestaurantTimeDialog.rTime.text = "오후 7:30"
+            5 -> RestaurantTimeDialog.rTime.text = "오후 8:00"
+        }
 
         // TODO 날짜, 시간, 인원수 연동해서 tvDate.text = ... 작성
 
