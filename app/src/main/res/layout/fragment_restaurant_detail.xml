@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/food_constraintlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/food_background_iv"
+            android:layout_width="360.81dp"
+            android:layout_height="223.2dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section2_salmon_tv"
+            android:layout_width="78dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="232dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#20000000"
+            android:text="다이닝바 - 강남"
+            android:textSize="11sp"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:layout_width="55dp"
+            android:layout_height="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="249dp"
+            android:layout_marginLeft="16dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="매장이름" />
+
+        <TextView
+            android:layout_width="211dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="16.07dp"
+            android:layout_marginTop="269.89dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="매장 소개(솰라솰라. 프리미엄 스테이크 다이닝 바.)"
+            android:textSize="10sp"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:layout_width="89dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="290dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="123개 MARIAJEU >"
+            android:textSize="10sp"
+            android:textColor="#20000000"
+            android:gravity="top"
+            />
+        <TextView
+            android:layout_width="98dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="307dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="점심 3만원, 저녁 5만원>"
+            android:textSize="10sp"
+            android:gravity="top"
+            />
+
+        <android.widget.Button
+            android:layout_width="156dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="333dp"
+            android:text="전화하기"
+            android:textSize="13sp"
+            android:background="@drawable/ic_restaurant_detail_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <android.widget.Button
+            android:layout_width="156dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="188dp"
+            android:layout_marginTop="333dp"
+            android:text="공유하기"
+            android:textSize="13sp"
+            android:background="@drawable/ic_restaurant_detail_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="328dp"
+            android:layout_height="0.81dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="#20000000"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="374dp"
+            android:layout_marginLeft="16dp"
+            />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="381.89dp"
+            android:layout_marginLeft="20.07dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="예약 일정" />
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="407dp"
+            android:background="@drawable/ic_restaurant_detail_calandar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="13dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="415dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="12.25 (월)  |  오후 7:00  |  2명"
+            android:textSize="10.62sp"/>
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_calendar"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="414dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ib_detail"
+            android:layout_marginLeft="326.3dp"
+            android:layout_marginTop="418dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <View
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="25.17dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="452dp"
+            android:background="@drawable/food_line_4"
+            />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="469.8dp"
+            android:layout_marginLeft="20.07dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="메뉴" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="498dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="런치 오마카세"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="521dp"
+            android:background="@drawable/food_line_4"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="285dp"
+            android:layout_marginTop="498dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="30,000원"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="530dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="런치 커플 오마카세"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="552dp"
+            android:background="@drawable/food_line_4"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="285dp"
+            android:layout_marginTop="530dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="40,000원"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="562dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="디너 오마카세"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="583dp"
+            android:background="@drawable/food_line_4"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="285dp"
+            android:layout_marginTop="562dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="50,000원"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="593dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="디너 커플 오마카세"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="613dp"
+            android:background="@drawable/food_line_4"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="285dp"
+            android:layout_marginTop="593dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="70,000원"
+            android:textAppearance="@style/g_2_1_"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="645dp"
+            android:background="@drawable/food_line_4"
+            />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="660dp"
+            android:layout_marginLeft="20.07dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="사진" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="684.07dp"
+            android:src="@drawable/iv_restaurant_detail_picture" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="188dp"
+            android:layout_marginTop="684.07dp"
+            android:src="@drawable/iv_restaurant_detail_picture" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_food_detail1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="828.07dp"
+            android:src="@drawable/iv_restaurant_detail_picture" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="188dp"
+            android:layout_marginTop="828.07dp"
+            android:src="@drawable/iv_restaurant_detail_more" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="881.07dp"
+            android:layout_marginLeft="243dp"
+            android:textSize="14sp"
+            android:text="+200"
+            android:textColor="@color/white"/>
+
+        <View
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="982dp"
+            android:background="@drawable/food_line_4"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_title_tv"
+            android:layout_width="109dp"
+            android:layout_height="16dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_food_detail1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="22.66dp"
+            android:layout_marginTop="20.98dp"
+            android:text="MARIAJEU 리뷰"
+            android:textAppearance="@style/our_mariajeu"
+            android:gravity="top"
+            />
+        <View
+            android:id="@+id/food_menu1_section6_line_v"
+            android:layout_width="310.46dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_title_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="25.17dp"
+            android:layout_marginTop="5.82dp"
+            android:background="@drawable/food_line_13"
+            />
+
+        <ImageView
+            android:id="@+id/food_menu1_section6_profile_01_v"
+            android:layout_width="25.17dp"
+            android:layout_height="25.17dp"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_line_v"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="13.43dp"
+            android:layout_marginStart="25.17dp"
+            android:background="#D9D9D9"
+            android:src="@drawable/ic_food_ellipse_21"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_name_01_tv"
+            android:layout_width="8dp"
+            android:layout_height="10dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_profile_01_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_profile_01_v"
+            android:layout_marginStart="2.52dp"
+            android:text="이"
+            android:textAppearance="@style/food_sec6_name"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/food_menu1_section6_rectangle_01_v"
+            android:layout_width="44.47dp"
+            android:layout_height="8.39dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_name_01_tv"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_name_01_tv"
+            android:layout_marginStart="5.43dp"
+            android:background="@drawable/food_rectangle_5"
+            android:elevation="1dp"
+            />
+        <ImageView
+            android:id="@+id/food_menu1_section6_heart_01_iv"
+            android:layout_width="6.71dp"
+            android:layout_height="6.71dp"
+            android:src="@drawable/ic_food_heart"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_01_v"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_rectangle_01_v"
+            android:layout_marginTop="0.84dp"
+            android:layout_marginStart="6.71dp"
+            android:elevation="10dp"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_like_num_01_tv"
+            android:layout_width="15dp"
+            android:layout_height="8dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_01_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_heart_01_iv"
+            android:layout_marginStart="7.55dp"
+            android:text="1128"
+            android:textSize="6.713dp"
+            android:gravity="top"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_review_01_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_01_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_name_01_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="맛있게 잘 먹었습니다!!!"
+            android:textSize="8.791sp"
+            android:gravity="top"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_review_date_01_tv"
+            android:layout_width="27dp"
+            android:layout_height="6dp"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_01_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_review_01_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="2023.01.28"
+            android:textSize="5.035sp"
+            android:gravity="top"
+            />
+
+
+        <ImageView
+            android:id="@+id/food_menu1_section6_profile_02_v"
+            android:layout_width="25.17dp"
+            android:layout_height="25.17dp"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_profile_01_v"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="21.82dp"
+            android:layout_marginStart="25.17dp"
+            android:background="#D9D9D9"
+            android:src="@drawable/ic_food_ellipse_22"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_name_02_tv"
+            android:layout_width="8dp"
+            android:layout_height="10dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_profile_02_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_profile_02_v"
+            android:layout_marginStart="2.52dp"
+            android:text="띵"
+            android:textAppearance="@style/food_sec6_name"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/food_menu1_section6_rectangle_02_v"
+            android:layout_width="44.47dp"
+            android:layout_height="8.39dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_name_02_tv"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_name_02_tv"
+            android:layout_marginStart="5.43dp"
+            android:background="@drawable/food_rectangle_5"
+            android:elevation="1dp"
+            />
+        <ImageView
+            android:id="@+id/food_menu1_section6_heart_02_iv"
+            android:layout_width="6.71dp"
+            android:layout_height="6.71dp"
+            android:src="@drawable/ic_food_heart"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_02_v"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_rectangle_02_v"
+            android:layout_marginTop="0.84dp"
+            android:layout_marginStart="6.71dp"
+            android:elevation="10dp"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_like_num_02_tv"
+            android:layout_width="15dp"
+            android:layout_height="8dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_02_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_heart_02_iv"
+            android:layout_marginStart="7.55dp"
+            android:text="1234"
+            android:textSize="6.713dp"
+            android:gravity="top"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_review_02_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_02_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_name_02_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="레드 와인이랑 잘 어울립니다"
+            android:textSize="8.791sp"
+            android:gravity="top"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_review_date_02_tv"
+            android:layout_width="27dp"
+            android:layout_height="6dp"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_02_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_review_02_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="2023.01.28"
+            android:textSize="5.035sp"
+            android:gravity="top"
+            />
+
+        <ImageView
+            android:id="@+id/food_menu1_section6_profile_03_v"
+            android:layout_width="25.17dp"
+            android:layout_height="25.17dp"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_profile_02_v"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="21.82dp"
+            android:layout_marginStart="25.17dp"
+            android:background="#D9D9D9"
+            android:src="@drawable/ic_food_ellipse_23"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_name_03_tv"
+            android:layout_width="8dp"
+            android:layout_height="10dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_profile_03_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_profile_03_v"
+            android:layout_marginStart="2.52dp"
+            android:text="건"
+            android:textAppearance="@style/food_sec6_name"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/food_menu1_section6_rectangle_03_v"
+            android:layout_width="44.47dp"
+            android:layout_height="8.39dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_name_03_tv"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_name_03_tv"
+            android:layout_marginStart="5.43dp"
+            android:background="@drawable/food_rectangle_5"
+            android:elevation="1dp"
+            />
+        <ImageView
+            android:id="@+id/food_menu1_section6_heart_03_iv"
+            android:layout_width="6.71dp"
+            android:layout_height="6.71dp"
+            android:src="@drawable/ic_food_heart"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_03_v"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_rectangle_03_v"
+            android:layout_marginTop="0.84dp"
+            android:layout_marginStart="6.71dp"
+            android:elevation="10dp"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_like_num_03_tv"
+            android:layout_width="15dp"
+            android:layout_height="8dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_03_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_heart_03_iv"
+            android:layout_marginStart="7.55dp"
+            android:text="5678"
+            android:textSize="6.713dp"
+            android:gravity="top"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_review_03_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_03_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_name_03_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="아이가 먹기에는 조금 짠거 같아서 설탕을 넣는 것도 좋은 것 같아요~"
+            android:textSize="8.791sp"
+            android:gravity="top"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_review_date_03_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_03_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_review_03_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="2023.01.28  ---"
+            android:textSize="5.035dp"
+            android:gravity="top"
+            />
+
+        <ImageView
+            android:id="@+id/food_menu1_section6_profile_re_01_v"
+            android:layout_width="25.17dp"
+            android:layout_height="25.17dp"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_profile_03_v"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16.78dp"
+            android:layout_marginStart="46.15dp"
+            android:background="#D9D9D9"
+            android:src="@drawable/ic_food_ellipse_24"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_name_re_01_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_profile_re_01_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_profile_re_01_v"
+            android:layout_marginStart="2.52dp"
+            android:text="MARIAJEU"
+            android:textAppearance="@style/food_sec6_name"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/food_menu1_section6_rectangle_re_01_v"
+            android:layout_width="44.47dp"
+            android:layout_height="8.39dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_name_re_01_tv"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_name_re_01_tv"
+            android:layout_marginStart="5.43dp"
+            android:background="@drawable/food_rectangle_5"
+            android:elevation="1dp"
+            />
+        <ImageView
+            android:id="@+id/food_menu1_section6_heart_re_01_iv"
+            android:layout_width="6.71dp"
+            android:layout_height="6.71dp"
+            android:src="@drawable/ic_food_heart"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_re_01_v"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_rectangle_re_01_v"
+            android:layout_marginTop="0.84dp"
+            android:layout_marginStart="6.71dp"
+            android:elevation="10dp"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_like_num_re_01_tv"
+            android:layout_width="15dp"
+            android:layout_height="8dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_rectangle_re_01_v"
+            app:layout_constraintStart_toEndOf="@id/food_menu1_section6_heart_re_01_iv"
+            android:layout_marginStart="7.55dp"
+            android:text="10"
+            android:textSize="6.713dp"
+            android:gravity="top"
+            android:elevation="10dp"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_review_re_01_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_re_01_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_name_re_01_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="건  맞아요! 아이들이 먹기에는 더 달면 좋은 것 같습니다"
+            android:textSize="8.791sp"
+            android:gravity="top"
+            />
+        <TextView
+            android:id="@+id/food_menu1_section6_review_date_re_01_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_name_re_01_tv"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_review_re_01_tv"
+            android:layout_marginTop="2.59dp"
+            android:text="2023.01.28  ---"
+            android:textSize="5.035dp"
+            android:gravity="top"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_see_all_comment_tv"
+            android:layout_width="59dp"
+            android:layout_height="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_line_v"
+            android:layout_marginTop="190.5dp"
+            android:text="댓글 전체보기  >"
+            android:textSize="8.391dp"
+            android:gravity="top"
+            />
+
+        <View
+            android:id="@+id/food_menu1_section6_leave_comment_v"
+            android:layout_width="156.07dp"
+            android:layout_height="25.17dp"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_see_all_comment_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="11.82dp"
+            android:background="@drawable/food_rectangle_4"
+            />
+
+        <ImageView
+            android:id="@+id/food_menu1_section6_leave_comment_iv"
+            android:layout_width="18.46dp"
+            android:layout_height="18.46dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_leave_comment_v"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_leave_comment_v"
+            android:layout_marginStart="43.63dp"
+            android:layout_marginTop="3.36dp"
+            android:background="@drawable/food_rectangle_4"
+            />
+
+        <TextView
+            android:id="@+id/food_menu1_section6_leave_comment_tv"
+            android:layout_width="41dp"
+            android:layout_height="10dp"
+            app:layout_constraintTop_toTopOf="@id/food_menu1_section6_leave_comment_v"
+            app:layout_constraintStart_toStartOf="@id/food_menu1_section6_leave_comment_v"
+            android:layout_marginStart="65.45dp"
+            android:layout_marginTop="7.55dp"
+            android:text="댓글 남기기"
+            android:textSize="8.391dp"
+            android:gravity="top"
+            />
+
+
+        <View
+            android:id="@+id/food_menu1_section6_ad_rectangle_4_v"
+            android:layout_width="360.81dp"
+            android:layout_height="48.67dp"
+            app:layout_constraintTop_toBottomOf="@id/food_menu1_section6_leave_comment_v"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12.59dp"
+            android:background="#D9D9D9"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="59.57dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="1340dp"
+            android:background="@color/light_purple"
+            android:text="광고(선택사항)"
+            android:textSize="13.425dp"
+            android:gravity="top"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iv_restaurant_detail_heart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           android:layout_marginTop="1363dp"
+            android:layout_marginLeft="40dp"/>
+        
+        <ImageButton
+            android:layout_width="242dp"
+            android:layout_height="31dp"
+            android:src="@drawable/ib_restaurant_detail_reservation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="1355dp"
+            android:layout_marginLeft="102dp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="1363dp"
+            android:layout_marginLeft="201dp"
+            android:text="예약하기"
+            android:textColor="@color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
