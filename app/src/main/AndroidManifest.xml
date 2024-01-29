@@ -3,7 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mariajeu">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
+
+    <!-- 카톡 회원 가입을 위한 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 사진 업로드를 위한 카메라 및 갤러리 접근 권한 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 문자 보내기 위한 권한 -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:name=".GlobalApplication"
@@ -43,8 +59,28 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".Login2Activity" />
         <activity android:name=".SignUpActivity"/>
         <activity android:name=".KakaoSignUpActivity"/>
-    </application>
 
+<!--        <provider-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:authorities="com.example.mariajeu.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true"-->
+<!--            tools:ignore="WrongManifestParent">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@drawable/file_paths" />-->
+<!--        </provider>-->
+
+        <receiver android:name=".SignUpActivity$SmsSentReceiver"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="SMS_SENT"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
 </manifest>

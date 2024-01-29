@@ -37,20 +37,20 @@ class StartFragment : Fragment() {
         return binding.root
     }
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        val startIntent : Intent = Intent()
-//        val isLogin = startIntent.getStringExtra("success")
-//
-//        if (isLogin != null) {
-//            val btnLogin = binding.startLoginTv
-//            val btnLogout = binding.startLogoutTv
-//
-//            btnLogin.visibility = GONE
-//            btnLogout.visibility = VISIBLE
-//        }
-//
-//    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val startIntent : Intent = Intent()
+        val isLogin = startIntent.getStringExtra("success")
+
+        if (isLogin != null) {
+            val btnLogin = binding.startLoginTv
+            val btnLogout = binding.startLogoutTv
+
+            btnLogin.visibility = GONE
+            btnLogout.visibility = VISIBLE
+        }
+
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) { // activity A 호출 -> B 호출 -> A 호출 (결과값 반환) 시에 사용하는 함수
         super.onActivityResult(requestCode, resultCode, data)
@@ -69,6 +69,8 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
 
         val startLoginTextView = view.findViewById<TextView>(R.id.start_login_tv)
         startLoginTextView.setOnClickListener {
@@ -98,6 +100,8 @@ class StartFragment : Fragment() {
         binding.startMenu1Tv.setOnClickListener {
             navigateToFoodFragment()
         }
+
+        Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
     }
 
     private fun createChoiceTouchListener(choiceTextView: TextView): View.OnTouchListener {
@@ -270,8 +274,40 @@ class StartFragment : Fragment() {
     private fun navigateToFoodFragment() {
         val foodFragment = FoodFragment()
 
-        // 프래그먼트 전환을 위한 트랜잭션 시작
+//        // 프래그먼트 전환을 위한 트랜잭션 시작
+//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//
+//        transaction.replace(R.id.start_constraintlayout, foodFragment)
+//
+//        // 이전의 백스택을 모두 제거
+//        requireActivity().supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+//
+////        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
+//
+//        // FoodFragment를 추가하거나 보여줌
+//        transaction.add(R.id.start_constraintlayout, foodFragment)
+//
+////        Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
+//
+//
+//        // 트랜잭션 커밋
+//        transaction.commit()
+
+        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
+//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//        transaction.replace(R.id.start_constraintlayout, foodFragment)
+//        transaction.addToBackStack(null)
+//        transaction.commit()
+
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
+
+        transaction.setCustomAnimations(
+            android.R.anim.fade_in,
+            android.R.anim.fade_out,
+            android.R.anim.fade_in,
+            android.R.anim.fade_out
+        )
+        transaction.replace(R.id.start_constraintlayout, foodFragment)
 
         // 현재 보이는 프래그먼트를 숨김
         val startFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.main_frm)
@@ -291,7 +327,14 @@ class StartFragment : Fragment() {
         // addToBackStack을 사용하여 백스택에 추가
         transaction.addToBackStack(null)
 
-        // 트랜잭션 커밋
+        requireActivity().supportFragmentManager.addOnBackStackChangedListener {
+            Log.d("FragmentManager", "BackStackChanged")
+        }
+        transaction.addToBackStack(null)
         transaction.commit()
+
+
+        // FragmentManager의 fragment 목록 출력
+        Log.d("FragmentManager", "Fragments after transaction: ${requireActivity().supportFragmentManager.fragments}")
     }
 }

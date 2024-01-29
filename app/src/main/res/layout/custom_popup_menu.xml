@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/custom_popup">
+
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/menu_recommand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="추천순"
+                android:textSize="11sp"/>
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib_menu_check1"
+                android:src="@drawable/ib_popup_check"
+                android:background="@color/transparent"
+                android:paddingLeft="56dp"
+                android:paddingTop="3dp"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/menu_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰 많은 순"
+            android:textSize="11sp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib_menu_check2"
+                android:src="@drawable/ib_popup_check"
+                android:background="@color/transparent"
+                android:paddingLeft="30dp"
+                android:paddingTop="3dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/menu_price_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가격 높은 순"
+                android:textSize="11sp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib_menu_check3"
+                android:src="@drawable/ib_popup_check"
+                android:background="@color/transparent"
+                android:paddingLeft="30dp"
+                android:paddingTop="3dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/menu_price_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가격 낮은 순"
+                android:textSize="11sp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib_menu_check4"
+                android:src="@drawable/ib_popup_check"
+                android:background="@color/transparent"
+                android:paddingLeft="30dp"
+                android:paddingTop="3dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+            android:id="@+id/menu_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="거리순"
+            android:textSize="11sp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib_menu_check5"
+                android:src="@drawable/ib_popup_check"
+                android:background="@color/transparent"
+                android:paddingLeft="56dp"
+                android:paddingTop="3dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
