@@ -64,6 +64,31 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
             showRestaurantDialog(restaurant, 5)
         }
 
+        // -------------------------------------------------------------------------------
+
+        // TODO 매장 detail 페이지로 이동 -> 왜 requireActivity() 안 되는지 알아낼 것
+        // 매장 detail 페이지로 이동
+
+//        restaurantImg.setOnClickListener {
+//            val restaurantDetailFragment = RestaurantDetailFragment()
+//
+//            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//            transaction.setCustomAnimations(
+//                android.R.anim.fade_in,
+//                android.R.anim.fade_out,
+//                android.R.anim.fade_in,
+//                android.R.anim.fade_out
+//            )
+//            transaction.replace(R.id.listview_list_item, restaurantDetailFragment)
+//
+//            requireActivity().supportFragmentManager.addOnBackStackChangedListener {
+//                Log.d("FragmentManager", "BackStackChanged")
+//            }
+//            transaction.addToBackStack(null)
+//            transaction.commit()
+//
+//        }
+
 
         return view
     }

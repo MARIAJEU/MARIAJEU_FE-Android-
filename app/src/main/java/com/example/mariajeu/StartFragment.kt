@@ -300,6 +300,7 @@ class StartFragment : Fragment() {
 //        transaction.commit()
 
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
+
         transaction.setCustomAnimations(
             android.R.anim.fade_in,
             android.R.anim.fade_out,
@@ -307,6 +308,24 @@ class StartFragment : Fragment() {
             android.R.anim.fade_out
         )
         transaction.replace(R.id.start_constraintlayout, foodFragment)
+
+        // 현재 보이는 프래그먼트를 숨김
+        val startFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.main_frm)
+        if (startFragment != null) {
+            transaction.hide(startFragment)
+        }
+
+        // FoodFragment를 추가하거나 보여줌
+        if (!foodFragment.isAdded) {
+            // FoodFragment가 아직 추가되지 않았으면 추가
+            transaction.add(R.id.main_frm, foodFragment)
+        }
+
+        // 숨겨진 상태인 경우 보이게 함
+        transaction.show(foodFragment)
+
+        // addToBackStack을 사용하여 백스택에 추가
+        transaction.addToBackStack(null)
 
         requireActivity().supportFragmentManager.addOnBackStackChangedListener {
             Log.d("FragmentManager", "BackStackChanged")

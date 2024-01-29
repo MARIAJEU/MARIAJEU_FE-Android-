@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListAdapter
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.fragment.app.FragmentManager
+import com.example.mariajeu.databinding.ActivityLoginBinding
 import com.example.mariajeu.databinding.ActivityMainBinding
 
 
@@ -61,4 +63,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
 }
+

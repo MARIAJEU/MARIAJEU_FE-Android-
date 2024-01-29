@@ -1,5 +1,6 @@
 package com.example.mariajeu
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.example.mariajeu.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
+    private lateinit var mainActivity: MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -110,6 +112,11 @@ class SearchFragment : Fragment() {
         return binding.root
 
 
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mainActivity = context as MainActivity
     }
 
 
