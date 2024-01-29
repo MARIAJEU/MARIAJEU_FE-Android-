@@ -21,7 +21,7 @@
         android:layout_height="194dp"
         android:src="@drawable/ic_splash_logo"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="143dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="373dp"
 
