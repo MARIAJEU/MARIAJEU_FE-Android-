@@ -10,8 +10,9 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
-class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
+class RestaurantAdapter(private val context: Context, private val activity: AppCompatActivity, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
 
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
@@ -67,21 +68,21 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         // -------------------------------------------------------------------------------
 
         // TODO 매장 detail 페이지로 이동 -> 왜 requireActivity() 안 되는지 알아낼 것
-        // 매장 detail 페이지로 이동
+//         매장 detail 페이지로 이동
 
 //        restaurantImg.setOnClickListener {
 //            val restaurantDetailFragment = RestaurantDetailFragment()
 //
-//            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//            val transaction = activity.supportFragmentManager.beginTransaction()
 //            transaction.setCustomAnimations(
 //                android.R.anim.fade_in,
 //                android.R.anim.fade_out,
 //                android.R.anim.fade_in,
 //                android.R.anim.fade_out
 //            )
-//            transaction.replace(R.id.listview_list_item, restaurantDetailFragment)
+//            transaction.replace(R.id.fragment_restaurant_detail, restaurantDetailFragment)
 //
-//            requireActivity().supportFragmentManager.addOnBackStackChangedListener {
+//            activity.supportFragmentManager.addOnBackStackChangedListener {
 //                Log.d("FragmentManager", "BackStackChanged")
 //            }
 //            transaction.addToBackStack(null)

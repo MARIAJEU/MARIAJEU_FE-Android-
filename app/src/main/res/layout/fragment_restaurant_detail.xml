@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_restaurant_detail">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/food_constraintlayout"
@@ -148,13 +149,13 @@
             android:textSize="10.62sp"/>
 
         <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/btn_calendar"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="414dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_calendar"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="414dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -338,6 +339,17 @@
             android:layout_marginTop="645dp"
             android:background="@drawable/food_line_4"
             />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="663.07dp"
+            android:layout_marginLeft="294dp"
+            android:textSize="10sp"
+            android:textColor="#30000000"
+            android:text="전체보기 >" />
 
         <TextView
             android:layout_width="70dp"
@@ -835,9 +847,9 @@
             android:src="@drawable/iv_restaurant_detail_heart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-           android:layout_marginTop="1363dp"
+            android:layout_marginTop="1363dp"
             android:layout_marginLeft="40dp"/>
-        
+
         <ImageButton
             android:layout_width="242dp"
             android:layout_height="31dp"
@@ -846,7 +858,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="1355dp"
             android:layout_marginLeft="102dp" />
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
