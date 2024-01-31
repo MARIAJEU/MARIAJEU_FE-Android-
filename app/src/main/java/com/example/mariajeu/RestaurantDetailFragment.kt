@@ -10,7 +10,7 @@ import com.example.mariajeu.databinding.FragmentRestaurantDetailBinding
 
 class RestaurantDetailFragment : Fragment() {
 
-    var mainActivity: MainActivity ?= null
+//    var mainActivity: MainActivity ?= null
     lateinit var binding: FragmentRestaurantDetailBinding
 
     override fun onCreateView(
@@ -22,8 +22,8 @@ class RestaurantDetailFragment : Fragment() {
         return binding.root
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is MainActivity) mainActivity = context
-    }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        if (context is MainActivity) mainActivity = context
+//    }
 }

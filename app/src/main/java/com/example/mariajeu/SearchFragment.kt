@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.PopupWindow
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.mariajeu.databinding.FragmentSearchBinding
+import com.example.mariajeu.Restaurant
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
@@ -45,7 +47,7 @@ class SearchFragment : Fragment() {
             restaurantList.add(Restaurant("옐로퍼플"))
             Log.d("TEST레스토랑TEST", "Size: ${restaurantList.size}")
 
-            val adapter = RestaurantAdapter(requireContext(), restaurantList)
+            val adapter = RestaurantAdapter(requireContext(),restaurantList)
             binding.lvRestaurant.adapter = adapter
 
             var cntRestaurant = adapter.count

@@ -274,67 +274,67 @@ class StartFragment : Fragment() {
     private fun navigateToFoodFragment() {
         val foodFragment = FoodFragment()
 
-//        // 프래그먼트 전환을 위한 트랜잭션 시작
-//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//
-//        transaction.replace(R.id.start_constraintlayout, foodFragment)
-//
-//        // 이전의 백스택을 모두 제거
-//        requireActivity().supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-//
-////        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
-//
-//        // FoodFragment를 추가하거나 보여줌
-//        transaction.add(R.id.start_constraintlayout, foodFragment)
-//
-////        Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
-//
-//
-//        // 트랜잭션 커밋
-//        transaction.commit()
-
-        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
-//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//        transaction.replace(R.id.start_constraintlayout, foodFragment)
-//        transaction.addToBackStack(null)
-//        transaction.commit()
-
+        // 프래그먼트 전환을 위한 트랜잭션 시작
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
 
-        transaction.setCustomAnimations(
-            android.R.anim.fade_in,
-            android.R.anim.fade_out,
-            android.R.anim.fade_in,
-            android.R.anim.fade_out
-        )
         transaction.replace(R.id.start_constraintlayout, foodFragment)
 
-        // 현재 보이는 프래그먼트를 숨김
-        val startFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.main_frm)
-        if (startFragment != null) {
-            transaction.hide(startFragment)
-        }
+        // 이전의 백스택을 모두 제거
+        requireActivity().supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+//        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
 
         // FoodFragment를 추가하거나 보여줌
-        if (!foodFragment.isAdded) {
-            // FoodFragment가 아직 추가되지 않았으면 추가
-            transaction.add(R.id.main_frm, foodFragment)
-        }
+        transaction.add(R.id.start_constraintlayout, foodFragment)
 
-        // 숨겨진 상태인 경우 보이게 함
-        transaction.show(foodFragment)
+//        Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
 
-        // addToBackStack을 사용하여 백스택에 추가
-        transaction.addToBackStack(null)
 
-        requireActivity().supportFragmentManager.addOnBackStackChangedListener {
-            Log.d("FragmentManager", "BackStackChanged")
-        }
-        transaction.addToBackStack(null)
+        // 트랜잭션 커밋
         transaction.commit()
 
-
-        // FragmentManager의 fragment 목록 출력
-        Log.d("FragmentManager", "Fragments after transaction: ${requireActivity().supportFragmentManager.fragments}")
+//        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
+////        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+////        transaction.replace(R.id.start_constraintlayout, foodFragment)
+////        transaction.addToBackStack(null)
+////        transaction.commit()
+//
+//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//
+//        transaction.setCustomAnimations(
+//            android.R.anim.fade_in,
+//            android.R.anim.fade_out,
+//            android.R.anim.fade_in,
+//            android.R.anim.fade_out
+//        )
+//        transaction.replace(R.id.start_constraintlayout, foodFragment)
+//
+//        // 현재 보이는 프래그먼트를 숨김
+//        val startFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.main_frm)
+//        if (startFragment != null) {
+//            transaction.hide(startFragment)
+//        }
+//
+//        // FoodFragment를 추가하거나 보여줌
+//        if (!foodFragment.isAdded) {
+//            // FoodFragment가 아직 추가되지 않았으면 추가
+//            transaction.add(R.id.main_frm, foodFragment)
+//        }
+//
+//        // 숨겨진 상태인 경우 보이게 함
+//        transaction.show(foodFragment)
+//
+//        // addToBackStack을 사용하여 백스택에 추가
+//        transaction.addToBackStack(null)
+//
+//        requireActivity().supportFragmentManager.addOnBackStackChangedListener {
+//            Log.d("FragmentManager", "BackStackChanged")
+//        }
+//        transaction.addToBackStack(null)
+//        transaction.commit()
+//
+//
+//        // FragmentManager의 fragment 목록 출력
+//        Log.d("FragmentManager", "Fragments after transaction: ${requireActivity().supportFragmentManager.fragments}")
     }
 }

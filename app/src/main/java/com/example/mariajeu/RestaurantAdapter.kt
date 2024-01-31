@@ -1,6 +1,5 @@
 package com.example.mariajeu
 
-import android.app.Dialog
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,10 +10,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.properties.Delegates
 
-class RestaurantAdapter(private val context: Context, private val activity: AppCompatActivity, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
+class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
 
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
+    private lateinit var rName: Restaurant
+    private var rTimeIdx by Delegates.notNull<Int>()
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
 
 
@@ -49,19 +51,29 @@ class RestaurantAdapter(private val context: Context, private val activity: AppC
         val restaurantTime5 = view.findViewById<Button>(R.id.listview_time5)
 
         restaurantTime1.setOnClickListener {
+            rName = restaurant
+            rTimeIdx = 1
             showRestaurantDialog(restaurant, 1)
         }
 
         restaurantTime2.setOnClickListener {
+            rName = restaurant
+            rTimeIdx = 2
             showRestaurantDialog(restaurant, 2)
         }
         restaurantTime3.setOnClickListener {
+            rName = restaurant
+            rTimeIdx = 3
             showRestaurantDialog(restaurant, 3)
         }
         restaurantTime4.setOnClickListener {
+            rName = restaurant
+            rTimeIdx = 4
             showRestaurantDialog(restaurant, 4)
         }
         restaurantTime5.setOnClickListener {
+            rName = restaurant
+            rTimeIdx = 5
             showRestaurantDialog(restaurant, 5)
         }
 
@@ -70,26 +82,25 @@ class RestaurantAdapter(private val context: Context, private val activity: AppC
         // TODO 매장 detail 페이지로 이동 -> 왜 requireActivity() 안 되는지 알아낼 것
 //         매장 detail 페이지로 이동
 
-//        restaurantImg.setOnClickListener {
-//            val restaurantDetailFragment = RestaurantDetailFragment()
-//
-//            val transaction = activity.supportFragmentManager.beginTransaction()
-//            transaction.setCustomAnimations(
-//                android.R.anim.fade_in,
-//                android.R.anim.fade_out,
-//                android.R.anim.fade_in,
-//                android.R.anim.fade_out
-//            )
-//            transaction.replace(R.id.fragment_restaurant_detail, restaurantDetailFragment)
-//
-//            activity.supportFragmentManager.addOnBackStackChangedListener {
-//                Log.d("FragmentManager", "BackStackChanged")
-//            }
-//            transaction.addToBackStack(null)
-//            transaction.commit()
-//
-//        }
+        restaurantImg.setOnClickListener {
+            val restaurantDetailFragment = RestaurantDetailFragment()
+            val appCompatActivity = context as? AppCompatActivity
 
+            val transaction = appCompatActivity?.supportFragmentManager?.beginTransaction()
+            transaction?.setCustomAnimations(
+                android.R.anim.fade_in,
+                android.R.anim.fade_out,
+                android.R.anim.fade_in,
+                android.R.anim.fade_out
+            )
+            transaction?.replace(R.id.fragment_restaurant_detail, restaurantDetailFragment)
+
+            appCompatActivity?.supportFragmentManager?.addOnBackStackChangedListener {
+                Log.d("FragmentManager", "BackStackChanged")
+            }
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+        }
 
         return view
     }
@@ -130,7 +141,7 @@ class RestaurantAdapter(private val context: Context, private val activity: AppC
 
     override fun onYesButtonClick(id: Int) {
         // 확인 버튼이 눌렸을 때의 동작 처리
-        showReservationDialog()
+        showReservationDialog(rName, rTimeIdx)
 
     }
 
@@ -139,16 +150,21 @@ class RestaurantAdapter(private val context: Context, private val activity: AppC
         // 여기에서 필요한 로직을 추가하세요.
     }
 
-    private fun showReservationDialog() {
+    private fun showReservationDialog(restaurant: Restaurant, idx: Int) {
 
         // Dialog 객체 생성
-        val reservationDialog = ReservationDialog(context)
+        val reservationDialog = ReservationDialog(context, this)
 
-        // 커스텀 다이얼로그의 XML 레이아웃을 인플레이트
-        val dialogReservation = LayoutInflater.from(context).inflate(R.layout.dialog_reservation, null)
+        // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
+        ReservationDialog.rName.text = restaurant.restaurantName
 
-        // Dialog에 커스텀 레이아웃 설정
-        reservationDialog.setContentView(dialogReservation)
+        when (idx) {
+            1 -> ReservationDialog.rTime.text = "오후 6:00"
+            2 -> ReservationDialog.rTime.text = "오후 6:30"
+            3 -> ReservationDialog.rTime.text = "오후 7:00"
+            4 -> ReservationDialog.rTime.text = "오후 7:30"
+            5 -> ReservationDialog.rTime.text = "오후 8:00"
+        }
 
         // Dialog를 화면에 표시
         reservationDialog.show()
