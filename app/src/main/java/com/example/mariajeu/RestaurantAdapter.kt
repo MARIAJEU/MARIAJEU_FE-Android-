@@ -9,10 +9,36 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
 
 class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
+    companion object {
+        fun changeMyPageFragment(context: Context, fragment: Fragment) {
+//            try {
+//                Log.d("ReservationDialog", "Trying to replace fragment")
+//                val fragmentManager = if (context is AppCompatActivity) {
+////                Log.d("ReservationDialog", "FragmentManager: $fragmentManager")
+//                    context.supportFragmentManager
+//                } else {
+//                    Log.e("ReservationDialog", "Context is not AppCompatActivity")
+//                    return  // 더 이상 진행하지 않고 함수를 종료
+//                }
+//
+//                val transaction = fragmentManager.beginTransaction()
+//                transaction.replace(R.id.searchFragment_id, fragment)
+//                transaction.addToBackStack(null)
+//                transaction.commit()  // commit을 호출해야 변경이 적용됨
+//            } catch (e: Exception) {
+//                e.printStackTrace()
+//            }
+
+            
+
+        }
+    }
 
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
     private lateinit var rName: Restaurant
@@ -141,16 +167,15 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 
     override fun onYesButtonClick(id: Int) {
         // 확인 버튼이 눌렸을 때의 동작 처리
-        showReservationDialog(rName, rTimeIdx)
-
+        showReservationDialog(context, rName, rTimeIdx)
     }
 
     override fun onCancelButtonClick() {
         // 취소 버튼이 눌렸을 때의 동작 처리
-        // 여기에서 필요한 로직을 추가하세요.
     }
 
-    private fun showReservationDialog(restaurant: Restaurant, idx: Int) {
+    private fun showReservationDialog(context: Context, restaurant: Restaurant, idx: Int) {
+        Log.d("ReservationDialog", "Context type: ${context::class.java}")
 
         // Dialog 객체 생성
         val reservationDialog = ReservationDialog(context, this)
@@ -169,8 +194,4 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         // Dialog를 화면에 표시
         reservationDialog.show()
     }
-
-
-
-
 }

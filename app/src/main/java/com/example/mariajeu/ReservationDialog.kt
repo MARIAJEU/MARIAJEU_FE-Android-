@@ -5,6 +5,9 @@ import android.content.Context
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 class ReservationDialog(context: Context, private val listener: RestaurantAdapter) : Dialog(context) {
 
@@ -15,6 +18,9 @@ class ReservationDialog(context: Context, private val listener: RestaurantAdapte
         lateinit var rDate: TextView
         lateinit var rTime: TextView
         lateinit var rCnt: TextView
+
+        var myPageFragment: MypageFragment = MypageFragment()
+
     }
 
     init {
@@ -37,8 +43,16 @@ class ReservationDialog(context: Context, private val listener: RestaurantAdapte
         }
 
         btnMyPage.setOnClickListener {
+            Log.d("ReservationDialog", "btnMyPage clicked")
             listener.onYesButtonClick(1)
+            RestaurantAdapter.changeMyPageFragment(context, myPageFragment)
             dismiss()
+
         }
+
     }
+
 }
+
+
+
