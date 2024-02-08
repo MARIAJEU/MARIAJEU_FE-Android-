@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
@@ -37,7 +38,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 
         }
 
-
+        // 전역 변수로 설정한 이유 - LikeAdapter에서 받아서 사용하기 위해서 (그래야 fragment 넘겼을 때 배열 형태로 받아올 수 있음)
         var likeRestaurantList = arrayListOf<Restaurant>()
 
     }
@@ -45,7 +46,20 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
     private lateinit var rName: Restaurant
     private var rTimeIdx by Delegates.notNull<Int>()
+    private val btnHeartClickState = mutableMapOf<Int, Boolean>()
+
+    init {
+        // 초기에 모든 아이템의 클릭 상태를 false로 설정
+        restaurantList.forEachIndexed { idx, _ ->
+            btnHeartClickState[idx] = false
+        }
+    }
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+
+        // 중복 검사하는 함수 (likeRestaurant에서 이미 즐겨찾기 추가한 매장인지)
+        fun isRestaurantLiked(restaurant: Restaurant): Boolean {
+            return likeRestaurantList.any { it.restaurantName == restaurant.restaurantName }
+        }
 
 
         var view = convertView
@@ -82,6 +96,15 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         val btnHeart = view.findViewById<ImageButton>(R.id.btn_heart)
         val btnHeartEmpty = view.findViewById<ImageButton>(R.id.btn_heart_empty)
 
+        val isHeartClicked = btnHeartClickState[position] ?: false
+
+        if (isHeartClicked) {
+            btnHeart.visibility = View.VISIBLE
+            btnHeartEmpty.visibility = View.GONE
+        } else {
+            btnHeart.visibility = View.GONE
+            btnHeartEmpty.visibility = View.VISIBLE
+        }
 
         restaurantTime1.setOnClickListener {
             rName = restaurant
@@ -113,17 +136,25 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         btnHeartEmpty.setOnClickListener {
             btnHeart.visibility = View.VISIBLE
             btnHeartEmpty.visibility = View.GONE
-            // 하트 버튼 누르면 likeRestaurant에 추가됨
+            btnHeartClickState[position] = true
+            Log.d("btnTESTbtnTESt", btnHeartClickState[position].toString())
+
+            // 빈 하트 버튼 누르면 likeRestaurant에 추가됨
             val heartRestaurant = restaurantList[position]
-            likeRestaurantList.add(heartRestaurant)
 
-
+            if (!isRestaurantLiked(heartRestaurant)) { // 중복 검사 후 추가
+                likeRestaurantList.add(heartRestaurant)
+            }
         }
 
         btnHeart.setOnClickListener {
             btnHeartEmpty.visibility = View.VISIBLE
             btnHeart.visibility = View.GONE
-            // TODO 하트 버튼 누르면 찜에서 삭제되게 하기
+            btnHeartClickState[position] = false
+
+            // 하트 버튼 누르면 likeRestaurant에서 삭제됨
+            val unHeartRestaurant = restaurantList[position]
+            likeRestaurantList.remove(unHeartRestaurant)
         }
 
         // -------------------------------------------------------------------------------

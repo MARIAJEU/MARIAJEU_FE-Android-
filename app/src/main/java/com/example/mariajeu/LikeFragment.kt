@@ -26,14 +26,12 @@ class LikeFragment : Fragment() {
         binding = FragmentLikeBinding.inflate(inflater, container, false)
         var likeRestaurantList = RestaurantAdapter.likeRestaurantList
 
+        // [setValues] RestaurantAdapter에서 받아온 정보를 바탕으로 찜한 매장 보여주기
         fun setValues() {
-//            likeRestaurantList.add(LikeRestaurant("마리아주"))
-
             val adapter = LikeAdapter(requireContext(), likeRestaurantList)
             binding.lvLike.adapter = adapter
 
             var cntLikeRestaurant = adapter.count
-
             binding.tvCntLikeRestaurant.text = cntLikeRestaurant.toString() + "개의 매장"
         }
 

@@ -34,6 +34,10 @@ class LikeAdapter(private val context: Context, private val likeList: ArrayList<
             // * 찜 취소 버튼 * //
             val btnDeleteHeart = view.findViewById<Button>(R.id.btn_delete_like)
 
+            btnDeleteHeart.setOnClickListener {
+                RestaurantAdapter.likeRestaurantList.removeAt(position)
+            }
+
 
         }
 

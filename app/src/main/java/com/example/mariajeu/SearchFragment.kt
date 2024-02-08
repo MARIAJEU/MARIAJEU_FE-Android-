@@ -11,12 +11,19 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import com.example.mariajeu.databinding.FragmentSearchBinding
 import com.example.mariajeu.Restaurant
+
+class SharedViewModel : ViewModel() {
+    var btnHeartClikedInfo: String? = null
+}
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
     private lateinit var mainActivity: MainActivity
+    private val viewModel by viewModels<SharedViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,8 +127,5 @@ class SearchFragment : Fragment() {
         super.onAttach(context)
         mainActivity = context as MainActivity
     }
-
-
-
 
 }
