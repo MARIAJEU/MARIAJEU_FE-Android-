@@ -151,7 +151,7 @@
                 <android.widget.Button
                     android:layout_width="60dp"
                     android:layout_height="15dp"
-                    android:id="@+id/listview_time1"
+                    android:id="@+id/btn_delete_like"
                     android:background="#701040"
                     android:text="찜 삭제하기"
                     android:textSize="10.46sp"

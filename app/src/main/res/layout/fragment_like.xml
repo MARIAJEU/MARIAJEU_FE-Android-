@@ -55,6 +55,17 @@
         android:textSize="11.61sp"
         android:paddingTop="132.7dp"
         android:paddingLeft="19.08dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_cnt_like_restaurant"
+        android:text="0개의 매장"
+        android:textSize="10sp"
+        android:textColor="#50000000"
+        android:paddingLeft="17dp"
+        android:paddingTop="225dp"
+        app:layout_constraintLeft_toLeftOf="parent"/>
     <!---->
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -64,10 +75,10 @@
         <!-- 기존의 로고 및 버튼 등의 뷰들 추가 -->
 
         <ListView
-            android:id="@+id/lv_restaurant"
+            android:id="@+id/lv_like"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="225dp"/>
+            android:layout_marginTop="240dp"/>
 
     </RelativeLayout>
 

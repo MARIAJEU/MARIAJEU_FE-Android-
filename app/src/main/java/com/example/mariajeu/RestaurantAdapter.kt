@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
@@ -36,9 +35,11 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 //                e.printStackTrace()
 //            }
 
-            
-
         }
+
+
+        var likeRestaurantList = arrayListOf<Restaurant>()
+
     }
 
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
@@ -112,7 +113,11 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         btnHeartEmpty.setOnClickListener {
             btnHeart.visibility = View.VISIBLE
             btnHeartEmpty.visibility = View.GONE
-            // TODO 하트 버튼 누르면 찜에 들어가게 하기
+            // 하트 버튼 누르면 likeRestaurant에 추가됨
+            val heartRestaurant = restaurantList[position]
+            likeRestaurantList.add(heartRestaurant)
+
+
         }
 
         btnHeart.setOnClickListener {
@@ -175,7 +180,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         return restaurantList.size
     }
 
-    override fun getItem(p0: Int): Any {
+    override fun getItem(p0: Int): Restaurant {
         return restaurantList[p0]
     }
 
