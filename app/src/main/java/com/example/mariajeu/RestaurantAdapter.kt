@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
 
 class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
+
     companion object {
         fun changeMyPageFragment(context: Context, fragment: Fragment) {
 //            try {
@@ -54,12 +55,12 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
             btnHeartClickState[idx] = false
         }
     }
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
 
-        // 중복 검사하는 함수 (likeRestaurant에서 이미 즐겨찾기 추가한 매장인지)
-        fun isRestaurantLiked(restaurant: Restaurant): Boolean {
-            return likeRestaurantList.any { it.restaurantName == restaurant.restaurantName }
-        }
+    // 중복 검사하는 함수 (likeRestaurant에서 이미 즐겨찾기 추가한 매장인지)
+    fun isRestaurantLiked(restaurant: Restaurant): Boolean {
+        return likeRestaurantList.any { it.restaurantName == restaurant.restaurantName }
+    }
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
 
         var view = convertView
 
@@ -95,9 +96,11 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         val btnHeart = view.findViewById<ImageButton>(R.id.btn_heart)
         val btnHeartEmpty = view.findViewById<ImageButton>(R.id.btn_heart_empty)
 
-        var isHeartClicked = btnHeartClickState[position]
+        var isHeartClicked = btnHeartClickState[position] ?: false
 
-        if (isHeartClicked == true) {
+        Log.d("TESTheartclick", isHeartClicked.toString())
+
+        if (isHeartClicked) {
             btnHeart.visibility = View.VISIBLE
             btnHeartEmpty.visibility = View.GONE
         } else {

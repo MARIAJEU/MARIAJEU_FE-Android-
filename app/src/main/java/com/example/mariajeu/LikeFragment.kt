@@ -39,6 +39,7 @@ class LikeFragment : Fragment() {
                 binding.tvLikeNone2.visibility = View.GONE
             }
 
+            // TODO 매장 개수 likeFragment 내에서 바로바로 연동이 안 됨 -> 다른 fragment로 전환 후 확인해야 연동이 됨.. 수정 필요!!
             var cntLikeRestaurant = adapter.count
             binding.tvCntLikeRestaurant.text = cntLikeRestaurant.toString() + "개의 매장"
         }
