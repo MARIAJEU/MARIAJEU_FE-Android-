@@ -61,7 +61,6 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
             return likeRestaurantList.any { it.restaurantName == restaurant.restaurantName }
         }
 
-
         var view = convertView
 
 //        // ArrayList<Restaurant>의 변수 restaurant의 이미지와 데이터를 ImageView와 TextView에 담음
@@ -96,9 +95,9 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         val btnHeart = view.findViewById<ImageButton>(R.id.btn_heart)
         val btnHeartEmpty = view.findViewById<ImageButton>(R.id.btn_heart_empty)
 
-        val isHeartClicked = btnHeartClickState[position] ?: false
+        var isHeartClicked = btnHeartClickState[position]
 
-        if (isHeartClicked) {
+        if (isHeartClicked == true) {
             btnHeart.visibility = View.VISIBLE
             btnHeartEmpty.visibility = View.GONE
         } else {

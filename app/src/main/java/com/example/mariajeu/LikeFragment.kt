@@ -31,6 +31,14 @@ class LikeFragment : Fragment() {
             val adapter = LikeAdapter(requireContext(), likeRestaurantList)
             binding.lvLike.adapter = adapter
 
+            if (likeRestaurantList.size == 0) {
+                binding.tvLikeNone.visibility = View.VISIBLE
+                binding.tvLikeNone2.visibility = View.VISIBLE
+            } else {
+                binding.tvLikeNone.visibility = View.GONE
+                binding.tvLikeNone2.visibility = View.GONE
+            }
+
             var cntLikeRestaurant = adapter.count
             binding.tvCntLikeRestaurant.text = cntLikeRestaurant.toString() + "개의 매장"
         }

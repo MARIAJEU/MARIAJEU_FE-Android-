@@ -33,9 +33,12 @@ class LikeAdapter(private val context: Context, private val likeList: ArrayList<
 
             // * 찜 취소 버튼 * //
             val btnDeleteHeart = view.findViewById<Button>(R.id.btn_delete_like)
+            val tvLikeNone = view.findViewById<TextView>(R.id.tv_like_none)
+            val tvLikeNone2 = view.findViewById<TextView>(R.id.tv_like_none2)
 
             btnDeleteHeart.setOnClickListener {
                 RestaurantAdapter.likeRestaurantList.removeAt(position)
+                notifyDataSetChanged()
             }
 
 
@@ -56,8 +59,4 @@ class LikeAdapter(private val context: Context, private val likeList: ArrayList<
         return p0.toLong()
     }
 
-    fun addItem(restaurant: Restaurant) {
-        likeList.add(restaurant)
-        notifyDataSetChanged() // 데이터가 변경되었음을 어댑터에 알림
-    }
 }

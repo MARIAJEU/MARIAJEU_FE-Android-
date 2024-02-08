@@ -56,23 +56,41 @@
         android:paddingTop="132.7dp"
         android:paddingLeft="19.08dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_cnt_like_restaurant"
-        android:text="0개의 매장"
-        android:textSize="10sp"
-        android:textColor="#50000000"
-        android:paddingLeft="17dp"
-        android:paddingTop="225dp"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-    <!---->
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- 기존의 로고 및 버튼 등의 뷰들 추가 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_cnt_like_restaurant"
+            android:text="0개의 매장"
+            android:textSize="10sp"
+            android:textColor="#50000000"
+            android:paddingLeft="17dp"
+            android:paddingTop="225dp"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_like_none"
+            android:text="텅!"
+            android:textSize="150sp"
+            android:layout_marginTop="350dp"
+            android:gravity="center_horizontal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_like_none2"
+            android:text="현재 내가 찜한 매장이 없습니다"
+            android:textStyle="italic"
+            android:layout_marginTop="550dp"
+            android:gravity="center_horizontal"
+            android:visibility="gone"/>
 
         <ListView
             android:id="@+id/lv_like"
