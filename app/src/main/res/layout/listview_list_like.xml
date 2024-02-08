@@ -57,26 +57,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_heart"
-                    android:src="@drawable/ib_heart"
-                    android:background="@color/transparent"
-                    android:layout_marginTop="11dp"
-                    android:layout_gravity="right"
-                    android:visibility="gone"/>
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btn_heart_empty"
-                    android:src="@drawable/ib_heart_empty"
-                    android:background="@color/transparent"
-                    android:layout_marginTop="11dp"
-                    android:layout_gravity="right"
-                    android:visibility="visible"/>
-
 
             </LinearLayout>
 
@@ -169,54 +149,15 @@
                 android:orientation="horizontal">
 
                 <android.widget.Button
-                    android:layout_width="50dp"
+                    android:layout_width="60dp"
                     android:layout_height="15dp"
                     android:id="@+id/listview_time1"
-                    android:background="@drawable/ib_listview_reservation"
-                    android:text="오후 6:00"
+                    android:background="#701040"
+                    android:text="찜 삭제하기"
                     android:textSize="10.46sp"
+                    android:textColor="@color/white"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"/>
-
-                <android.widget.Button
-                    android:layout_width="50dp"
-                    android:layout_height="15dp"
-                    android:id="@+id/listview_time2"
-                    android:background="@drawable/ib_listview_reservation"
-                    android:text="오후 6:30"
-                    android:textSize="10.46sp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"/>
-
-                <android.widget.Button
-                    android:layout_width="50dp"
-                    android:layout_height="15dp"
-                    android:id="@+id/listview_time3"
-                    android:background="@drawable/ib_listview_reservation"
-                    android:text="오후 7:00"
-                    android:textSize="10.46sp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"/>
-
-                <android.widget.Button
-                    android:layout_width="50dp"
-                    android:layout_height="15dp"
-                    android:id="@+id/listview_time4"
-                    android:background="@drawable/ib_listview_reservation"
-                    android:text="오후 7:30"
-                    android:textSize="10.46sp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"/>
-
-                <android.widget.Button
-                    android:layout_width="50dp"
-                    android:layout_height="15dp"
-                    android:id="@+id/listview_time5"
-                    android:background="@drawable/ib_listview_reservation"
-                    android:text="오후 8:00"
-                    android:textSize="10.46sp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"/>
+                    android:layout_marginLeft="210dp"/>
 
             </LinearLayout>
         </LinearLayout>

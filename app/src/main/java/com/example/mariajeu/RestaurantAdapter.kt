@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -76,6 +77,11 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         val restaurantTime4 = view.findViewById<Button>(R.id.listview_time4)
         val restaurantTime5 = view.findViewById<Button>(R.id.listview_time5)
 
+        // * 하트 버튼 * //
+        val btnHeart = view.findViewById<ImageButton>(R.id.btn_heart)
+        val btnHeartEmpty = view.findViewById<ImageButton>(R.id.btn_heart_empty)
+
+
         restaurantTime1.setOnClickListener {
             rName = restaurant
             rTimeIdx = 1
@@ -101,6 +107,18 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
             rName = restaurant
             rTimeIdx = 5
             showRestaurantDialog(restaurant, 5)
+        }
+
+        btnHeartEmpty.setOnClickListener {
+            btnHeart.visibility = View.VISIBLE
+            btnHeartEmpty.visibility = View.GONE
+            // TODO 하트 버튼 누르면 찜에 들어가게 하기
+        }
+
+        btnHeart.setOnClickListener {
+            btnHeartEmpty.visibility = View.VISIBLE
+            btnHeart.visibility = View.GONE
+            // TODO 하트 버튼 누르면 찜에서 삭제되게 하기
         }
 
         // -------------------------------------------------------------------------------
