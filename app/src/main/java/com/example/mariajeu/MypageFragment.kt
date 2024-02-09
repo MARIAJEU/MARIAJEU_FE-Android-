@@ -23,10 +23,10 @@ class MypageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMypageBinding.inflate(inflater, container, false)
-        var likeRestaurantList = RestaurantAdapter.likeRestaurantList
+        var myRestaurantList = RestaurantAdapter.myPageRestaurantList
 
         fun setValues() {
-            val adapter = LikeAdapter(requireContext(), likeRestaurantList)
+            val adapter = MyPageAdapter(requireContext(), myRestaurantList)
             binding.lvMypage.adapter = adapter
         }
 

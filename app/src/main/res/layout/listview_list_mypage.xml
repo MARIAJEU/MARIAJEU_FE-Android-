@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.widget.Button
+                android:layout_width="80dp"
+                android:layout_height="14dp"
+                android:id="@+id/btn_listview_cork_charge"
+                android:background="@drawable/ib_listview_corkcharge"
+                android:text="콜키지 비용 무료"
+                android:textColor="#B51D1D"
+                android:textSize="10.6sp"
+                android:layout_marginLeft="5dp"/>
+
+            <ImageView
+                android:id="@+id/lv_mypage_img"
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/light_gray" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_mypage_name"
+                    android:text="매장 이름"
+                    android:textColor="@color/black"
+                    android:textSize="20.61sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mypage_date"
+                    android:text="2023.12.25 (월)"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mypage_time"
+                    android:text=" - 오후 7:00"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mypage_cnt"
+                    android:text=" - 2명"/>
+            </LinearLayout>
+
+            <android.widget.Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:text="취소하기"
+                android:textSize="7sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="당일취소 및 노쇼 방지를 위해 신중히 결정해주세요!"
+                android:textColor="#DA0505"
+                android:textSize="8sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

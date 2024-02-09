@@ -41,6 +41,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 
         // 전역 변수로 설정한 이유 - LikeAdapter에서 받아서 사용하기 위해서 (그래야 fragment 넘겼을 때 배열 형태로 받아올 수 있음)
         var likeRestaurantList = arrayListOf<Restaurant>()
+        var myPageRestaurantList = arrayListOf<ReservedRestaurant>()
 
     }
 
@@ -226,6 +227,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
     override fun onYesButtonClick(id: Int) {
         // 확인 버튼이 눌렸을 때의 동작 처리
         showReservationDialog(context, rName, rTimeIdx)
+        myPageRestaurantList.add(ReservedRestaurant(rName.restaurantName, 0, rTimeIdx))
     }
 
     override fun onCancelButtonClick() {

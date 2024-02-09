@@ -1,7 +1,8 @@
 package com.example.mariajeu
 
 data class Restaurant(
-    var restaurantName: String
+    var restaurantName: String,
+    var restaurantIdx: Int
 //    var restaurantImg: String,
 //    var isCorkCharge: Boolean,
 //    var restaurantDescription: String,

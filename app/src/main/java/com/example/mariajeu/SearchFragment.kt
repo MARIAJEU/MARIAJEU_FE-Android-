@@ -42,16 +42,16 @@ class SearchFragment : Fragment() {
 
         fun setValues() {
             /* 예시 데이터 */
-            restaurantList.add(Restaurant("마리아주"))
-            restaurantList.add(Restaurant("AOS"))
-            restaurantList.add(Restaurant("안드로이드 파이팅"))
-            restaurantList.add(Restaurant("인하대 맛집"))
-            restaurantList.add(Restaurant("아주대 맛집"))
-            restaurantList.add(Restaurant("인하대 와인"))
-            restaurantList.add(Restaurant("아주대 와인"))
-            restaurantList.add(Restaurant("미테펍"))
-            restaurantList.add(Restaurant("와인파인"))
-            restaurantList.add(Restaurant("옐로퍼플"))
+            restaurantList.add(Restaurant("마리아주", 0))
+            restaurantList.add(Restaurant("AOS", 1))
+            restaurantList.add(Restaurant("안드로이드 파이팅", 2))
+            restaurantList.add(Restaurant("인하대 맛집", 3))
+            restaurantList.add(Restaurant("아주대 맛집", 4))
+            restaurantList.add(Restaurant("인하대 와인", 5))
+            restaurantList.add(Restaurant("아주대 와인", 6))
+            restaurantList.add(Restaurant("미테펍", 7))
+            restaurantList.add(Restaurant("와인파인", 8))
+            restaurantList.add(Restaurant("옐로퍼플", 9))
             Log.d("TEST레스토랑TEST", "Size: ${restaurantList.size}")
 
             val adapter = RestaurantAdapter(requireContext(),restaurantList)

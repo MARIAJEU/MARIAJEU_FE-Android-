@@ -1,6 +1,7 @@
 package com.example.mariajeu
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,16 +32,8 @@ class LikeAdapter(private val context: Context, private val likeList: ArrayList<
             val restaurantPrice = view.findViewById<TextView>(R.id.tv_listview_price)
             val restaurantLocation = view.findViewById<TextView>(R.id.tv_listview_location)
 
-            // * 찜 취소 버튼 * //
-            val btnDeleteHeart = view.findViewById<Button>(R.id.btn_delete_like)
             val tvLikeNone = view.findViewById<TextView>(R.id.tv_like_none)
             val tvLikeNone2 = view.findViewById<TextView>(R.id.tv_like_none2)
-
-            btnDeleteHeart.setOnClickListener {
-                RestaurantAdapter.likeRestaurantList.removeAt(position)
-                notifyDataSetChanged()
-            }
-
 
         }
 
