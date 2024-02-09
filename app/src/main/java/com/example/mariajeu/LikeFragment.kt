@@ -12,6 +12,10 @@ class LikeFragment : Fragment() {
     private lateinit var binding: FragmentLikeBinding
     private lateinit var mainActivity: MainActivity
 
+    companion object {
+
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +56,11 @@ class LikeFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mainActivity = context as MainActivity
+    }
+
+    fun updateLikeRestaurantList(likeList: ArrayList<Restaurant>) {
+        RestaurantAdapter.likeRestaurantList.clear()
+        RestaurantAdapter.likeRestaurantList.addAll(likeList)
     }
 
 }

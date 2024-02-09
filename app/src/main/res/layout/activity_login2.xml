@@ -110,12 +110,25 @@
     <ImageButton
         android:layout_width="10.77dp"
         android:layout_height="10.77dp"
-        android:id="@+id/btn_check_name"
+        android:id="@+id/btn_check_name_off"
         app:layout_constraintStart_toStartOf="@+id/iv_name"
         app:layout_constraintTop_toBottomOf="@id/iv_nickname"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/ib_logincheck">
+        android:src="@drawable/ib_logincheck"
+        android:visibility="visible">
+    </ImageButton>
+
+    <ImageButton
+        android:layout_width="10.77dp"
+        android:layout_height="10.77dp"
+        android:id="@+id/btn_check_name_on"
+        app:layout_constraintStart_toStartOf="@+id/iv_name"
+        app:layout_constraintTop_toBottomOf="@id/iv_nickname"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ib_logincheck_on"
+        android:visibility="gone">
     </ImageButton>
 
     <ImageButton

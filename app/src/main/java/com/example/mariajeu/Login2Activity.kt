@@ -45,10 +45,22 @@ class Login2Activity : AppCompatActivity() {
         }
 
         // 체크 버튼 눌렀을 때 -> 이름으로 닉네임이 설정됨
-        binding.btnCheckName.setOnClickListener {
+        binding.btnCheckNameOff.setOnClickListener {
+            binding.btnCheckNameOff.visibility = View.GONE
+            binding.btnCheckNameOn.visibility = View.VISIBLE
+
             val userName = intent.getStringExtra("이름")
             Log.d("TEST전달TEST전달", userName.toString())
             binding.etNickname.setText(userName.toString())
+        }
+
+        binding.btnCheckNameOn.setOnClickListener {
+            binding.btnCheckNameOff.visibility = View.VISIBLE
+            binding.btnCheckNameOn.visibility = View.GONE
+
+            val userName = intent.getStringExtra("이름")
+            Log.d("TEST전달TEST전달", userName.toString())
+            binding.etNickname.setText("")
         }
 
     }

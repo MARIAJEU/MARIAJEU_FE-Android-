@@ -60,6 +60,8 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
     fun isRestaurantLiked(restaurant: Restaurant): Boolean {
         return likeRestaurantList.any { it.restaurantName == restaurant.restaurantName }
     }
+
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
 
         var view = convertView

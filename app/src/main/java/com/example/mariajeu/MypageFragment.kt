@@ -1,5 +1,6 @@
 package com.example.mariajeu
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +11,32 @@ import com.example.mariajeu.databinding.FragmentMypageBinding
 class MypageFragment : Fragment() {
 
     lateinit var binding: FragmentMypageBinding
+    lateinit var mainActivity: MainActivity
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = FragmentMypageBinding.inflate(layoutInflater)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMypageBinding.inflate(inflater, container, false)
+        var likeRestaurantList = RestaurantAdapter.likeRestaurantList
+
+        fun setValues() {
+            val adapter = LikeAdapter(requireContext(), likeRestaurantList)
+            binding.lvMypage.adapter = adapter
+        }
+
+        setValues()
         return binding.root
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mainActivity = context as MainActivity
     }
 
 
