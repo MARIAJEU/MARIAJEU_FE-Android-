@@ -88,6 +88,7 @@
             <android.widget.Button
                 android:layout_width="80dp"
                 android:layout_height="30dp"
+                android:id="@+id/btn_cancel_reservation"
                 android:text="취소하기"
                 android:textSize="7sp"/>
 

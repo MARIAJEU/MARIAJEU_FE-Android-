@@ -33,6 +33,11 @@ class MyPageAdapter(private val context: Context, private val myPageList: ArrayL
             }
 
             val restaurantImg = view.findViewById<ImageView>(R.id.lv_mypage_img)
+            val btnCancel = view.findViewById<Button>(R.id.btn_cancel_reservation)
+
+            btnCancel.setOnClickListener {
+                //TODO 예약 취소 버튼 눌렀을 때 이벤트 처리
+            }
 
         }
 

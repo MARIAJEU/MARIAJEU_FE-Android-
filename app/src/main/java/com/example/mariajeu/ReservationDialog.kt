@@ -5,11 +5,9 @@ import android.content.Context
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
-class ReservationDialog(context: Context, private val listener: RestaurantAdapter) : Dialog(context) {
+class ReservationDialog(context: Context, private val listener: FragmentManager, private val fragmentManager: RestaurantAdapter) : Dialog(context) {
 
     companion object {
         lateinit var btnGoback: ImageButton
@@ -38,16 +36,12 @@ class ReservationDialog(context: Context, private val listener: RestaurantAdapte
 
         btnGoback.setOnClickListener {
             Log.d("ReservationDialog", "btnGoback clicked")
-            listener.onCancelButtonClick()
             dismiss()
         }
 
         btnMyPage.setOnClickListener {
             Log.d("ReservationDialog", "btnMyPage clicked")
-            listener.onYesButtonClick(1)
-            RestaurantAdapter.changeMyPageFragment(context, myPageFragment)
             dismiss()
-
         }
 
     }
