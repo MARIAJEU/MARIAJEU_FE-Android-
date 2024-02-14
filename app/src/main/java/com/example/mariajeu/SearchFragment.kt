@@ -9,12 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.PopupWindow
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import com.example.mariajeu.databinding.FragmentSearchBinding
-import com.example.mariajeu.Restaurant
 
 class SharedViewModel : ViewModel() {
     var btnHeartClikedInfo: String? = null
@@ -38,20 +36,20 @@ class SearchFragment : Fragment() {
     ): View? {
 
         binding = FragmentSearchBinding.inflate(inflater, container, false)
-        var restaurantList = arrayListOf<Restaurant>() // 리스트뷰를 위해 생성
+        var restaurantList = arrayListOf<RestaurantDTO>() // 리스트뷰를 위해 생성
 
         fun setValues() {
             /* 예시 데이터 */
-            restaurantList.add(Restaurant("마리아주", 0))
-            restaurantList.add(Restaurant("AOS", 1))
-            restaurantList.add(Restaurant("안드로이드 파이팅", 2))
-            restaurantList.add(Restaurant("인하대 맛집", 3))
-            restaurantList.add(Restaurant("아주대 맛집", 4))
-            restaurantList.add(Restaurant("인하대 와인", 5))
-            restaurantList.add(Restaurant("아주대 와인", 6))
-            restaurantList.add(Restaurant("미테펍", 7))
-            restaurantList.add(Restaurant("와인파인", 8))
-            restaurantList.add(Restaurant("옐로퍼플", 9))
+            restaurantList.add(RestaurantDTO("마리아주", 0))
+            restaurantList.add(RestaurantDTO("AOS", 1))
+            restaurantList.add(RestaurantDTO("안드로이드 파이팅", 2))
+            restaurantList.add(RestaurantDTO("인하대 맛집", 3))
+            restaurantList.add(RestaurantDTO("아주대 맛집", 4))
+            restaurantList.add(RestaurantDTO("인하대 와인", 5))
+            restaurantList.add(RestaurantDTO("아주대 와인", 6))
+            restaurantList.add(RestaurantDTO("미테펍", 7))
+            restaurantList.add(RestaurantDTO("와인파인", 8))
+            restaurantList.add(RestaurantDTO("옐로퍼플", 9))
             Log.d("TEST레스토랑TEST", "Size: ${restaurantList.size}")
 
             val adapter = RestaurantAdapter(requireContext(),restaurantList)

@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
 
-class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<Restaurant>): BaseAdapter(), RestaurantTimeDialogInterface {
+class RestaurantAdapter(private val context: Context, private val restaurantList: ArrayList<RestaurantDTO>): BaseAdapter(), RestaurantTimeDialogInterface {
 
     companion object {
         fun changeMyPageFragment(context: Context, fragment: Fragment) {
@@ -39,13 +39,13 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         }
 
         // 전역 변수로 설정한 이유 - LikeAdapter에서 받아서 사용하기 위해서 (그래야 fragment 넘겼을 때 배열 형태로 받아올 수 있음)
-        var likeRestaurantList = arrayListOf<Restaurant>()
+        var likeRestaurantList = arrayListOf<RestaurantDTO>()
         var myPageRestaurantList = arrayListOf<ReservedRestaurant>()
 
     }
 
     // postion에 위치한 데이터를 화면에 출력하는 데 사용되는 view를 리턴해줌
-    private lateinit var rName: Restaurant
+    private lateinit var rName: RestaurantDTO
     private var rTimeIdx by Delegates.notNull<Int>()
     private val btnHeartClickState = mutableMapOf<Int, Boolean>()
 
@@ -57,7 +57,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
     }
 
     // 중복 검사하는 함수 (likeRestaurant에서 이미 즐겨찾기 추가한 매장인지)
-    fun isRestaurantLiked(restaurant: Restaurant): Boolean {
+    fun isRestaurantLiked(restaurant: RestaurantDTO): Boolean {
         return likeRestaurantList.any { it.restaurantName == restaurant.restaurantName }
     }
 
@@ -189,7 +189,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         return view
     }
 
-    private fun showRestaurantDialog(restaurant: Restaurant, idx: Int) {
+    private fun showRestaurantDialog(restaurant: RestaurantDTO, idx: Int) {
 
         val restaurantTimeDialog = RestaurantTimeDialog(context, this)
         Log.d("TEST 네임", restaurant.restaurantName)
@@ -215,7 +215,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         return restaurantList.size
     }
 
-    override fun getItem(p0: Int): Restaurant {
+    override fun getItem(p0: Int): RestaurantDTO {
         return restaurantList[p0]
     }
 
@@ -233,7 +233,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         // 취소 버튼이 눌렸을 때의 동작 처리
     }
 
-    private fun showReservationDialog(context: Context, restaurant: Restaurant, idx: Int) {
+    private fun showReservationDialog(context: Context, restaurant: RestaurantDTO, idx: Int) {
         Log.d("ReservationDialog", "Context type: ${context::class.java}")
 
         // Dialog 객체 생성

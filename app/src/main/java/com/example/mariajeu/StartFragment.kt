@@ -29,6 +29,11 @@ class StartFragment : Fragment() {
 
     private var selectedView: View? = null
 
+//    companion object {
+//        lateinit var startBtnLogin
+//
+//    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

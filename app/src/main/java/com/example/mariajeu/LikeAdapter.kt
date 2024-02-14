@@ -1,17 +1,15 @@
 package com.example.mariajeu
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 
-class LikeAdapter(private val context: Context, private val likeList: ArrayList<Restaurant>): BaseAdapter() {
+class LikeAdapter(private val context: Context, private val likeList: ArrayList<RestaurantDTO>): BaseAdapter() {
     private lateinit var lName: LikeRestaurant
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
@@ -20,7 +18,7 @@ class LikeAdapter(private val context: Context, private val likeList: ArrayList<
         if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.listview_list_like, parent, false)
 
-            val likeRestaurant = getItem(position) as Restaurant
+            val likeRestaurant = getItem(position) as RestaurantDTO
             val likeRestaurantName = view!!.findViewById<TextView>(R.id.tv_listview_name)
             likeRestaurantName.text = likeRestaurant.restaurantName
 

@@ -58,7 +58,7 @@ class LikeFragment : Fragment() {
         mainActivity = context as MainActivity
     }
 
-    fun updateLikeRestaurantList(likeList: ArrayList<Restaurant>) {
+    fun updateLikeRestaurantList(likeList: ArrayList<RestaurantDTO>) {
         RestaurantAdapter.likeRestaurantList.clear()
         RestaurantAdapter.likeRestaurantList.addAll(likeList)
     }

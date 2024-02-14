@@ -1,6 +1,6 @@
 package com.example.mariajeu
 
-data class Restaurant(
+data class RestaurantDTO(
     var restaurantName: String,
     var restaurantIdx: Int
 //    var restaurantImg: String,
