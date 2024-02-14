@@ -6,13 +6,16 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mariajeu.databinding.ActivityLogin2Binding
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,7 +28,7 @@ class Login2Activity : AppCompatActivity() {
 
     lateinit var binding: ActivityLogin2Binding
     private lateinit var uri: Uri
-    var signup: SignUpDTO? = null
+    private val client = RetrofitInstance.getInstance().create(ApiService::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +48,6 @@ class Login2Activity : AppCompatActivity() {
             // Activity -> Fragment 전환??
 
             // 서버 연결
-            var signUpService: SignUpService = ServerConnection.retrofit.create(SignUpService::class.java)
 
             var userId = SignUpActivity.userId
             var password = SignUpActivity.password
@@ -59,19 +61,39 @@ class Login2Activity : AppCompatActivity() {
             var agreedToTerms2 = SignUpActivity.agreeCheck2
             var agreedToOptionalTerms = SignUpActivity.optionCheck
 
-            signUpService.requestSignUp(userId, password, name, emailAddr, nickname, agreedToTerms1, agreedToTerms2, agreedToOptionalTerms).enqueue(object: Callback<SignUpDTO> {
+            var signUpBody = SignUpDTO(userId, password, name, emailAddr, nickname, agreedToTerms1, agreedToTerms2, agreedToOptionalTerms)
+            CoroutineScope(Dispatchers.IO).launch {
+                client.signup(signUpBody).enqueue(object : Callback<ResponseBody> {
+                    override fun onResponse(
+                        call: Call<ResponseBody>,
+                        response: Response<ResponseBody>
+                    ) {
+                        if (response.isSuccessful) {
+                            Log.d("[ Sign up ] response is successful", response.body().toString())
+                        } else {
+                            Log.d("[ Sign up ] response is not successful", response.errorBody().toString())
+                        }
+                    }
 
-                override fun onFailure(call: Call<SignUpDTO>, t: Throwable) {
-                    Log.e("SIGN UP FAILURE",t.message.toString())
-                }
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        Log.d("[ Sign up ] connection failure", t.message.toString())
+                    }
 
-                override fun onResponse(call: Call<SignUpDTO>, response: Response<SignUpDTO>) {
-                    signup = response.body()
-                    Log.d("SIGN UP SUCCESS","msg : "+signup?.msg)
-                    Log.d("SIGN UP SUCCESS","code : "+signup?.code)
-                }
-            })
-            
+                })
+            }
+
+//            loginService.requestLogin(userId, password).enqueue(object: Callback<LoginDTO> {
+//                override fun onFailure(call: Call<LoginDTO>, t: Throwable) {
+//                    Log.e("LOGIN FAILURE",t.message.toString())
+//                }
+//
+//                override fun onResponse(call: Call<LoginDTO>, response: Response<LoginDTO>) {
+//                    login = response.body()
+//                    Log.d("LOGIN SUCCESS","msg : "+login?.msg)
+//                    Log.d("LOGIN SUCCESS","code : "+login?.code)
+//                }
+//            })
+//
             val login2Intent = Intent(this, MainActivity::class.java)
             login2Intent.putExtra("로그아웃으로", "logout")
             startActivity(login2Intent)

@@ -15,6 +15,10 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class LoginActivity : AppCompatActivity(){
 
     lateinit var binding: ActivityLoginBinding
-    var login: LoginDTO? = null
+    private val client = RetrofitInstance.getInstance().create(ApiService::class.java)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -40,12 +44,6 @@ class LoginActivity : AppCompatActivity(){
         /** KakoSDK init */
         KakaoSdk.init(this, this.getString(R.string.kakao_app_key))
 
-        // 서버 연동을 위한 세팅--------------------------------------------------
-
-        var loginService: LoginService = ServerConnection.retrofit.create(LoginService::class.java)
-
-        //---------------------------------------------------------------------
-
         binding.loginSignInTv.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
@@ -56,20 +54,31 @@ class LoginActivity : AppCompatActivity(){
         }
 
         binding.loginLoginBtn.setOnClickListener {
+            // 서버 연동을 위한 세팅--------------------------------------------------
             var userId = binding.loginIdEt.text.toString()
             var password = binding.loginPasswordEt.text.toString()
+            //---------------------------------------------------------------------
+            var loginBody = LoginDTO(userId, password)
+            CoroutineScope(Dispatchers.IO).launch {
+                client.login(loginBody).enqueue(object : Callback<ResponseBody> {
+                    override fun onResponse(
+                        call: Call<ResponseBody>,
+                        response: Response<ResponseBody>
+                    ) {
+                        if (response.isSuccessful) {
+                            Log.d("[ login ]response is successful", response.body().toString())
+                        } else {
+                            Log.d("[ login ] response is not successful", response.errorBody().toString())
+                        }
+                    }
 
-            loginService.requestLogin(userId, password).enqueue(object: Callback<LoginDTO> {
-                override fun onFailure(call: Call<LoginDTO>, t: Throwable) {
-                    Log.e("LOGIN FAILURE",t.message.toString())
-                }
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        Log.d("[ login ] connection failure", t.message.toString())
+                    }
 
-                override fun onResponse(call: Call<LoginDTO>, response: Response<LoginDTO>) {
-                    login = response.body()
-                    Log.d("LOGIN SUCCESS","msg : "+login?.msg)
-                    Log.d("LOGIN SUCCESS","code : "+login?.code)
-                }
-            })
+                })
+            }
+
         }
     }
 
