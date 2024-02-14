@@ -29,11 +29,6 @@ class StartFragment : Fragment() {
 
     private var selectedView: View? = null
 
-//    companion object {
-//        lateinit var startBtnLogin
-//
-//    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,17 +39,6 @@ class StartFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val startIntent : Intent = Intent()
-        val isLogin = startIntent.getStringExtra("success")
-
-        if (isLogin != null) {
-            val btnLogin = binding.startLoginTv
-            val btnLogout = binding.startLogoutTv
-
-            btnLogin.visibility = GONE
-            btnLogout.visibility = VISIBLE
-        }
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) { // activity A 호출 -> B 호출 -> A 호출 (결과값 반환) 시에 사용하는 함수
@@ -62,13 +46,13 @@ class StartFragment : Fragment() {
 
         Log.d("값 전달받기 성공", "성공")
 
-        val btnLogin = binding.startLoginTv
-        val btnLogout = binding.startLogoutTv
-
         // 로그인 성공 시, 로그인 -> 로그아웃 버튼으로 전환됨
         // ** 현재는 카카오톡 로그인 시에만 적용됨 ** //
-        btnLogin.visibility = GONE
-        btnLogout.visibility = VISIBLE
+
+        val mypageFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment // MypageFragment에 있는 함수 호출하기 위해 작성함
+
+        startLogin()
+        mypageFragment?.mypageLogin()
 
     }
 
@@ -77,8 +61,10 @@ class StartFragment : Fragment() {
 
         Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
 
-        val startLoginTextView = view.findViewById<TextView>(R.id.start_login_tv)
-        startLoginTextView.setOnClickListener {
+        var startBtnLogin = binding.startLoginTv
+        var startBtnLogout = binding.startLogoutTv
+
+        startBtnLogin.setOnClickListener {
             // 클릭 이벤트 발생 시 LoginActivity 로 전환
             val intent = Intent(activity, LoginActivity::class.java)
             intent.putExtra("로그인으로", "toLogin")
@@ -107,6 +93,16 @@ class StartFragment : Fragment() {
         }
 
         Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
+    }
+
+    fun startLogin() {
+        binding.startLoginTv.visibility = View.GONE
+        binding.startLogoutTv.visibility = View.VISIBLE
+    }
+
+    fun startLogout() {
+        binding.startLoginTv.visibility = View.VISIBLE
+        binding.startLogoutTv.visibility = View.GONE
     }
 
     private fun createChoiceTouchListener(choiceTextView: TextView): View.OnTouchListener {
@@ -140,8 +136,8 @@ class StartFragment : Fragment() {
     }
 
     private fun handleChoiceClickUp() {
-        binding.startMouseonExV.visibility = View.GONE
-        binding.startMouseonExTv.visibility = View.GONE
+        binding.startMouseonExV.visibility = GONE
+        binding.startMouseonExTv.visibility = GONE
     }
 
     private fun getClickedChoiceId(): Int {
@@ -163,13 +159,6 @@ class StartFragment : Fragment() {
         params.topToTop = clickedView.id
         binding.startMouseonExV.layoutParams = params
     }
-
-
-
-
-
-
-
 
     private fun handleViewClick(clickedView: View, clickedTextView: View) {
         // 기존에 선택된 뷰가 있으면 원래의 배경으로 되돌림

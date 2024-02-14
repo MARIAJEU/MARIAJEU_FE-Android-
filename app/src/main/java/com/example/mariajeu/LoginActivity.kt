@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity(){
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val toLogin = intent.getStringExtra("로그인으로")
+//        val toLogin = intent.getStringExtra("로그인으로")
 
         // 카카오톡 로그인 -------------------------------------------------------
 
@@ -67,6 +67,7 @@ class LoginActivity : AppCompatActivity(){
                     ) {
                         if (response.isSuccessful) {
                             Log.d("[ login ]response is successful", response.body().toString())
+
                         } else {
                             Log.d("[ login ] response is not successful", response.errorBody().toString())
                         }
@@ -78,6 +79,14 @@ class LoginActivity : AppCompatActivity(){
 
                 })
             }
+
+            val startFragment = supportFragmentManager.findFragmentById(R.id.start_fragment) as? StartFragment
+            val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
+
+            startFragment?.startLogin()
+            mypageFragment?.mypageLogin()
+
+            setLogin(true)
 
         }
     }

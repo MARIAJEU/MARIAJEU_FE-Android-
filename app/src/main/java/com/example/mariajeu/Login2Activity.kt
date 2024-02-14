@@ -82,6 +82,12 @@ class Login2Activity : AppCompatActivity() {
                 })
             }
 
+            val startFragment = supportFragmentManager.findFragmentById(R.id.start_fragment) as? StartFragment
+            val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
+
+            startFragment?.startLogin()
+            mypageFragment?.mypageLogin()
+
 //            loginService.requestLogin(userId, password).enqueue(object: Callback<LoginDTO> {
 //                override fun onFailure(call: Call<LoginDTO>, t: Throwable) {
 //                    Log.e("LOGIN FAILURE",t.message.toString())

@@ -19,7 +19,7 @@
         />
 
     <TextView
-        android:id="@+id/start_login_tv"
+        android:id="@+id/mypage_login_tv"
         android:layout_width="36dp"
         android:layout_height="14dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +32,7 @@
         />
 
     <TextView
-        android:id="@+id/start_logout_tv"
+        android:id="@+id/mypage_logout_tv"
         android:layout_width="wrap_content"
         android:layout_height="14dp"
         app:layout_constraintTop_toTopOf="parent"
