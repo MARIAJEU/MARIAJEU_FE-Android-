@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
@@ -238,7 +237,7 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         Log.d("ReservationDialog", "Context type: ${context::class.java}")
 
         // Dialog 객체 생성
-        val reservationDialog = ReservationDialog(context, this)
+        val reservationDialog = ReservationDialog(context)
 
         // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
         ReservationDialog.rName.text = restaurant.restaurantName

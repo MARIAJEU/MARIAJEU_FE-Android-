@@ -5,9 +5,8 @@ import android.content.Context
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.fragment.app.FragmentManager
 
-class ReservationDialog(context: Context, private val listener: FragmentManager, private val fragmentManager: RestaurantAdapter) : Dialog(context) {
+class ReservationDialog(context: Context) : Dialog(context) {
 
     companion object {
         lateinit var btnGoback: ImageButton
