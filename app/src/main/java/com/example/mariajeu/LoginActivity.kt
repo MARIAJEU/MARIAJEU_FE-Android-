@@ -41,11 +41,8 @@ class LoginActivity : AppCompatActivity(){
         KakaoSdk.init(this, this.getString(R.string.kakao_app_key))
 
         // 서버 연동을 위한 세팅--------------------------------------------------
-        var retrofit = Retrofit.Builder()
-            .baseUrl("http://172.30.1.50:8000") //TODO 서버 주소 수정 필요
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        var loginService: LoginService = retrofit.create(LoginService::class.java)
+
+        var loginService: LoginService = ServerConnection.retrofit.create(LoginService::class.java)
 
         //---------------------------------------------------------------------
 

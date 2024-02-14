@@ -13,6 +13,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -25,7 +26,20 @@ import kotlin.random.Random
 
 class SignUpActivity : AppCompatActivity() {
 
+
+
     lateinit var binding: ActivitySignupBinding
+
+    companion object {
+        lateinit var userId: String
+        lateinit var password: String
+        lateinit var username: String
+        lateinit var emailAddr: String
+
+        var agreeCheck1 = false
+        var agreeCheck2 = false
+        var optionCheck = false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +53,16 @@ class SignUpActivity : AppCompatActivity() {
 
         // 다음 버튼 눌렀을 때 프로필 사진 화면으로 전환
         binding.btnNext.setOnClickListener {
+
+            userId = binding.etInputId.text.toString()
+            password = binding.etInputPwd.text.toString()
+            username = binding.etName.text.toString()
+            emailAddr = binding.etEmail.text.toString()
+
             val gpsVersion = packageManager.getPackageInfo(GoogleApiAvailability.GOOGLE_PLAY_SERVICES_PACKAGE, 0).versionCode
             Log.d("TEST버젼체크TEST버젼체크", gpsVersion.toString())
+
+            // 필수 정보 기입 안 했을 시 다음 화면으로 안 넘어가도록 함
             if (binding.etInputId.text.toString().isEmpty()) {
                 binding.tvEssentialInfo.visibility = View.VISIBLE
             }
@@ -59,7 +81,7 @@ class SignUpActivity : AppCompatActivity() {
             val phoneNumber = binding.etInputPhone.text.toString()
             Log.d("TEST전번TEST전번", phoneNumber)
 
-            sendSmsMessage(this,  phoneNumber, randomNum.toString())
+            sendSmsMessage(this,  phoneNumber, "[마리아주 본인 확인] 인증번호: $randomNum")
         }
 
         binding.btnConfirm.setOnClickListener {
@@ -114,6 +136,9 @@ class SignUpActivity : AppCompatActivity() {
 
             binding.btnPersoninfoOff.visibility = View.GONE
             binding.btnPersoninfoOn.visibility = View.VISIBLE
+
+            agreeCheck1 = true
+            agreeCheck2 = true
         }
 
         binding.btnAllOn.setOnClickListener {
@@ -125,36 +150,51 @@ class SignUpActivity : AppCompatActivity() {
 
             binding.btnPersoninfoOff.visibility = View.VISIBLE
             binding.btnPersoninfoOn.visibility = View.GONE
+
+            agreeCheck1 = false
+            agreeCheck2 = false
         }
 
         binding.btnYakgwanOff.setOnClickListener {
             binding.btnYakgwanOff.visibility = View.GONE
             binding.btnYakgwanOn.visibility = View.VISIBLE
+
+            agreeCheck1 = true
         }
 
         binding.btnYakgwanOn.setOnClickListener {
             binding.btnYakgwanOff.visibility = View.VISIBLE
             binding.btnYakgwanOn.visibility = View.GONE
+
+            agreeCheck1 = false
         }
 
         binding.btnPersoninfoOff.setOnClickListener {
             binding.btnPersoninfoOff.visibility = View.GONE
             binding.btnPersoninfoOn.visibility = View.VISIBLE
+
+            agreeCheck2 = true
         }
 
         binding.btnPersoninfoOn.setOnClickListener {
             binding.btnPersoninfoOff.visibility = View.VISIBLE
             binding.btnPersoninfoOn.visibility = View.GONE
+
+            agreeCheck2 = false
         }
 
         binding.btnCertificationOff.setOnClickListener {
             binding.btnCertificationOff.visibility = View.GONE
             binding.btnCertificationOn.visibility = View.VISIBLE
+
+            optionCheck = true
         }
 
         binding.btnCertificationOn.setOnClickListener {
             binding.btnCertificationOff.visibility = View.VISIBLE
             binding.btnCertificationOn.visibility = View.GONE
+
+            optionCheck = false
         }
 
         //-----------------------------------------------------------------------
@@ -202,8 +242,10 @@ class SignUpActivity : AppCompatActivity() {
                     deliveredIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_DELIVERED"), PendingIntent.FLAG_IMMUTABLE)
                 } else {
                     // 타겟 31 미만
-                    sendIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_SENT"), 0)
-                    deliveredIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_DELIVERED"), 0)
+                    sendIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_SENT"),
+                        PendingIntent.FLAG_IMMUTABLE)
+                    deliveredIntent = PendingIntent.getBroadcast(mContext, 0, Intent("SMS_DELIVERED"),
+                        PendingIntent.FLAG_IMMUTABLE)
                 }
 
                 val smsManager = SmsManager.getDefault()

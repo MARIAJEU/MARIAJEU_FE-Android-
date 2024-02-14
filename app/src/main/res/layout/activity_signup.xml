@@ -270,6 +270,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_email"
                     android:inputType="textEmailAddress"
                     android:layout_marginTop="325dp"
                     android:layout_marginLeft="50dp"

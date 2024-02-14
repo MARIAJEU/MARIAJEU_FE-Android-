@@ -6,12 +6,16 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mariajeu.databinding.ActivityLogin2Binding
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -21,6 +25,7 @@ class Login2Activity : AppCompatActivity() {
 
     lateinit var binding: ActivityLogin2Binding
     private lateinit var uri: Uri
+    var signup: SignUpDTO? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +43,35 @@ class Login2Activity : AppCompatActivity() {
         binding.ivRegister.setOnClickListener {
 //            imageUpload(uri)
             // Activity -> Fragment 전환??
+
+            // 서버 연결
+            var signUpService: SignUpService = ServerConnection.retrofit.create(SignUpService::class.java)
+
+            var userId = SignUpActivity.userId
+            var password = SignUpActivity.password
+            var name = SignUpActivity.username
+            var emailAddr = SignUpActivity.emailAddr
+            var nickname = binding.etNickname.text.toString()
+
+            Log.d("회원가입테스투", emailAddr)
+
+            var agreedToTerms1 = SignUpActivity.agreeCheck1
+            var agreedToTerms2 = SignUpActivity.agreeCheck2
+            var agreedToOptionalTerms = SignUpActivity.optionCheck
+
+            signUpService.requestSignUp(userId, password, name, emailAddr, nickname, agreedToTerms1, agreedToTerms2, agreedToOptionalTerms).enqueue(object: Callback<SignUpDTO> {
+
+                override fun onFailure(call: Call<SignUpDTO>, t: Throwable) {
+                    Log.e("SIGN UP FAILURE",t.message.toString())
+                }
+
+                override fun onResponse(call: Call<SignUpDTO>, response: Response<SignUpDTO>) {
+                    signup = response.body()
+                    Log.d("SIGN UP SUCCESS","msg : "+signup?.msg)
+                    Log.d("SIGN UP SUCCESS","code : "+signup?.code)
+                }
+            })
+            
             val login2Intent = Intent(this, MainActivity::class.java)
             login2Intent.putExtra("로그아웃으로", "logout")
             startActivity(login2Intent)
