@@ -290,7 +290,7 @@
             app:layout_constraintStart_toStartOf="@id/filter_region_sec3_confirm_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
-            android:text="확인"
+            android:text="적용"
             android:textSize="12dp"
             android:gravity="center_horizontal|top"
             />
@@ -315,7 +315,7 @@
             app:layout_constraintStart_toStartOf="@id/filter_region_sec3_cancel_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
-            android:text="취소"
+            android:text="닫기"
             android:textSize="12dp"
             android:textColor="@color/white"
             android:gravity="center_horizontal|top"

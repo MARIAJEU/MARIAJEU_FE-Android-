@@ -61,6 +61,217 @@
             />
 
 
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/filter_mood_sec3_confirm_v"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/filter_map_sec2_iv"
+                android:layout_width="100.36dp"
+                android:layout_height="95.38dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/light_gray" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/filter_map_sec2_name_tv"
+                        android:text="매장 이름"
+                        android:textColor="@color/black"
+                        android:textSize="11.612dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <android.widget.Button
+                        android:layout_width="51.42dp"
+                        android:layout_height="9.95dp"
+                        android:id="@+id/filter_map_sec2_corkcarge_btn"
+                        android:background="@drawable/ib_listview_corkcharge"
+                        android:text="콜키지 비용 무료"
+                        android:textColor="#B51D1D"
+                        android:textSize="6.635dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/filter_map_sec2_heart_ibtn"
+                        android:layout_width="13.27dp"
+                        android:layout_height="13.27dp"
+                        android:src="@drawable/ib_heart"
+                        android:background="@color/transparent"
+                        android:layout_marginTop="11dp"
+                        android:layout_gravity="right"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/filter_map_sec2_description_tv"
+                    android:text="매장 소개(솰라솰라. 프리미엄 스테이크 다이닝 바.)"
+                    android:textSize="7sp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp">
+
+                    <ImageView
+                        android:id="@+id/filter_map_sec2_star_iv"
+                        android:layout_width="8.29dp"
+                        android:layout_height="8.29dp"
+                        android:src="@drawable/iv_star"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/filter_map_sec2_star_rate_tv"
+                        android:text="4.5"
+                        android:textSize="7sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/filter_map_sec2_review_tv"
+                        android:text="(200)"
+                        android:textSize="7sp"
+                        android:layout_marginLeft="3dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp">
+
+                    <ImageView
+                        android:layout_width="6.64dp"
+                        android:layout_height="9.12dp"
+                        android:src="@drawable/iv_my_location"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="내 위치에서"
+                        android:textSize="7sp"
+                        android:layout_marginLeft="3dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/filter_map_sec2_mylocation_tv"
+                        android:text="300m"
+                        android:textColor="#8B1A10"
+                        android:textSize="7sp"
+                        android:layout_marginLeft="2dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/filter_map_sec2_location_tv"
+                    android:text="다이닝바 - 강남"
+                    android:textSize="7sp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/filter_map_sec2_price_tv"
+                    android:text="점심 2~5만원, 저녁 5~8만원"
+                    android:textSize="7sp"
+                    android:layout_marginLeft="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:orientation="horizontal">
+
+                    <android.widget.Button
+                        android:layout_width="41.47dp"
+                        android:layout_height="12.44dp"
+                        android:id="@+id/filter_map_sec2_time_01_btn"
+                        android:background="@drawable/ib_listview_reservation"
+                        android:text="오후 6:00"
+                        android:textSize="7.465dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <android.widget.Button
+                        android:layout_width="41.47dp"
+                        android:layout_height="12.44dp"
+                        android:id="@+id/filter_map_sec2_time_02_btn"
+                        android:background="@drawable/ib_listview_reservation"
+                        android:text="오후 6:30"
+                        android:textSize="7.465dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <android.widget.Button
+                        android:layout_width="41.47dp"
+                        android:layout_height="12.44dp"
+                        android:id="@+id/filter_map_sec2_time_03_btn"
+                        android:background="@drawable/ib_listview_reservation"
+                        android:text="오후 7:00"
+                        android:textSize="7.465dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <android.widget.Button
+                        android:layout_width="41.47dp"
+                        android:layout_height="12.44dp"
+                        android:id="@+id/filter_map_sec2_time_04_btn"
+                        android:background="@drawable/ib_listview_reservation"
+                        android:text="오후 7:30"
+                        android:textSize="7.465dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <android.widget.Button
+                        android:layout_width="41.47dp"
+                        android:layout_height="12.44dp"
+                        android:id="@+id/filter_map_sec2_time_05_btn"
+                        android:background="@drawable/ib_listview_reservation"
+                        android:text="오후 8:00"
+                        android:textSize="7.465dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
 
 
 
@@ -84,7 +295,7 @@
             app:layout_constraintStart_toStartOf="@id/filter_mood_sec3_confirm_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
-            android:text="확인"
+            android:text="닫기"
             android:textSize="12dp"
             android:gravity="center_horizontal|top"
             />
@@ -109,7 +320,7 @@
             app:layout_constraintStart_toStartOf="@id/filter_mood_sec3_cancel_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
-            android:text="취소"
+            android:text="적용"
             android:textSize="12dp"
             android:textColor="@color/white"
             android:gravity="center_horizontal|top"
