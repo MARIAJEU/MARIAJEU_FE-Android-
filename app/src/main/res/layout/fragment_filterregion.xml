@@ -118,8 +118,8 @@
 
                 <TextView
                     android:id="@+id/filter_region_sec2_right_01_tv"
-                    android:layout_width="67dp"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginStart="16dp"
@@ -131,8 +131,8 @@
 
                 <TextView
                     android:id="@+id/filter_region_sec2_right_02_tv"
-                    android:layout_width="67dp"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_01_tv"
                     android:layout_marginStart="16dp"
@@ -144,8 +144,8 @@
 
                 <TextView
                     android:id="@+id/filter_region_sec2_right_03_tv"
-                    android:layout_width="67dp"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_02_tv"
                     android:layout_marginStart="16dp"
@@ -157,8 +157,8 @@
 
                 <TextView
                     android:id="@+id/filter_region_sec2_right_04_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_03_tv"
                     android:layout_marginStart="16dp"
@@ -169,8 +169,8 @@
                     />
                 <TextView
                     android:id="@+id/filter_region_sec2_right_05_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_04_tv"
                     android:layout_marginStart="16dp"
@@ -181,8 +181,8 @@
                     />
                 <TextView
                     android:id="@+id/filter_region_sec2_right_06_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_05_tv"
                     android:layout_marginStart="16dp"
@@ -194,8 +194,8 @@
 
                 <TextView
                     android:id="@+id/filter_region_sec2_right_07_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_06_tv"
                     android:layout_marginStart="16dp"
@@ -206,8 +206,8 @@
                     />
                 <TextView
                     android:id="@+id/filter_region_sec2_right_08_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_07_tv"
                     android:layout_marginStart="16dp"
@@ -218,8 +218,8 @@
                     />
                 <TextView
                     android:id="@+id/filter_region_sec2_right_09_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_08_tv"
                     android:layout_marginStart="16dp"
@@ -230,8 +230,8 @@
                     />
                 <TextView
                     android:id="@+id/filter_region_sec2_right_10_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_09_tv"
                     android:layout_marginStart="16dp"
@@ -242,8 +242,8 @@
                     />
                 <TextView
                     android:id="@+id/filter_region_sec2_right_11_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_10_tv"
                     android:layout_marginStart="16dp"
@@ -254,8 +254,8 @@
                     />
                 <TextView
                     android:id="@+id/filter_region_sec2_right_12_tv"
-                    android:layout_width="67dp"
-                    android:layout_height="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/filter_region_sec2_right_11_tv"
                     android:layout_marginStart="16dp"
