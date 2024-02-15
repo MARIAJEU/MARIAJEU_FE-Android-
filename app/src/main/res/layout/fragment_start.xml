@@ -72,7 +72,7 @@
             app:layout_constraintTop_toBottomOf="@id/start_english_logo_tv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="'나에게 맞는 와인 안주 추천 서비스'"
+            android:text="'당신을 위한 와인 안주 추천 서비스'"
             android:textSize="14dp"
             android:gravity="top|center"
             />
