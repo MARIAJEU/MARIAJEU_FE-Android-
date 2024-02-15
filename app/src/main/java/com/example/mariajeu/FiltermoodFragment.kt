@@ -1,4 +1,6 @@
 package com.example.mariajeu
 
-class FiltermoodFragment {
+import androidx.fragment.app.Fragment
+
+class FiltermoodFragment : Fragment() {
 }

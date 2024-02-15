@@ -1,4 +1,6 @@
 package com.example.mariajeu
 
-class FiltermapFragment {
+import androidx.fragment.app.Fragment
+
+class FiltermapFragment  : Fragment(){
 }

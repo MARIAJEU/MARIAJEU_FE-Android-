@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filter_date_constraintlayout"
     >
 
     <TextView
@@ -98,7 +99,6 @@
         android:text="1명"
         android:textColor="@color/black"
         android:textSize="8.504dp"
-        android:elevation="10dp"
         />
 
 
@@ -123,7 +123,6 @@
         android:text="2명"
         android:textColor="@color/white"
         android:textSize="8.504dp"
-        android:elevation="10dp"
         />
 
     <View
@@ -146,7 +145,6 @@
         app:layout_constraintBottom_toBottomOf="@id/filter_date_sec_2_per_03_v"
         android:text="3명"
         android:textSize="8.504dp"
-        android:elevation="10dp"
         />
 
     <View
@@ -169,7 +167,6 @@
         app:layout_constraintBottom_toBottomOf="@id/filter_date_sec_2_per_04_v"
         android:text="4명"
         android:textSize="8.504dp"
-        android:elevation="10dp"
         />
 
     <View
@@ -192,7 +189,6 @@
         app:layout_constraintBottom_toBottomOf="@id/filter_date_sec_2_per_05_v"
         android:text="5명"
         android:textSize="8.504dp"
-        android:elevation="10dp"
         />
 
     <View
@@ -215,7 +211,6 @@
         app:layout_constraintBottom_toBottomOf="@id/filter_date_sec_2_per_06_v"
         android:text="6명"
         android:textSize="8.504dp"
-        android:elevation="10dp"
         />
 
     <View
@@ -238,7 +233,6 @@
         app:layout_constraintBottom_toBottomOf="@id/filter_date_sec_2_per_07_v"
         android:text="7명"
         android:textSize="8.504dp"
-        android:elevation="10dp"
         />
 
 
