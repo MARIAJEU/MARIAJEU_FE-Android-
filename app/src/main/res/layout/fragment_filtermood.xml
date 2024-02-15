@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:id="@+id/filter_mood_constraintlayout">
 
         <TextView
             android:id="@+id/filter_mood_sec1_region_tv"
@@ -351,17 +352,17 @@
 
 
         <View
-            android:id="@+id/filter_mood_sec3_confirm_v"
-            android:layout_width="156dp"
-            android:layout_height="37dp"
-            app:layout_constraintTop_toBottomOf="@id/filter_mood_sec3_v"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="44dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="163dp"
-            android:background="@drawable/filter_region_rectangle_8"
-            />
+        android:id="@+id/filter_mood_sec3_confirm_v"
+        android:layout_width="156dp"
+        android:layout_height="37dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="44dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="719dp"
+        android:background="@drawable/filter_region_rectangle_8"
+        />
         <TextView
             android:id="@+id/filter_mood_sec3_confirm_tv"
             android:layout_width="41dp"
@@ -370,7 +371,7 @@
             app:layout_constraintStart_toStartOf="@id/filter_mood_sec3_confirm_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
-            android:text="적용"
+            android:text="닫기"
             android:textSize="12dp"
             android:gravity="center_horizontal|top"
             />
@@ -379,12 +380,12 @@
             android:id="@+id/filter_mood_sec3_cancel_v"
             android:layout_width="156dp"
             android:layout_height="37dp"
-            app:layout_constraintTop_toBottomOf="@id/filter_mood_sec3_v"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="44dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="163dp"
+            android:layout_marginTop="719dp"
             android:background="@drawable/filter_region_rectangle_9"
             />
         <TextView
@@ -395,7 +396,7 @@
             app:layout_constraintStart_toStartOf="@id/filter_mood_sec3_cancel_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
-            android:text="닫기"
+            android:text="적용"
             android:textSize="12dp"
             android:textColor="@color/white"
             android:gravity="center_horizontal|top"
