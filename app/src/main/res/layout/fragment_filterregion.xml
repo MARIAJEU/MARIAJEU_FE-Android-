@@ -272,7 +272,7 @@
 
 
         <View
-            android:id="@+id/filter_region_sec3_confirm_v"
+            android:id="@+id/filter_region_sec3_cancel_v"
             android:layout_width="156dp"
             android:layout_height="37dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -284,11 +284,11 @@
             android:background="@drawable/filter_region_rectangle_8"
             />
         <TextView
-            android:id="@+id/filter_region_sec3_confirm_tv"
+            android:id="@+id/filter_region_sec3_cancel_tv"
             android:layout_width="41dp"
             android:layout_height="15dp"
-            app:layout_constraintTop_toTopOf="@id/filter_region_sec3_confirm_v"
-            app:layout_constraintStart_toStartOf="@id/filter_region_sec3_confirm_v"
+            app:layout_constraintTop_toTopOf="@id/filter_region_sec3_cancel_v"
+            app:layout_constraintStart_toStartOf="@id/filter_region_sec3_cancel_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
             android:text="닫기"
@@ -297,7 +297,7 @@
             />
 
         <View
-            android:id="@+id/filter_region_sec3_cancel_v"
+            android:id="@+id/filter_region_sec3_confirm_v"
             android:layout_width="156dp"
             android:layout_height="37dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -309,11 +309,11 @@
             android:background="@drawable/filter_region_rectangle_9"
             />
         <TextView
-            android:id="@+id/filter_region_sec3_cancel_tv"
+            android:id="@+id/filter_region_sec3_confirm_tv"
             android:layout_width="41dp"
             android:layout_height="15dp"
-            app:layout_constraintTop_toTopOf="@id/filter_region_sec3_cancel_v"
-            app:layout_constraintStart_toStartOf="@id/filter_region_sec3_cancel_v"
+            app:layout_constraintTop_toTopOf="@id/filter_region_sec3_confirm_v"
+            app:layout_constraintStart_toStartOf="@id/filter_region_sec3_confirm_v"
             android:layout_marginTop="11dp"
             android:layout_marginStart="58dp"
             android:text="적용"

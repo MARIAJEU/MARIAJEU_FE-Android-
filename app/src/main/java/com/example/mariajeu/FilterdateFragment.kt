@@ -28,6 +28,7 @@ class FilterdateFragment : Fragment() {
         return binding.root
 
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupDateChangeListener()
@@ -40,7 +41,6 @@ class FilterdateFragment : Fragment() {
 
 
     }
-
 
 
     private fun navigateToNextRegionFragment() {
