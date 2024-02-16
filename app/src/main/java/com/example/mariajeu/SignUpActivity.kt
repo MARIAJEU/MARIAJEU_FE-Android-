@@ -35,6 +35,7 @@ class SignUpActivity : AppCompatActivity() {
         lateinit var password: String
         lateinit var username: String
         lateinit var emailAddr: String
+        var phoneNum: String = ""
 
         var agreeCheck1 = false
         var agreeCheck2 = false

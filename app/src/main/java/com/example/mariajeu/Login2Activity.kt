@@ -53,6 +53,7 @@ class Login2Activity : AppCompatActivity() {
             var password = SignUpActivity.password
             var name = SignUpActivity.username
             var emailAddr = SignUpActivity.emailAddr
+            var phoneNum = SignUpActivity.phoneNum
             var nickname = binding.etNickname.text.toString()
 
             Log.d("회원가입테스투", emailAddr)
@@ -61,7 +62,11 @@ class Login2Activity : AppCompatActivity() {
             var agreedToTerms2 = SignUpActivity.agreeCheck2
             var agreedToOptionalTerms = SignUpActivity.optionCheck
 
-            var signUpBody = SignUpDTO(userId, password, name, emailAddr, nickname, agreedToTerms1, agreedToTerms2, agreedToOptionalTerms)
+            Log.d("fdfdfdf",
+                userId+password+name+emailAddr+phoneNum+nickname+agreedToTerms1+agreedToTerms2+agreedToOptionalTerms
+            )
+
+            var signUpBody = SignUpDTO(userId, password, name, emailAddr, "01011112222","111111",nickname, "ADMIN", agreedToTerms1, agreedToTerms2, agreedToOptionalTerms)
             CoroutineScope(Dispatchers.IO).launch {
                 client.signup(signUpBody).enqueue(object : Callback<ResponseBody> {
                     override fun onResponse(
@@ -69,9 +74,9 @@ class Login2Activity : AppCompatActivity() {
                         response: Response<ResponseBody>
                     ) {
                         if (response.isSuccessful) {
-                            Log.d("[ Sign up ] response is successful", response.body().toString())
+                            Log.d("successful", response.body().toString())
                         } else {
-                            Log.d("[ Sign up ] response is not successful", response.errorBody().toString())
+                            Log.d("not successful", response.errorBody()?.string()!!)
                         }
                     }
 
