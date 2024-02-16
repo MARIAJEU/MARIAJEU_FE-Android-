@@ -28,9 +28,13 @@ class FilterregionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        // 지역 클릭시
         setClickListeners()
 
+        // 닫기 클릭시
+        setRegionCancleClickListener()
+
+        // 적용 클릭시
         binding.filterRegionSec3ConfirmV.setOnClickListener {
             navigateToNextPriceFragment()
         }
@@ -48,6 +52,30 @@ class FilterregionFragment : Fragment() {
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
+
+
+    private fun setRegionCancleClickListener() {
+        binding.filterRegionSec3CancelV.setOnClickListener {
+            navigateToSearchFragment()
+        }
+
+        binding.filterRegionSec3CancelTv.setOnClickListener {
+            navigateToSearchFragment()
+        }
+    }
+
+    private fun navigateToSearchFragment() {
+        // Clear the entire back stack and navigate back to the SearchFragment
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        val searchFragment = SearchFragment()
+
+        // Replace the current fragment with the SearchFragment
+        fragmentManager.beginTransaction()
+            .replace(R.id.searchFragment_id, searchFragment)
+            .commit()
+    }
+
 
     private fun setClickListeners() {
         val textViews = arrayOf(
