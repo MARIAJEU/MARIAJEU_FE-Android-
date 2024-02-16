@@ -66,10 +66,10 @@ class LoginActivity : AppCompatActivity(){
                         response: Response<ResponseBody>
                     ) {
                         if (response.isSuccessful) {
-                            Log.d("[ login ]response is successful", response.body().toString())
+                            Log.d("login/response is successful", response.body()?.string()!!)
 
                         } else {
-                            Log.d("[ login ] response is not successful", response.errorBody().toString())
+                            Log.d("login/response is not successful", response.errorBody()?.string()!!)
                         }
                     }
 

@@ -35,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
         lateinit var password: String
         lateinit var username: String
         lateinit var emailAddr: String
-        var phoneNum: String = ""
+        lateinit var phoneNum: String
 
         var agreeCheck1 = false
         var agreeCheck2 = false
@@ -59,15 +59,27 @@ class SignUpActivity : AppCompatActivity() {
             password = binding.etInputPwd.text.toString()
             username = binding.etName.text.toString()
             emailAddr = binding.etEmail.text.toString()
+            phoneNum = binding.etInputPhone.text.toString()
 
             val gpsVersion = packageManager.getPackageInfo(GoogleApiAvailability.GOOGLE_PLAY_SERVICES_PACKAGE, 0).versionCode
             Log.d("TEST버젼체크TEST버젼체크", gpsVersion.toString())
 
+            if (userId.length < 5 || userId.length > 12) {
+                Toast.makeText(this, "아이디는 5~12자리여야 합니다", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (password.length < 8 || password.length > 16) {
+                // 비밀번호가 규칙에 맞지 않는 경우
+                Toast.makeText(this, "비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용해야 합니다.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             // 필수 정보 기입 안 했을 시 다음 화면으로 안 넘어가도록 함
-            if (binding.etInputId.text.toString().isEmpty()) {
+            if (userId.isEmpty()) {
                 binding.tvEssentialInfo.visibility = View.VISIBLE
             }
-            else if (binding.etInputPhone.text.toString().isEmpty()) {
+            else if (phoneNum.isEmpty()) {
                 binding.tvEssentialInfo2.visibility = View.VISIBLE
             }
             else {

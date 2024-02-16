@@ -3,7 +3,7 @@ package com.example.mariajeu
 import retrofit2.http.Field
 
 data class SignUpDTO(
-    val username: String,
+    val userName: String,
     val password: String,
     val name: String,
     val email: String,

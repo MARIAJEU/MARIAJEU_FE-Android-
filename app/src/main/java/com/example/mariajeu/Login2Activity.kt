@@ -12,9 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mariajeu.databinding.ActivityLogin2Binding
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import com.google.gson.JsonObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import okhttp3.MediaType
+import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -66,7 +69,10 @@ class Login2Activity : AppCompatActivity() {
                 userId+password+name+emailAddr+phoneNum+nickname+agreedToTerms1+agreedToTerms2+agreedToOptionalTerms
             )
 
-            var signUpBody = SignUpDTO(userId, password, name, emailAddr, "01011112222","111111",nickname, "ADMIN", agreedToTerms1, agreedToTerms2, agreedToOptionalTerms)
+//            var map = HashMap<String, SignUpDTO>()
+//            map["id"] = userId + ""
+
+            var signUpBody = SignUpDTO(userId, password, name, emailAddr, phoneNum,"111111", nickname, "ADMIN", agreedToTerms1, agreedToTerms2, agreedToOptionalTerms)
             CoroutineScope(Dispatchers.IO).launch {
                 client.signup(signUpBody).enqueue(object : Callback<ResponseBody> {
                     override fun onResponse(
@@ -74,7 +80,7 @@ class Login2Activity : AppCompatActivity() {
                         response: Response<ResponseBody>
                     ) {
                         if (response.isSuccessful) {
-                            Log.d("successful", response.body().toString())
+                            Log.d("successful", response.body()?.string()!!)
                         } else {
                             Log.d("not successful", response.errorBody()?.string()!!)
                         }
