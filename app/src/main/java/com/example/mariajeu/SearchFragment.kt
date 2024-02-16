@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import com.example.mariajeu.databinding.FragmentSearchBinding
@@ -22,6 +23,8 @@ class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
     private lateinit var mainActivity: MainActivity
     private val viewModel by viewModels<SharedViewModel>()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,6 +119,14 @@ class SearchFragment : Fragment() {
 
 
 
+        // btnCalender을 찾지못함... 이유를 모르겠음...
+//        binding.btnCalender.setOnClickListener { navigateToFilterDateFragment() }
+        binding.ibFilterNear.setOnClickListener { navigateToFilterMapFragment() }
+        binding.ibFilterRegion.setOnClickListener { navigateToFilterRegionFragment() }
+        binding.ibFilterPrice.setOnClickListener { navigateToFilterPriceFragment() }
+        binding.ibFilterAtmosphere.setOnClickListener { navigateToFilterMoodFragment() }
+
+
         return binding.root
 
 
@@ -124,6 +135,41 @@ class SearchFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mainActivity = context as MainActivity
+    }
+
+
+
+    private fun navigateToFilterDateFragment() {
+        val nextFragment = FilterdateFragment()
+        navigateToFragment(nextFragment)
+    }
+
+    private fun navigateToFilterMapFragment() {
+        val nextFragment = FiltermapFragment()
+        navigateToFragment(nextFragment)
+    }
+
+    private fun navigateToFilterRegionFragment() {
+        val nextFragment = FilterregionFragment()
+        navigateToFragment(nextFragment)
+    }
+
+    private fun navigateToFilterPriceFragment() {
+        val nextFragment = FilterpriceFragment()
+        navigateToFragment(nextFragment)
+    }
+
+    private fun navigateToFilterMoodFragment() {
+        val nextFragment = FiltermoodFragment()
+        navigateToFragment(nextFragment)
+    }
+
+    private fun navigateToFragment(fragment: Fragment) {
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.searchFragment_id, fragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 
 }

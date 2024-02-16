@@ -85,7 +85,7 @@
             android:layout_marginTop="200.58dp"
             android:background="@drawable/filter_price_line_26"
             />
-        
+
         <ImageView
             android:id="@+id/filter_price_sec2_range_lowest_iv"
             android:layout_width="21.17dp"
@@ -151,38 +151,38 @@
 
         <TextView
             android:id="@+id/filter_price_sec2_range_change_from_tv"
-            android:layout_width="42.37dp"
-            android:layout_height="14.53dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="271dp"
             android:text="~"
-            android:textSize="12.105dp"
+            android:textSize="15dp"
             android:gravity="center_horizontal|top"
             />
 
         <TextView
             android:id="@+id/filter_price_sec2_range_change_lowest_tv"
-            android:layout_width="48.42dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/filter_price_sec2_range_change_from_tv"
             app:layout_constraintEnd_toStartOf="@id/filter_price_sec2_range_change_from_tv"
             android:layout_marginEnd="18.16dp"
             android:text="0 만원"
-            android:textSize="12.105dp"
+            android:textSize="15dp"
             android:gravity="center_horizontal|top"
             />
 
         <TextView
             android:id="@+id/filter_price_sec2_range_change_highset_tv"
-            android:layout_width="58.42dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/filter_price_sec2_range_change_from_tv"
             app:layout_constraintStart_toEndOf="@id/filter_price_sec2_range_change_from_tv"
-            android:layout_marginEnd="18.16dp"
+            android:layout_marginStart="18.16dp"
             android:text="20 만원"
-            android:textSize="12.105dp"
+            android:textSize="15dp"
             android:gravity="center_horizontal|top"
             />
 

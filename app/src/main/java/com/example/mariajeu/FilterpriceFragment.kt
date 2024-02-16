@@ -2,8 +2,11 @@ package com.example.mariajeu
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.mariajeu.databinding.FragmentFilterpriceBinding
@@ -11,6 +14,7 @@ import com.example.mariajeu.databinding.FragmentFilterpriceBinding
 class FilterpriceFragment  : Fragment(){
 
     lateinit var binding: FragmentFilterpriceBinding
+
 
 
     override fun onCreateView(
@@ -31,6 +35,7 @@ class FilterpriceFragment  : Fragment(){
             navigateToNextMoodFragment()
         }
 
+
     }
 
     private fun navigateToNextMoodFragment() {
@@ -44,4 +49,7 @@ class FilterpriceFragment  : Fragment(){
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
+
+
+
 }
