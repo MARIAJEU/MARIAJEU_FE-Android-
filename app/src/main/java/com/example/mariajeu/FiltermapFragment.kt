@@ -29,6 +29,9 @@ class FiltermapFragment  : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 닫기 클릭시
+        setMapCancleClickListener()
+
         binding.filterMapSec3ConfirmTv.setOnClickListener {
             navigateToNextResDetailFragment()
         }
@@ -45,5 +48,28 @@ class FiltermapFragment  : Fragment(){
         fragmentTransaction.replace(R.id.filter_map_constraintlayout, nextFragment)
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
+    }
+
+
+    private fun setMapCancleClickListener() {
+        binding.filterMapSec3CancelV.setOnClickListener {
+            navigateToSearchFragment()
+        }
+
+        binding.filterMapSec3CancelTv.setOnClickListener {
+            navigateToSearchFragment()
+        }
+    }
+
+    private fun navigateToSearchFragment() {
+        // Clear the entire back stack and navigate back to the SearchFragment
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        val searchFragment = SearchFragment()
+
+        // Replace the current fragment with the SearchFragment
+        fragmentManager.beginTransaction()
+            .replace(R.id.searchFragment_id, searchFragment)
+            .commit()
     }
 }
