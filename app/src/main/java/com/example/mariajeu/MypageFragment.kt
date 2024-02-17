@@ -36,14 +36,13 @@ class MypageFragment : Fragment() {
             val adapter = MyPageAdapter(requireContext(), myRestaurantList)
             binding.lvMypage.adapter = adapter
 
-            val userId = arguments?.getString("로그인 정보")
-            Log.d("로그인 정보", userId.toString())
+            val data = arguments?.getString("로그인 정보")
+            Log.d("전달 후 ", data.toString())
+
+//            binding.tvMypageNickname.text = arguments?.getString("로그인 정보")
         }
 
-        // arguments가 null이 아닌 경우에만 setValues() 함수를 호출합니다.
-        if (arguments != null) {
-            setValues()
-        }
+        setValues()
 
         binding.mypageLoginTv.setOnClickListener {
             val intent = Intent(activity, LoginActivity::class.java)
@@ -56,13 +55,6 @@ class MypageFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mainActivity = context as MainActivity
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        val loginData = arguments?.getString("로그인 정보")
-        Log.d("로그인 정보 전달 후 ", loginData.toString())
-
-        super.onActivityCreated(savedInstanceState)
     }
 
     fun mypageLogin() {

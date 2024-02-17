@@ -60,7 +60,24 @@ class LoginActivity : AppCompatActivity(){
             var password = binding.loginPasswordEt.text.toString()
 
             val startFragment = supportFragmentManager.findFragmentById(R.id.start_constraintlayout) as? StartFragment
-            val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
+
+            // TODO 마이페이지에서 intent 값 전달 받아야 하는데 자꾸 null 값 찍힘...
+
+            val mypageFragment = MypageFragment()
+            val bundle = Bundle()
+
+            mypageFragment.arguments = bundle
+            mypageFragment?.mypageLogin()
+
+
+            bundle.putString("로그인 정보", userId)
+            Log.d("로그인 정보 전달 전", userId)
+
+
+            // 프래그먼트를 추가하거나 교체합니다.
+            supportFragmentManager.beginTransaction()
+                .add(R.id.mypageFragment, mypageFragment!!)
+                .commit()
 
             //---------------------------------------------------------------------
             var loginBody = LoginDTO(userId, password)
@@ -133,24 +150,8 @@ class LoginActivity : AppCompatActivity(){
         }
     }
 
-    private fun setLogin(bool: Boolean){
+    private fun setLogin(bool: Boolean) {
 
-        var userId = binding.loginIdEt.text.toString()
-
-        if (bool) {
-            val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
-            mypageFragment?.mypageLogin()
-
-            val bundle = Bundle()
-            bundle.putString("로그인 정보", userId)
-            Log.d("로그인 정보 전달 전", userId)
-            mypageFragment?.arguments = bundle
-
-            // 프래그먼트를 추가하거나 교체합니다.
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.mypageFragment, mypageFragment!!)
-                .commit()
-        }
         val loginItent = Intent(this, MainActivity::class.java)
 //        loginItent.putExtra("로그인 성공", "success")
 //        Log.d("tag", "로그인 성공함")
