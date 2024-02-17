@@ -2,10 +2,12 @@ package com.example.mariajeu
 
 import android.app.PendingIntent
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.telephony.SmsManager
@@ -50,7 +52,7 @@ class SignUpActivity : AppCompatActivity() {
         val intent = Intent(this, Login2Activity::class.java)
         // 랜덤으로 네 자리 수 만들기 (인증번호로 사용)
         val random = Random(System.currentTimeMillis())
-        val randomNum = random.nextInt(1000, 10000)
+        val randomNum = random.nextInt(100000, 1000000)
 
         // 다음 버튼 눌렀을 때 프로필 사진 화면으로 전환
         binding.btnNext.setOnClickListener {
@@ -91,10 +93,11 @@ class SignUpActivity : AppCompatActivity() {
 
         // TODO 본인인증 -> 안 됨...
         binding.btnCertification.setOnClickListener {
-            val phoneNumber = binding.etInputPhone.text.toString()
-            Log.d("TEST전번TEST전번", phoneNumber)
+//            Log.d("TEST전번TEST전번", phoneNum)
+//
+            sendSmsMessage(this,  phoneNum, "[마리아주 본인 확인] 인증번호: $randomNum")
 
-            sendSmsMessage(this,  phoneNumber, "[마리아주 본인 확인] 인증번호: $randomNum")
+//            sendEmail(randomNum.toString())
         }
 
         binding.btnConfirm.setOnClickListener {
@@ -212,6 +215,28 @@ class SignUpActivity : AppCompatActivity() {
 
         //-----------------------------------------------------------------------
 
+    }
+
+    @SuppressLint("QueryPermissionsNeeded")
+    private fun sendEmail(content: String) {
+        val emailAddress = emailAddr
+        val title = "[마리아주 이메일 인증]"
+
+        val intent = Intent(Intent.ACTION_SENDTO) // 메일 전송 설정
+            .apply {
+                type = "text/plain" // 데이터 타입 설정
+                data = Uri.parse("mailto:") // 이메일 앱에서만 인텐트 처리되도록 설정
+
+                putExtra(Intent.EXTRA_EMAIL, arrayOf(emailAddress)) // 메일 수신 주소 목록
+                putExtra(Intent.EXTRA_SUBJECT, title) // 메일 제목 설정
+                putExtra(Intent.EXTRA_TEXT, content) // 메일 본문 설정
+            }
+
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(Intent.createChooser(intent, "메일 전송하기"))
+        } else {
+            Toast.makeText(this, "메일을 전송할 수 없습니다", Toast.LENGTH_LONG).show()
+        }
     }
 
     fun sendSmsMessage(mContext: Context, phone: String, message: String) {

@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity(){
 
 //        val toLogin = intent.getStringExtra("로그인으로")
 
+
         // 카카오톡 로그인 -------------------------------------------------------
 
         val keyHash = Utility.getKeyHash(this)
@@ -57,6 +58,10 @@ class LoginActivity : AppCompatActivity(){
             // 서버 연동을 위한 세팅--------------------------------------------------
             var userId = binding.loginIdEt.text.toString()
             var password = binding.loginPasswordEt.text.toString()
+
+            val startFragment = supportFragmentManager.findFragmentById(R.id.start_fragment) as? StartFragment
+            val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
+
             //---------------------------------------------------------------------
             var loginBody = LoginDTO(userId, password)
             CoroutineScope(Dispatchers.IO).launch {
@@ -67,7 +72,6 @@ class LoginActivity : AppCompatActivity(){
                     ) {
                         if (response.isSuccessful) {
                             Log.d("login/response is successful", response.body()?.string()!!)
-
                         } else {
                             Log.d("login/response is not successful", response.errorBody()?.string()!!)
                         }
@@ -80,11 +84,7 @@ class LoginActivity : AppCompatActivity(){
                 })
             }
 
-            val startFragment = supportFragmentManager.findFragmentById(R.id.start_fragment) as? StartFragment
-            val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
-
             startFragment?.startLogin()
-            mypageFragment?.mypageLogin()
 
             setLogin(true)
 
@@ -134,11 +134,28 @@ class LoginActivity : AppCompatActivity(){
     }
 
     private fun setLogin(bool: Boolean){
-        val loginItent = Intent(this, StartFragment::class.java)
-        loginItent.putExtra("로그인 성공", "success")
-        Log.d("tag", "로그인 성공함")
-        setResult(RESULT_OK, loginItent)
-//        startActivity(loginItent)
+
+        var userId = binding.loginIdEt.text.toString()
+
+        if (bool) {
+            val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
+            mypageFragment?.mypageLogin()
+
+            val bundle = Bundle()
+            bundle.putString("로그인 정보", userId)
+            Log.d("로그인 정보 전달 전", userId)
+            mypageFragment?.arguments = bundle
+
+            // 프래그먼트를 추가하거나 교체합니다.
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.mypageFragment, mypageFragment!!)
+                .commit()
+        }
+        val loginItent = Intent(this, MainActivity::class.java)
+//        loginItent.putExtra("로그인 성공", "success")
+//        Log.d("tag", "로그인 성공함")
+//        setResult(RESULT_OK, loginItent)
+        startActivity(loginItent)
         finish() // 이전 액티비티로 돌아가기
 //        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
 //        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE

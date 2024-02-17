@@ -2,18 +2,22 @@ package com.example.mariajeu
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.mariajeu.databinding.FragmentMypageBinding
+import kotlin.math.log
 
 class MypageFragment : Fragment() {
 
     lateinit var binding: FragmentMypageBinding
     lateinit var mainActivity: MainActivity
+    private val client = RetrofitInstance.getInstance().create(ApiService::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +34,15 @@ class MypageFragment : Fragment() {
         fun setValues() {
             val adapter = MyPageAdapter(requireContext(), myRestaurantList)
             binding.lvMypage.adapter = adapter
+
+            val userId = arguments?.getString("로그인 정보")
+            Log.d("로그인 정보", userId.toString())
         }
 
-        setValues()
+        // arguments가 null이 아닌 경우에만 setValues() 함수를 호출합니다.
+        if (arguments != null) {
+            setValues()
+        }
 
         binding.mypageLoginTv.setOnClickListener {
             val intent = Intent(activity, LoginActivity::class.java)
@@ -44,6 +54,13 @@ class MypageFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mainActivity = context as MainActivity
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        val loginData = arguments?.getString("로그인 정보")
+        Log.d("로그인 정보 전달 후 ", loginData.toString())
+
+        super.onActivityCreated(savedInstanceState)
     }
 
     fun mypageLogin() {
