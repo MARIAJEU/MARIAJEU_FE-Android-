@@ -80,7 +80,7 @@ class LoginActivity : AppCompatActivity(){
                 })
             }
 
-            val startFragment = supportFragmentManager.findFragmentById(R.id.start_fragment) as? StartFragment
+            val startFragment = supportFragmentManager.findFragmentById(R.id.start_constraintlayout) as? StartFragment
             val mypageFragment = supportFragmentManager.findFragmentById(R.id.mypageFragment) as? MypageFragment
 
             startFragment?.startLogin()

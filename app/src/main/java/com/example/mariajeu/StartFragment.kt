@@ -82,15 +82,11 @@ class StartFragment : Fragment() {
         binding.startChoice04V.setOnTouchListener(createChoiceTouchListener(binding.startChoice04Tv))
 
 
-        // start_menu1_v 클릭 시 FoodFragment로 전환
-        binding.startMenu1V.setOnClickListener {
-            navigateToFoodFragment()
-        }
-
-        // start_menu1_tv 클릭 시 FoodFragment로 전환
-        binding.startMenu1Tv.setOnClickListener {
-            navigateToFoodFragment()
-        }
+        // 메뉴 아이템에 대한 클릭 리스너 설정
+        setMenuItemClickListener(binding.startMenu1V, "연어스테이크")
+        setMenuItemClickListener(binding.startMenu2V, "감바스")
+        setMenuItemClickListener(binding.startMenu3V, "menu3")
+        setMenuItemClickListener(binding.startMenu4V, "menu4")
 
         Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
     }
@@ -265,70 +261,51 @@ class StartFragment : Fragment() {
         }
     }
 
-    private fun navigateToFoodFragment() {
-        val foodFragment = FoodFragment()
-
-        // 프래그먼트 전환을 위한 트랜잭션 시작
-        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-
-        transaction.replace(R.id.start_constraintlayout, foodFragment)
-
-        // 이전의 백스택을 모두 제거
-        requireActivity().supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-
-//        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
-
-        // FoodFragment를 추가하거나 보여줌
-        transaction.add(R.id.start_constraintlayout, foodFragment)
-
-//        Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
-
-
-        // 트랜잭션 커밋
-        transaction.commit()
-
-//        Log.d("FragmentTransaction", "Before: ${requireActivity().supportFragmentManager.fragments}")
-////        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-////        transaction.replace(R.id.start_constraintlayout, foodFragment)
-////        transaction.addToBackStack(null)
-////        transaction.commit()
-//
-//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//
-//        transaction.setCustomAnimations(
-//            android.R.anim.fade_in,
-//            android.R.anim.fade_out,
-//            android.R.anim.fade_in,
-//            android.R.anim.fade_out
-//        )
-//        transaction.replace(R.id.start_constraintlayout, foodFragment)
-//
-//        // 현재 보이는 프래그먼트를 숨김
-//        val startFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.main_frm)
-//        if (startFragment != null) {
-//            transaction.hide(startFragment)
-//        }
-//
-//        // FoodFragment를 추가하거나 보여줌
-//        if (!foodFragment.isAdded) {
-//            // FoodFragment가 아직 추가되지 않았으면 추가
-//            transaction.add(R.id.main_frm, foodFragment)
-//        }
-//
-//        // 숨겨진 상태인 경우 보이게 함
-//        transaction.show(foodFragment)
-//
-//        // addToBackStack을 사용하여 백스택에 추가
-//        transaction.addToBackStack(null)
-//
-//        requireActivity().supportFragmentManager.addOnBackStackChangedListener {
-//            Log.d("FragmentManager", "BackStackChanged")
-//        }
-//        transaction.addToBackStack(null)
-//        transaction.commit()
-//
-//
-//        // FragmentManager의 fragment 목록 출력
-//        Log.d("FragmentManager", "Fragments after transaction: ${requireActivity().supportFragmentManager.fragments}")
+    private fun setMenuItemClickListener(view: View, menuName: String) {
+        view.setOnClickListener {
+            navigateToFoodFragment(menuName)
+        }
     }
+
+    // FoodFragment로 이동하는 함수
+    private fun navigateToFoodFragment(menuName: String) {
+
+        binding.startWhiteV.visibility = View.GONE
+        binding.startRedV.visibility = View.GONE
+        binding.startSparklingV.visibility = View.GONE
+        binding.startRectangle1V.visibility = View.GONE
+        binding.startRectangle16V.visibility = View.GONE
+        binding.startWhiteTv.visibility = View.GONE
+        binding.startRedTv.visibility = View.GONE
+        binding.startSparklingTv.visibility = View.GONE
+        binding.startMenu1V.visibility = View.GONE
+        binding.startMenu2V.visibility = View.GONE
+        binding.startMenu3V.visibility = View.GONE
+        binding.startMenu4V.visibility = View.GONE
+        binding.startMenu1Tv.visibility = View.GONE
+        binding.startMenu2Tv.visibility = View.GONE
+        binding.startMenu3Tv.visibility = View.GONE
+        binding.startMenu4Tv.visibility = View.GONE
+        binding.startChoice01Tv.visibility = View.GONE
+        binding.startChoice01V.visibility = View.GONE
+        binding.startChoice01Iv.visibility = View.GONE
+        binding.startChoice02Tv.visibility = View.GONE
+        binding.startChoice02V.visibility = View.GONE
+        binding.startChoice02Iv.visibility = View.GONE
+        binding.startChoice03Tv.visibility = View.GONE
+        binding.startChoice03V.visibility = View.GONE
+        binding.startChoice03Iv.visibility = View.GONE
+
+        // FoodFragment로 이동
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+        fragmentTransaction.replace(R.id.start_constraintlayout, FoodFragment())
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+
+
+    }
+
+
 }

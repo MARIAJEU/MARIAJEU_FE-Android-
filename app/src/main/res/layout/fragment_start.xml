@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment"
-    android:id="@+id/start_fragment">
+    tools:context=".HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/start_constraintlayout"
@@ -109,6 +108,7 @@
             app:layout_constraintTop_toTopOf="@id/start_search_v"
             app:layout_constraintBottom_toBottomOf="@id/start_search_v"
             />
+
 
         <View
             android:id="@+id/start_white_v"
