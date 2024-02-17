@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -74,6 +75,10 @@ class FilterregionFragment : Fragment() {
         fragmentManager.beginTransaction()
             .replace(R.id.searchFragment_id, searchFragment)
             .commit()
+
+        // search 프래그먼트의 list 겹침 해결 (숨기기)
+        val lvRestaurant: ListView? = requireActivity().findViewById(R.id.lv_restaurant)
+        lvRestaurant?.visibility = View.GONE
     }
 
 
