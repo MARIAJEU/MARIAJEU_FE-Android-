@@ -43,7 +43,34 @@ class ReservationDialog(context: Context) : Dialog(context) {
             dismiss()
         }
 
+
+        setDateClickListeners()
+
     }
+
+    private fun setDateClickListeners() {
+        // 날짜를 클릭하면 FilterdateFragment로 이동
+        rDate.setOnClickListener {
+            navigateToFilterDateFragment()
+        }
+
+        // 시간을 클릭하면 FiltertimeFragment로 이동
+        rTime.setOnClickListener {
+            navigateToFilterDateFragment()
+        }
+    }
+
+    // FilterdateFragment로 이동하는 함수
+    private fun navigateToFilterDateFragment() {
+        val nextFragment = FilterdateFragment()
+        // 이동할 Fragment로 전환
+        myPageFragment.navigateToFilterDateFragment(nextFragment)
+        // 다이얼로그 닫기
+        dismiss()
+    }
+
+
+
 
 }
 

@@ -194,7 +194,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/search_list_layout">
 
         <!-- 기존의 로고 및 버튼 등의 뷰들 추가 -->
 

@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.mariajeu.databinding.FragmentMypageBinding
 import kotlin.math.log
 
@@ -49,6 +50,7 @@ class MypageFragment : Fragment() {
             startActivity(intent)
         }
         return binding.root
+
     }
 
     override fun onAttach(context: Context) {
@@ -71,6 +73,14 @@ class MypageFragment : Fragment() {
     fun mypageLogout() {
         binding.mypageLoginTv.visibility = View.VISIBLE
         binding.mypageLogoutTv.visibility = View.GONE
+    }
+
+    fun navigateToFilterDateFragment(fragment: Fragment) {
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.filter_date_constraintlayout, fragment )
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 
 }
