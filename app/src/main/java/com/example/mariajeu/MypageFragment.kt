@@ -66,7 +66,7 @@ class MypageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvMypageNickname.text = userId
+//        binding.tvMypageNickname.text = userId
     }
 
 

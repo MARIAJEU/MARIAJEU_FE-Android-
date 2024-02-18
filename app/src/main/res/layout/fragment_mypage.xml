@@ -60,35 +60,16 @@
 
     <TextView
         android:id="@+id/start_simple_service_tv"
-        android:layout_width="122dp"
+        android:layout_width="wrap_content"
         android:layout_height="17dp"
         app:layout_constraintTop_toBottomOf="@id/tv_mypage_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="'간단한 서비스 설명'"
+        android:text="'당신을 위한 와인 안주 추천 서비스'"
         android:textSize="14dp"
         />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ib_mypage_profile"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/ic_login2_circle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_mypage_logo" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_mypage_nickname"
-        android:text="닉네임"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ib_mypage_profile"
-        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,13 +78,13 @@
         android:text="나의 예약"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_mypage_nickname"
+        app:layout_constraintTop_toBottomOf="@id/start_simple_service_tv"
         android:layout_marginTop="30dp"
         android:layout_marginStart="40dp"/>
 
     <ListView
         android:layout_width="330dp"
-        android:layout_height="260dp"
+        android:layout_height="460dp"
         android:id="@+id/lv_mypage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
