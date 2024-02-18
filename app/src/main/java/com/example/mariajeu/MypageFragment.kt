@@ -16,20 +16,41 @@ import kotlin.math.log
 
 class MypageFragment : Fragment() {
 
-    lateinit var binding: FragmentMypageBinding
+    private var _binding: FragmentMypageBinding? = null
+    private val binding get() = _binding!!
+
     lateinit var mainActivity: MainActivity
+    lateinit var userId: String
+
     private val client = RetrofitInstance.getInstance().create(ApiService::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentMypageBinding.inflate(layoutInflater)
+        _binding = FragmentMypageBinding.inflate(layoutInflater)
+
+        userId = ""
+
+        arguments.let {
+            var id = it?.getString("loginId") ?: "로그인이 필요한 서비스입니다"
+            if (id != "로그인이 필요한 서비스입니다") {
+                userId = id
+                Log.d("useriduserid", userId)
+            }
+
+            Log.d("전달후", id)
+        }
+
+        binding.mypageLoginTv.setOnClickListener {
+            val intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMypageBinding.inflate(inflater, container, false)
+//        binding = FragmentMypageBinding.inflate(inflater, container, false)
         var myRestaurantList = RestaurantAdapter.myPageRestaurantList
 
         fun setValues() {
@@ -39,18 +60,15 @@ class MypageFragment : Fragment() {
 
         setValues()
 
-        binding.mypageLoginTv.setOnClickListener {
-            val intent = Intent(activity, LoginActivity::class.java)
-            startActivity(intent)
-        }
         return binding.root
 
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        mainActivity = context as MainActivity
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.tvMypageNickname.text = userId
     }
+
 
     fun mypageLogin() {
         binding.mypageLoginTv.visibility = View.GONE
@@ -70,10 +88,5 @@ class MypageFragment : Fragment() {
         fragmentTransaction.commit()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        arguments?.let {
-            binding.tvMypageNickname.text = it.getString("login")
-        }
-    }
 
 }

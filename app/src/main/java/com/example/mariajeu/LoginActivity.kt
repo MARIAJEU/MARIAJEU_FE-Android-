@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mariajeu.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.model.OAuthToken
@@ -73,6 +74,21 @@ class LoginActivity : AppCompatActivity(){
                     ) {
                         if (response.isSuccessful) {
                             Log.d("login/response is successful", response.body()?.string()!!)
+                            Toast.makeText(applicationContext, "$userId 님, 환영합니다!", Toast.LENGTH_SHORT).show()
+
+                            val bundle: Bundle = Bundle()
+                            val mypageFragment = MypageFragment()
+                            var id = binding.loginIdEt.text.toString()
+                            bundle.putString("loginId", id)
+                            Log.d("전달전", id!!)
+
+                            mypageFragment.arguments = bundle
+
+                            val transaction = supportFragmentManager.beginTransaction()
+
+                            transaction.replace(R.id.mypageFragment, mypageFragment)
+                            transaction.commit()
+
                         } else {
                             Log.d("login/response is not successful", response.errorBody()?.string()!!)
                         }
@@ -85,9 +101,7 @@ class LoginActivity : AppCompatActivity(){
                 })
             }
 
-            startFragment?.startLogin()
-
-            setLogin(true)
+//            setLogin(true)
 
         }
     }
@@ -98,14 +112,14 @@ class LoginActivity : AppCompatActivity(){
         val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
             if (error != null) {
 //                TextMsg(this, "카카오계정으로 로그인 실패 : ${error}")
-                setLogin(false)
+//                setLogin(false)
             } else if (token != null) {
                 //TODO: 최종적으로 카카오로그인 및 유저정보 가져온 결과
                 UserApiClient.instance.me { user, error ->
 //                    TextMsg(this, "카카오계정으로 로그인 성공 \n\n " +
 //                            "token: ${token.accessToken} \n\n " +
 //                            "me: ${user}")
-                    setLogin(true)
+//                    setLogin(true)
                 }
             }
         }
@@ -126,7 +140,7 @@ class LoginActivity : AppCompatActivity(){
                     UserApiClient.instance.loginWithKakaoAccount(this, callback = callback)
                 } else if (token != null) {
 //                    TextMsg(this, "카카오톡으로 로그인 성공 ${token.accessToken}")
-                    setLogin(true)
+//                    setLogin(true)
                 }
             }
         } else {
@@ -134,16 +148,4 @@ class LoginActivity : AppCompatActivity(){
         }
     }
 
-    private fun setLogin(bool: Boolean) {
-
-        val loginItent = Intent(this, MainActivity::class.java)
-//        loginItent.putExtra("로그인 성공", "success")
-//        Log.d("tag", "로그인 성공함")
-//        setResult(RESULT_OK, loginItent)
-        startActivity(loginItent)
-        finish() // 이전 액티비티로 돌아가기
-
-//        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
-//        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE
-    }
 }

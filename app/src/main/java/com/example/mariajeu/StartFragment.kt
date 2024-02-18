@@ -92,10 +92,14 @@ class StartFragment : Fragment() {
         // 메뉴 아이템에 대한 클릭 리스너 설정
         setMenuItemClickListener(binding.startMenu1V, "연어스테이크")
         setMenuItemClickListener(binding.startMenu2V, "감바스")
-        setMenuItemClickListener(binding.startMenu3V, "menu3")
-        setMenuItemClickListener(binding.startMenu4V, "menu4")
+        setMenuItemClickListener(binding.startMenu3V, "카나페")
+        setMenuItemClickListener(binding.startMenu4V, "알리오 올리오")
 
         Log.d("FragmentTransaction", "After: ${requireActivity().supportFragmentManager.fragments}")
+
+        if (this.arguments?.getString("로그인 성공").equals("success")) {
+            startLogin()
+        }
     }
 
     fun startLogin() {
