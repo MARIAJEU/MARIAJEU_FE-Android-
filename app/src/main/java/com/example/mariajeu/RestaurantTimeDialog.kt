@@ -7,6 +7,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class RestaurantTimeDialog(context: Context, private val listener: RestaurantTimeDialogInterface) : Dialog(context) {
 
@@ -15,6 +16,7 @@ class RestaurantTimeDialog(context: Context, private val listener: RestaurantTim
         lateinit var rDate: TextView
         lateinit var rTime: TextView
         lateinit var rCnt: TextView
+
     }
 
     init {
@@ -39,5 +41,11 @@ class RestaurantTimeDialog(context: Context, private val listener: RestaurantTim
             listener.onCancelButtonClick() // 취소 버튼 클릭 시 이벤트 처리
             dismiss()
         }
+
     }
+
+
+
+
+
 }

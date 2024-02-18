@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class ReservationDialog(context: Context) : Dialog(context) {
 
@@ -17,6 +18,8 @@ class ReservationDialog(context: Context) : Dialog(context) {
         lateinit var rCnt: TextView
 
         var myPageFragment: MypageFragment = MypageFragment()
+
+
 
     }
 
@@ -44,30 +47,9 @@ class ReservationDialog(context: Context) : Dialog(context) {
         }
 
 
-        setDateClickListeners()
-
     }
 
-    private fun setDateClickListeners() {
-        // 날짜를 클릭하면 FilterdateFragment로 이동
-        rDate.setOnClickListener {
-            navigateToFilterDateFragment()
-        }
 
-        // 시간을 클릭하면 FiltertimeFragment로 이동
-        rTime.setOnClickListener {
-            navigateToFilterDateFragment()
-        }
-    }
-
-    // FilterdateFragment로 이동하는 함수
-    private fun navigateToFilterDateFragment() {
-        val nextFragment = FilterdateFragment()
-        // 이동할 Fragment로 전환
-        myPageFragment.navigateToFilterDateFragment(nextFragment)
-        // 다이얼로그 닫기
-        dismiss()
-    }
 
 
 

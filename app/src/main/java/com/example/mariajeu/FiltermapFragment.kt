@@ -50,6 +50,36 @@ class FiltermapFragment  : Fragment(){
         fragmentTransaction.replace(R.id.filter_map_constraintlayout, nextFragment)
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
+
+        hideFilterViews()
+
+    }
+
+    private fun hideFilterViews() {
+        binding.filterMoodSec1V.visibility = View.GONE
+        binding.filterMapSec2Iv.visibility = View.GONE
+        binding.filterMapSec2NameTv.visibility = View.GONE
+        binding.filterMapSec2CorkcargeBtn.visibility = View.GONE
+        binding.filterMapSec2HeartIbtn.visibility = View.GONE
+        binding.filterMapSec2DescriptionTv.visibility = View.GONE
+        binding.filterMapSec2StarIv.visibility = View.GONE
+        binding.filterMapSec2StarRateTv.visibility = View.GONE
+        binding.filterMapSec2ReviewTv.visibility = View.GONE
+        binding.filterMapSec2MylocationTv.visibility = View.GONE
+        binding.filterMapSec2LocationTv.visibility = View.GONE
+        binding.filterMapSec2PriceTv.visibility = View.GONE
+        binding.filterMapSec2Time01Btn.visibility = View.GONE
+        binding.filterMapSec2Time02Btn.visibility = View.GONE
+        binding.filterMapSec2Time03Btn.visibility = View.GONE
+        binding.filterMapSec2Time04Btn.visibility = View.GONE
+        binding.filterMapSec2Time05Btn.visibility = View.GONE
+        binding.filterMapMylocationIv.visibility = View.GONE
+        binding.filterMapMylocationTv.visibility = View.GONE
+
+        binding.filterMapSec3CancelV.visibility = View.GONE
+        binding.filterMapSec3CancelTv.visibility = View.GONE
+        binding.filterMapSec3ConfirmV.visibility = View.GONE
+        binding.filterMapSec3ConfirmTv.visibility = View.GONE
     }
 
 
