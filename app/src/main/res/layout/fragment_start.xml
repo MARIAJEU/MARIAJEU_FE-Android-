@@ -425,14 +425,14 @@
 
 
 
-        <View
+        <ImageView
             android:id="@+id/start_menu1_v"
             android:layout_width="156dp"
             android:layout_height="148.33dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="400dp"
-            android:background="@color/light_gray"
+            android:src="@drawable/iv_steak"
             app:layout_constraintEnd_toStartOf="@id/start_menu2_v" />
 
         <TextView
@@ -446,13 +446,13 @@
             android:textSize="11.9dp"
             android:gravity="top" />
 
-        <View
+        <ImageView
             android:id="@+id/start_menu2_v"
             android:layout_width="156dp"
             android:layout_height="148.33dp"
             app:layout_constraintStart_toEndOf="@id/start_menu1_v"
             app:layout_constraintTop_toTopOf="@id/start_menu1_v"
-            android:background="@color/light_gray"
+            android:src="@drawable/iv_gambas"
             app:layout_constraintEnd_toEndOf="parent" />
 
 
@@ -467,12 +467,12 @@
             app:layout_constraintStart_toStartOf="@id/start_menu2_v"
             app:layout_constraintTop_toBottomOf="@id/start_menu2_v" />
 
-        <View
+        <ImageView
             android:id="@+id/start_menu3_v"
             android:layout_width="156dp"
             android:layout_height="148.33dp"
             android:layout_marginTop="48dp"
-            android:background="@color/light_gray"
+            android:src="@drawable/iv_canape"
             app:layout_constraintStart_toStartOf="@id/start_menu1_v"
             app:layout_constraintTop_toBottomOf="@id/start_menu1_v" />
 
@@ -483,28 +483,28 @@
             app:layout_constraintStart_toStartOf="@id/start_menu3_v"
             app:layout_constraintTop_toBottomOf="@id/start_menu3_v"
             android:layout_marginTop="10.5dp"
-            android:text="menu3"
+            android:text="카나페"
             android:textSize="11.9dp"
             android:gravity="top"
             />
 
-        <View
+        <ImageView
             android:id="@+id/start_menu4_v"
             android:layout_width="156dp"
             android:layout_height="148.33dp"
             app:layout_constraintStart_toStartOf="@id/start_menu2_v"
             app:layout_constraintTop_toBottomOf="@id/start_menu2_v"
             android:layout_marginTop="50dp"
-            android:background="@color/light_gray"
+            android:src="@drawable/iv_pasta"
             />
         <TextView
             android:id="@+id/start_menu4_tv"
-            android:layout_width="69dp"
+            android:layout_width="wrap_content"
             android:layout_height="14dp"
             app:layout_constraintStart_toStartOf="@id/start_menu4_v"
             app:layout_constraintTop_toBottomOf="@id/start_menu4_v"
             android:layout_marginTop="10.5dp"
-            android:text="menu4"
+            android:text="알리오 올리오"
             android:textSize="11.9dp"
             android:gravity="top"
             />
