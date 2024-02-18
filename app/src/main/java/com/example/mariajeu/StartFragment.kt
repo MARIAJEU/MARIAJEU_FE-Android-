@@ -71,6 +71,13 @@ class StartFragment : Fragment() {
             startActivityForResult(intent, 1)
         }
 
+        startBtnLogout.setOnClickListener {
+            startLogout()
+            val intent = Intent(activity, LoginActivity::class.java)
+            Toast.makeText(activity, "정상적으로 로그아웃되었습니다", Toast.LENGTH_SHORT).show()
+            startActivityForResult(intent, 1)
+        }
+
         binding.startWhiteV.setOnClickListener { handleViewClick(binding.startWhiteV, binding.startWhiteTv) }
         binding.startRedV.setOnClickListener { handleViewClick(binding.startRedV, binding.startRedTv) }
         binding.startSparklingV.setOnClickListener { handleViewClick(binding.startSparklingV, binding.startSparklingTv) }

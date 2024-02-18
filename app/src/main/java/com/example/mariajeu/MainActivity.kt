@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private fun initBottomNavigation(){
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.main_frm, SearchFragment()) //원래는 HomeFragment() StartFragment()
+            .replace(R.id.main_frm, StartFragment()) //원래는 HomeFragment()
             .commitAllowingStateLoss()
 
         binding.mainBnv.setOnItemSelectedListener{ item ->
@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
-
 
 
 

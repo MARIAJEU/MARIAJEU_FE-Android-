@@ -35,11 +35,6 @@ class MypageFragment : Fragment() {
         fun setValues() {
             val adapter = MyPageAdapter(requireContext(), myRestaurantList)
             binding.lvMypage.adapter = adapter
-
-            val data = arguments?.getString("로그인 정보")
-            Log.d("전달 후 ", data.toString())
-
-//            binding.tvMypageNickname.text = arguments?.getString("로그인 정보")
         }
 
         setValues()
@@ -73,6 +68,12 @@ class MypageFragment : Fragment() {
         fragmentTransaction.replace(R.id.filter_date_constraintlayout, fragment )
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        arguments?.let {
+            binding.tvMypageNickname.text = it.getString("login")
+        }
     }
 
 }

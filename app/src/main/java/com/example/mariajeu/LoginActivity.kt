@@ -63,22 +63,6 @@ class LoginActivity : AppCompatActivity(){
 
             // TODO 마이페이지에서 intent 값 전달 받아야 하는데 자꾸 null 값 찍힘...
 
-            val mypageFragment = MypageFragment()
-            val bundle = Bundle()
-
-            mypageFragment.arguments = bundle
-            mypageFragment?.mypageLogin()
-
-
-            bundle.putString("로그인 정보", userId)
-            Log.d("로그인 정보 전달 전", userId)
-
-
-            // 프래그먼트를 추가하거나 교체합니다.
-            supportFragmentManager.beginTransaction()
-                .add(R.id.mypageFragment, mypageFragment!!)
-                .commit()
-
             //---------------------------------------------------------------------
             var loginBody = LoginDTO(userId, password)
             CoroutineScope(Dispatchers.IO).launch {
@@ -158,6 +142,7 @@ class LoginActivity : AppCompatActivity(){
 //        setResult(RESULT_OK, loginItent)
         startActivity(loginItent)
         finish() // 이전 액티비티로 돌아가기
+
 //        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
 //        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE
     }

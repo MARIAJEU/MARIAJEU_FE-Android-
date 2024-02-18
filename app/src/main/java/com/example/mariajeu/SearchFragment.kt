@@ -15,16 +15,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import com.example.mariajeu.databinding.FragmentSearchBinding
 
-class SharedViewModel : ViewModel() {
-    var btnHeartClikedInfo: String? = null
-}
+
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
     private lateinit var mainActivity: MainActivity
-    private val viewModel by viewModels<SharedViewModel>()
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
