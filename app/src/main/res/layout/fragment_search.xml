@@ -55,6 +55,17 @@
         android:elevation="10dp"
         android:layout_marginLeft="19.08dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_select_date"
+        android:text="날짜와 인원을 선택하세요"
+        app:layout_constraintStart_toEndOf="@id/btn_calendar"
+        app:layout_constraintBottom_toTopOf="@id/ib_map"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"/>
+
     <View
         android:layout_width="340dp"
         android:layout_height="1dp"

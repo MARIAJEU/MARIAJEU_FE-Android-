@@ -56,6 +56,7 @@ class SearchFragment : Fragment() {
             var cntRestaurant = adapter.count
 
             binding.tvCntRestaurant.text = cntRestaurant.toString() + "개의 매장"
+            binding.tvSelectDate.text = FilterdateFragment.date
         }
 
         // ********************************* 리스트뷰 데이터 ********************************************* //
