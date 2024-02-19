@@ -97,7 +97,7 @@ class FilterdateFragment : Fragment() {
             filterViews[i].setOnClickListener {
                 // 클릭 시 처리
                 updatePersonnelView(i)
-                personnel = i.toString() + "명"
+                personnel = (i + 1).toString() + "명"
                 return@setOnClickListener
             }
         }
