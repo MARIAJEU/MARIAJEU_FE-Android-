@@ -4,4 +4,5 @@ interface RestaurantTimeDialogInterface {
 
     fun onYesButtonClick(id: Int)
     fun onCancelButtonClick()
+
 }

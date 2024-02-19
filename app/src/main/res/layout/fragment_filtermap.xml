@@ -173,6 +173,7 @@
                     android:layout_marginTop="1dp">
 
                     <ImageView
+                        android:id="@+id/filter_map_mylocation_iv"
                         android:layout_width="6.64dp"
                         android:layout_height="9.12dp"
                         android:src="@drawable/iv_my_location"
@@ -180,6 +181,7 @@
                         android:layout_marginLeft="10dp"/>
 
                     <TextView
+                        android:id="@+id/filter_map_mylocation_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="내 위치에서"

@@ -116,6 +116,10 @@ class SearchFragment : Fragment() {
 
         // btnCalender을 찾지못함... 이유를 모르겠음...
 //        binding.btnCalender.setOnClickListener { navigateToFilterDateFragment() }
+
+        binding.root.findViewById<ImageButton>(R.id.btn_calendar).setOnClickListener {
+            navigateToFilterDateFragment()
+        }
         binding.ibFilterNear.setOnClickListener { navigateToFilterMapFragment() }
         binding.ibFilterRegion.setOnClickListener { navigateToFilterRegionFragment() }
         binding.ibFilterPrice.setOnClickListener { navigateToFilterPriceFragment() }
@@ -136,7 +140,7 @@ class SearchFragment : Fragment() {
 
     private fun navigateToFilterDateFragment() {
         val nextFragment = FilterdateFragment()
-        navigateToFragment(nextFragment)
+        navigateToFilterDateFragment(nextFragment)
     }
 
     private fun navigateToFilterMapFragment() {
@@ -167,4 +171,42 @@ class SearchFragment : Fragment() {
         fragmentTransaction.commit()
     }
 
+
+    private fun navigateToFilterDateFragment(fragment: Fragment) {
+        val nextFragment = FilterdateFragment()
+
+        hideAllViews()
+
+        val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+        // FilterdateFragment를 추가
+        fragmentManager.beginTransaction()
+            .replace(R.id.searchFragment_id, nextFragment)
+            .addToBackStack(null)
+            .commit()
+
+
+    }
+
+
+
+    private fun hideAllViews() {
+        binding.logo1.visibility = View.GONE
+        binding.logo2.visibility = View.GONE
+        binding.logo3.visibility = View.GONE
+        binding.btnCalendar.visibility = View.GONE
+        binding.ivLine.visibility = View.GONE
+        binding.ibDetail.visibility = View.GONE
+        binding.ibMap.visibility = View.GONE
+        binding.ibFilter.visibility = View.GONE
+        binding.ivLine2.visibility = View.GONE
+        binding.ibFilterNear.visibility = View.GONE
+        binding.ibFilterRegion.visibility = View.GONE
+        binding.ibFilterPrice.visibility = View.GONE
+        binding.ibFilterAtmosphere.visibility = View.GONE
+        binding.tvCntRestaurant.visibility = View.GONE
+        binding.ivSortFilter.visibility = View.GONE
+        binding.tvSelectedFilter.visibility = View.GONE
+        binding.ibSelectSortWay.visibility = View.GONE
+        binding.searchListLayout.visibility = View.GONE
+    }
 }
