@@ -18,6 +18,11 @@ import com.example.mariajeu.databinding.FragmentFilterdateBinding
 class FilterdateFragment : Fragment() {
     lateinit var binding: FragmentFilterdateBinding
 
+    companion object {
+        var date: String = "일자"
+        var personnel: String = "인원수"
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,7 +71,7 @@ class FilterdateFragment : Fragment() {
             // 선택된 날짜에 대한 처리
             val selectedDate = "$year-$month-$dayOfMonth"
             Toast.makeText(requireContext(), "Selected Date: $selectedDate", Toast.LENGTH_SHORT).show()
-
+            date = selectedDate
             // TODO: 선택된 날짜에 따라 스타일 변경 등의 작업 수행
         }
     }
@@ -91,6 +96,7 @@ class FilterdateFragment : Fragment() {
             filterViews[i].setOnClickListener {
                 // 클릭 시 처리
                 updatePersonnelView(i)
+                personnel = i.toString() + "명"
             }
         }
     }

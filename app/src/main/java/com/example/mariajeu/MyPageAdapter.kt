@@ -22,14 +22,19 @@ class MyPageAdapter(private val context: Context, private val myPageList: ArrayL
             val mypageRestaurant = getItem(position) as ReservedRestaurant
             val mypageRestaurantName = view!!.findViewById<TextView>(R.id.tv_mypage_name)
             val mypageRestaurantTime = view!!.findViewById<TextView>(R.id.mypage_time)
+            val mypageRestaurantDate = view!!.findViewById<TextView>(R.id.mypage_date)
+            val mypageRestaurantPersonnel = view!!.findViewById<TextView>(R.id.mypage_cnt)
 
             mypageRestaurantName.text = mypageRestaurant.restaurantName
+            mypageRestaurantDate.text = FilterdateFragment.date
+            mypageRestaurantPersonnel.text = FilterdateFragment.personnel
+
             when (mypageRestaurant.reservedTime) {
-                1 -> mypageRestaurantTime.text = " - 오후 6:00"
-                2 -> mypageRestaurantTime.text = " - 오후 6:30"
-                3 -> mypageRestaurantTime.text = " - 오후 7:00"
-                4 -> mypageRestaurantTime.text = " - 오후 7:30"
-                5 -> mypageRestaurantTime.text = " - 오후 8:00"
+                1 -> mypageRestaurantTime.text = " - 오후 6:00 - "
+                2 -> mypageRestaurantTime.text = " - 오후 6:30 - "
+                3 -> mypageRestaurantTime.text = " - 오후 7:00 - "
+                4 -> mypageRestaurantTime.text = " - 오후 7:30 - "
+                5 -> mypageRestaurantTime.text = " - 오후 8:00 - "
             }
 
             val restaurantImg = view.findViewById<ImageView>(R.id.lv_mypage_img)

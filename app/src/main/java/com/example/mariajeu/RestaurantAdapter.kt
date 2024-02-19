@@ -196,6 +196,8 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 
         // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
         RestaurantTimeDialog.rName.text = restaurant.restaurantName
+        RestaurantTimeDialog.rDate.text = FilterdateFragment.date
+        RestaurantTimeDialog.rCnt.text = FilterdateFragment.personnel
 
         when (idx) {
             1 -> RestaurantTimeDialog.rTime.text = "오후 6:00"
@@ -241,6 +243,8 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
 
         // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
         ReservationDialog.rName.text = restaurant.restaurantName
+        ReservationDialog.rDate.text = FilterdateFragment.date
+        ReservationDialog.rCnt.text = FilterdateFragment.personnel
 
         when (idx) {
             1 -> ReservationDialog.rTime.text = "오후 6:00"
