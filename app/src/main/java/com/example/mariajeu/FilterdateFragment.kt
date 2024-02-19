@@ -68,10 +68,11 @@ class FilterdateFragment : Fragment() {
 
     private fun setupDateChangeListener(){
         binding.filterDateCalendarV.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            val adjustedMonth = month + 1
             // 선택된 날짜에 대한 처리
-            val selectedDate = "$year-$month-$dayOfMonth"
+            val selectedDate = "$year-$adjustedMonth-$dayOfMonth"
             Toast.makeText(requireContext(), "Selected Date: $selectedDate", Toast.LENGTH_SHORT).show()
-            date = "$month/$dayOfMonth"
+            date = "$adjustedMonth/$dayOfMonth"
             return@setOnDateChangeListener
             // TODO: 선택된 날짜에 따라 스타일 변경 등의 작업 수행
         }
