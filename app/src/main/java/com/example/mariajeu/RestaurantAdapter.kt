@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlin.properties.Delegates
@@ -195,6 +196,10 @@ class RestaurantAdapter(private val context: Context, private val restaurantList
         Log.d("TEST 네임", restaurant.restaurantName)
 
         // 다이얼로그에 해당 아이템의 제목을 표시하도록 설정
+        if (FilterdateFragment.date.equals("일자") or FilterdateFragment.personnel.equals("인원")) {
+            Toast.makeText(context, "날짜와 인원을 먼저 선택해주세요", Toast.LENGTH_SHORT).show()
+            return
+        }
         RestaurantTimeDialog.rName.text = restaurant.restaurantName
         RestaurantTimeDialog.rDate.text = FilterdateFragment.date
         RestaurantTimeDialog.rCnt.text = FilterdateFragment.personnel

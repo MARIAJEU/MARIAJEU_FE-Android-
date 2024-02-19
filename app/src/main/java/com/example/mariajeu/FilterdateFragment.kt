@@ -20,7 +20,7 @@ class FilterdateFragment : Fragment() {
 
     companion object {
         var date: String = "일자"
-        var personnel: String = "인원수"
+        var personnel: String = "인원"
     }
 
 
@@ -66,12 +66,13 @@ class FilterdateFragment : Fragment() {
 
 
 
-    private fun setupDateChangeListener() {
+    private fun setupDateChangeListener(){
         binding.filterDateCalendarV.setOnDateChangeListener { view, year, month, dayOfMonth ->
             // 선택된 날짜에 대한 처리
             val selectedDate = "$year-$month-$dayOfMonth"
             Toast.makeText(requireContext(), "Selected Date: $selectedDate", Toast.LENGTH_SHORT).show()
-            date = selectedDate
+            date = "$month/$dayOfMonth"
+            return@setOnDateChangeListener
             // TODO: 선택된 날짜에 따라 스타일 변경 등의 작업 수행
         }
     }
@@ -97,6 +98,7 @@ class FilterdateFragment : Fragment() {
                 // 클릭 시 처리
                 updatePersonnelView(i)
                 personnel = i.toString() + "명"
+                return@setOnClickListener
             }
         }
     }

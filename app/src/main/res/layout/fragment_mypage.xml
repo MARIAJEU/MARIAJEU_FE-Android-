@@ -67,6 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="'당신을 위한 와인 안주 추천 서비스'"
         android:textSize="14dp"
+        android:layout_marginTop="10dp"
         />
 
 
